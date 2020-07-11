@@ -1,0 +1,97 @@
+{
+  "deposits": [
+    {
+      "accountNumber": "1001110024107",
+      "typeOfDeposit": "RRSP 24 TO 35 MO NON REDEEMABLE NON REGD",
+      "holder": "Vanessa Romme",
+      "depositAmt": {
+        "amount": "18000.00",
+        "currency": "CAD"
+      },
+      "maturityAmt": {
+        "amount": "18972.00",
+        "currency": "CAD"
+      },
+      "interestRate": {
+        "rate": "2.70"
+      },
+      "newMaturityAmt": {
+        "amount": "19484.24",
+        "currency": "CAD"
+      },
+      "depositPeriod": "2 Years; 0 Months; 0 Days",
+      "renewalDate": "2021-01-28T18:30:00.000Z",
+      "openedDate": "2019-01-28T18:30:00.000Z",
+      "productId": "110",
+      "accountRouting": {
+        "scheme": "IBAN"
+      },
+      "details": {
+        "value": "",
+        "label": ""
+      }
+    },
+    {
+      "accountNumber": "1001105024956",
+      "typeOfDeposit": "RRSP 12 TO 23 MO NON REDEEMABLE NON REGD",
+      "holder": "Vanessa Romme",
+      "depositAmt": {
+        "amount": "35000.00",
+        "currency": "CAD"
+      },
+      "maturityAmt": {
+        "amount": "35875.00",
+        "currency": "CAD"
+      },
+      "interestRate": {
+        "rate": "2.50"
+      },
+      "newMaturityAmt": {
+        "amount": "36771.88",
+        "currency": "CAD"
+      },
+      "depositPeriod": "1 Years; 0 Months; 0 Days",
+      "renewalDate": "2020-02-25T18:30:00.000Z",
+      "openedDate": "2019-02-25T18:30:00.000Z",
+      "productId": "105",
+      "accountRouting": {
+        "scheme": "IBAN"
+      },
+      "details": {
+        "value": "",
+        "label": ""
+      }
+    },
+    {
+      "accountNumber": "1001105024960",
+      "typeOfDeposit": "RRSP 12 TO 23 MO NON REDEEMABLE NON REGD",
+      "holder": "Vanessa Romme",
+      "depositAmt": {
+        "amount": "19000.00",
+        "currency": "CAD"
+      },
+      "maturityAmt": {
+        "amount": "19475.00",
+        "currency": "CAD"
+      },
+      "interestRate": {
+        "rate": "2.50"
+      },
+      "newMaturityAmt": {
+        "amount": "19961.88",
+        "currency": "CAD"
+      },
+      "depositPeriod": "1 Years; 0 Months; 0 Days",
+      "renewalDate": "2020-03-02T18:30:00.000Z",
+      "openedDate": "2019-03-02T18:30:00.000Z",
+      "productId": "105",
+      "accountRouting": {
+        "scheme": "IBAN"
+      },
+      "details": {
+        "value": "",
+        "label": ""
+      }
+    }
+  ]
+}

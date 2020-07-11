@@ -1,0 +1,33 @@
+{
+                "status": 200,
+                "body": [
+                    {
+                        "id": "1",
+                        "value": {
+                            "title": "first todo",
+                            "done": true,
+                            "tags": "important, fun",
+                            "dueDate": "2018-12-05"
+                        }
+                    },
+                    {
+                        "id": "2",
+                        "value": {
+                            "title": "second todo",
+                            "done": false,
+                            "tags": "important, boring",
+                            "dueDate": "2019-06-01"
+                        }
+                    },
+                    {
+                        "id": "3",
+                        "value": {
+                            "title": "third todo",
+                            "done": false,
+                            "tags": "boring",
+                            "dueDate": "2020-02-29"
+                        }
+                    }
+                ],
+                "type": "TodoItems"
+}

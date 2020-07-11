@@ -1,0 +1,29 @@
+{
+  "status": 200,
+  "Documents": [
+    {
+      "name": "Happy",
+      "type": "Permanent",
+      "date": "30.04.2020",
+      "document": "Happy Life"
+    },
+    {
+      "name": "Sumit",
+      "type": "Contract",
+      "date": "09.02.2020",
+      "document": "Sumit Life"
+    },
+    {
+      "name": "Raj",
+      "type": "Contract",
+      "date": "09.02.2020",
+      "document": "Hello"
+    },
+    {
+      "name": "Cancel",
+      "type": "Permanentr",
+      "date": "09.02.2020",
+      "document": "Time is money"
+    }
+  ]
+}

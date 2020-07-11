@@ -1,0 +1,20 @@
+#%RAML 1.0
+---
+title: Todo
+version: v1
+baseUri: "todo-service/v1"
+mediaType:  application/json
+protocols: [ HTTP, HTTPS ]
+#===============================================================
+# API resource definitions
+#===============================================================
+/todos:
+  displayName: todoItemsList
+  get:
+    description: |
+      Fetch todos and metadata.
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include schema/todoItems-response.json
