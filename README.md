@@ -24,11 +24,11 @@ docker-compose --version
 docker --version
 mvn –version
 
-# Download the Project
+### Download the Project
 
 https://start-training.backbase.com/
 
-# Start MySQL and Active MQ
+### Start MySQL and Active MQ
 
 	1.	Make sure the following ports are not being used:
 		o	Active MQ: 61616, 8161, 5672, 61613, 1883, and 61614.
@@ -39,7 +39,7 @@ https://start-training.backbase.com/
 	
 		docker-compose up
 		
-# Start Infrastructure and Platform Services
+### Start Infrastructure and Platform Services
 
 	1.	Open a Terminal or Command Prompt
 	2.	Navigate into the platform folder
@@ -47,7 +47,7 @@ https://start-training.backbase.com/
 
 		mvn blade:run
 
-# Start Customer Experience Services
+### Start Customer Experience Services
 
 	1.	Open a Terminal or Command Prompt
 	2.	Navigate into the cx6-targeting folder
@@ -59,20 +59,20 @@ https://start-training.backbase.com/
 		
 		mvn blade:run
 
-# Import your experiences and collections and access the Experience Manager
+### Import your experiences and collections and access the Experience Manager
 
 To import all of the experiences and collections available in the statics folder, there are three commands as outlined below. Once these have been successfully imported, you will then be able to access the Experience Manager.
 
-# mvn bb:provision
+### mvn bb:provision
 This command imports collections and widgets
 
-# mvn bb:import-experiences
+### mvn bb:import-experiences
 This command imports experiences and demo experience without its pages.
 
-# mvn bb:import-packages
+### mvn bb:import-packages
 This command imports page (link) artifacts to a portal.
 
-# Access Experience Manager
+### Access Experience Manager
 
 	1.	Open a Browser
 	2.	Navigate to the following URL: http://localhost:8080/gateway/cxp-manager.
@@ -80,13 +80,13 @@ This command imports page (link) artifacts to a portal.
 		o	Username: admin
 		o	Password: admin
 
-# Install Node.js
+### Install Node.js
 Run the following commands to install and use Node.js 10.18.1:
 
 	nvm install 10.18.1
 	nvm use 10.18.1
 
-# Set up the npm registry
+### Set up the npm registry
 Run below command to register npm
 
 	npm adduser --registry=https://repo.backbase.com/api/npm/npm-backbase/ --always-auth --scope=@backbase    
@@ -95,20 +95,165 @@ Run below command to register npm
 	Email: (this IS public) xx@abc.com
 	Logged in as  ****  to scope @backbase on https://repo.backbase.com/api/npm/npm-backbase/
 
-# Install Angular CLI
+### Install Angular CLI
 	
 	npm install -g @angular/cli@8.0.0
 
-# Install the Backbase schematics
+### Install the Backbase schematics
 
 	npm install -g @bb-cli/schematics@2.12.1
 	
-# foundation-ang is the core library of WA3
+### foundation-ang is the core library of WA3
 
 	npm install @backbase/foundation-ang@4.25.0
 	npm i -g @bb-cli/bb-import
 
-## CREATE TODO WIDGET
+# CREATE TODO WIDGET
+
+The following examples are based on a scaffolded application named todo-app. The minimal project and app can be scaffolded using the following commands:
+
+	ng new todo-project --collection=@bb-cli/schematics
+	cd todo-project
+	npm run ng -- generate app --name=todo-app
+
+### Scaffold ToDo Widget
+In the root directory of your project execute
+	
+	npm run ng -- generate widget --name=todo-widget
+
+### Generate Data Modules:
+
+	ng generate @bb-cli/schematics:data-module --name TodoData --ramlPath ./raml/api.raml
+
+### Enable data module mocks in application
+
+Every data-module contains auto-generated mock data as well. With following changes we will configure our app to use mocked data in development environment:
+
+#### todo-app-project\apps\todo-app\src\environments
+
+	import { TodoDataMocksProvider } from '../../../../libs/todo-data/src/todo-data-mocks.service'
+	import { Provider } from '@angular/core';
+	
+	export const environment = {
+		production: false,
+		mockProviders: [createMocksInterceptor(),TodoDataMocksProvider,] as Array<Provider>,
+	};
+
+### Render data in the widget
+
+Let’s first create Injectable service which is normalizing data retrieved from data modules:
+
+#### libs/todo-widget/src/todo.service.ts
+
+			import { Injectable } from '@angular/core';
+			import { HttpResponse } from '@angular/common/http';
+			import { Observable, ReplaySubject } from 'rxjs';
+			import { map, switchMap } from 'rxjs/operators';
+			 
+			import {TodoDataService} from '../../todo-data/src/todo-data.service';
+			import {TodoItemsResponse} from '../../todo-data/src/todo-data.interfaces'
+			 
+			export interface TodoItem {
+			  id: string;
+			  title: string;
+			  dueDate: Date;
+			}
+			 
+			@Injectable()
+			export class TodoService {
+			  private readonly id = new ReplaySubject<string>();
+			 
+			  constructor(private readonly data: TodoDataService) {}
+			 
+			  readonly items: Observable<Array<TodoItem>> = this.data.getTodos()
+				.pipe(map((response: HttpResponse<TodoItemsResponse>): Array<TodoItem> => {
+				  return response.body
+					? response.body.TodoItems.map(itemFromData)
+					: [];
+				}));
+			   
+			}
+			 
+			function itemFromData(record: any): TodoItem {
+			  return {
+				id: record.id,
+				title: record.value.title,
+				dueDate: new Date(record.value.dueDate),
+			  };
+			}
+
+### Next, we will create a component that simply renders todo items as html list:
+
+#### libs/todo-widget/src/todo-list.component.ts
+
+			import { Component } from '@angular/core';
+			import { Observable } from 'rxjs';
+			 
+			import { TodoService, TodoItem } from './todo.service';
+			 
+			@Component({
+			  selector: 'bb-todo-widget',
+			  template: `
+			  <ul>
+				<li *ngFor="let todo of todos | async">
+				  {{ todo.title }}
+				</li>
+			  </ul>
+			  `,
+			})
+			export class TodoWidgetComponent {
+			  todos: Observable<Array<TodoItem>>;
+			  constructor(private todoService: TodoService) {
+				this.todos = todoService.items;
+			  }
+			}
+			
+### Then import service into widget’s module and add it to the list of module providers and import list component and add to declarations:
+
+#### libs/todo-widget/src/todo-widget.module.ts
+
+			import { NgModule } from '@angular/core';
+			import { CommonModule } from '@angular/common';
+			import { BackbaseCoreModule } from '@backbase/foundation-ang/core';
+			import { TodoWidgetComponent } from './todo-widget.component';
+			import { TodoDataModule } from '../../todo-data/src/todo-data.module';
+			import { TodoService } from './todo.service';
+
+			@NgModule({
+			  declarations: [TodoWidgetComponent],
+			  imports: [
+				CommonModule,
+				TodoDataModule,
+				BackbaseCoreModule.withConfig({
+				  classMap: { TodoWidgetComponent }
+				})
+			  ],
+			  providers: [TodoService]
+			})
+			export class TodoWidgetModule { }
+			
+#### By configuring application as we did above:
+
+when compiled for production, application will use data from real backend services 
+
+	npm run package:apps
+	
+#### Import as BB widget:
+  
+    bb-import package dist/provisioning-packages/cx6/todo-app.zip  --portal-port=8080 --portal-host=localhost --portal-username admin --portal-password admin --portal-context gateway/api --portal-auth-path gateway/api/auth/login --portal-version 6.1  
+
+when compiled for development, application will use mocked data
+
+	npm start
+
+
+
+
+	
+	
+	
+
+
 
 	
 
