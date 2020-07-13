@@ -1,0 +1,21 @@
+/// Will set color $color-support on text
+///
+/// @name bb-text-support
+///
+/// @example html
+///   <p class="bb-text-support">Text with support color</p>
+
+.bb-text-support {
+  color: $text-support;
+}
+
+/// Will set color $color-neutral-dark on text. Used only to indicate disabled text
+///
+/// @name bb-text-disabled
+///
+/// @example html
+///   <p class="bb-text-disabled">Text with disabled color</p>
+
+.bb-text-disabled {
+  color: $text-disabled;
+}

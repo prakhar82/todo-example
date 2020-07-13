@@ -1,0 +1,55 @@
+// buttons
+//Used to generate btn-* classes with mixin button-variant
+$button-palette: (
+  "primary":   $primaryMap,
+  "secondary": $secondaryMap,
+  "success":   $successMap,
+  "danger":    $dangerMap,
+) !default;
+
+$button-outline-palette: map-merge($button-palette,
+  (
+    "secondary": ( default: color("neutrals", "dark"))
+  )
+) !default;
+
+
+$dropdown-toggle-border: 1px solid color("neutrals", "white");
+$btn-outline-border-width: 1px !default;
+$btn-link-color: color("primary");
+$btn-link-hover-decoration: none;
+
+$btn-focus-box-shadow-color: map-deep-get($button-palette, "primary", "darker") !default;
+$btn-focus-box-shadow:  0 0 0 $input-btn-focus-width rgba(mix(color-yiq($btn-focus-box-shadow-color), $btn-focus-box-shadow-color, 15%), .5) !default;
+
+$btn-disabled-opacity: initial !default;
+
+$btn-icon-bg-color: transparent;
+$btn-icon-color: color("neutrals", "greyest");
+$btn-icon-hover-color: color("white");
+$btn-icon-active-color:$primary-bright;
+
+$btn-icon-padding-x: .25rem !default;
+$btn-icon-padding-y: .25rem !default;
+$btn-icon-font-size: 2rem !default;
+$btn-icon-width: $btn-icon-font-size + ($btn-icon-padding-x * 2) !default;
+$btn-icon-height: $btn-icon-font-size + ($btn-icon-padding-y * 2) !default;
+
+$btn-icon-padding-x-sm: .5rem !default;
+$btn-icon-padding-y-sm: .5rem !default;
+$btn-icon-font-size-sm: 1.125rem !default;
+$btn-icon-width-sm: $btn-icon-font-size-sm + ($btn-icon-padding-x-sm * 2) !default;
+$btn-icon-height-sm: $btn-icon-font-size-sm + ($btn-icon-padding-y-sm * 2) !default;
+
+// For each of Bootstrap's buttons, define text, background, and border color.
+
+$btn-border-radius:           10rem;
+$btn-border-radius-lg:        $btn-border-radius;
+$btn-border-radius-sm:        $btn-border-radius;
+$btn-border-width:            0;
+$btn-disabled-opacity:        0.3;
+
+$btn-bar-button-sm-margin-x: 0.5rem;
+$btn-bar-button-sm-margin-y: 1rem;
+$btn-bar-button-md-margin-x: 0.5rem;
+$btn-bar-button-md-margin-y: 1rem;

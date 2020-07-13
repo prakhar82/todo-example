@@ -1,0 +1,38 @@
+bb-rich-text-editor-ui {
+  &.ng-invalid.ng-touched:not(.is-focused) .form-control {
+    border-color: color('danger');
+  }
+
+  &.is-focused {
+    .form-control {
+      border-color: $input-focus-border-color;
+      box-shadow: $input-btn-focus-box-shadow;
+    }
+  }
+
+  .bb-rich-text-editor-ui {
+    margin-bottom: 0.5rem;
+    height: auto;
+    
+    //div[contenteditable=true]
+    .rich-text-editor-content,
+    .bb-rich-text-editor__content {
+      height: $bb-rich-text-editor-ui-content-height;
+      outline: 0;
+      overflow-y: auto;
+
+      //Placeholder
+      &[contenteditable=true]:empty:before {
+        color: $input-placeholder-color;
+
+        content: attr(placeholder);
+        display: block; /* For Firefox */
+      }
+    }
+  }
+
+  &.bb-rich-text-editor--disabled {
+    background-color: $input-disabled-bg;
+  }
+}
+

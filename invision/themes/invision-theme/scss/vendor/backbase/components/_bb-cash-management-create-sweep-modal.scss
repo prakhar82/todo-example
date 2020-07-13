@@ -1,0 +1,24 @@
+@include msBrowsersOnly {
+
+  .button-with-dropdown {
+    flex: 1;
+  }
+
+  @include media-breakpoint-up(sm) {
+    .sweep-rule-editor {
+      flex: none;
+    }
+
+    .sweep-rule-type-wrapper {
+      display: inline-flex !important;
+    }
+
+    .sweep-rule-type {
+      width: auto !important;
+    }
+  }
+}
+
+.sweep-summary-item-label {
+  font-size: 1rem;
+}

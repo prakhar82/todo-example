@@ -1,0 +1,28 @@
+
+.navigation-link-widget {
+  &.flex-sm-row .nav-item {
+    flex: 1;
+  }
+
+  .bb-universal-nav-header {
+    font-size: $navigation-header-font-size;
+  }
+}
+
+.navigation-link-widget .dropdown-menu.show,
+ul.navigation-link-widget,
+ul.navigation-link-widget > li {
+  width: 100%;
+}
+
+bb-navigation-link-widget-ang {
+  height: 100%;
+  min-width: $sidebar-width;
+  overflow-y: auto;
+}
+
+@include media-breakpoint-down(sm) {
+  bb-navigation-link-widget-ang {
+    height: $navigation-link-widget-height-sm;
+  }
+}

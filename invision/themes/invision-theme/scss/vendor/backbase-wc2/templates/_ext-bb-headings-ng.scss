@@ -1,0 +1,10 @@
+// content main header
+$content-header-height: 130px;
+
+@at-root { 
+  .heading-wrapper {
+    margin-bottom: $base-padding-height;
+    min-height: $content-header-height;
+    align-items: flex-end;
+  }
+}

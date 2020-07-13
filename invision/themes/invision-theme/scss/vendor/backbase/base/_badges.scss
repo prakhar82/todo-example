@@ -1,0 +1,19 @@
+// Badges
+$badge-palette: (
+  "success":   $success,
+  "info":      $info,
+  "warning":   $warning,
+  "danger":    $danger,
+);
+$badge-outline-palette: map-merge($badge-palette, (
+  "primary": $primary
+));
+
+$badge-font-size:                   0.625rem;
+$badge-font-weight:                 $font-weight-normal;
+$badge-padding-y:                   .25rem;
+$badge-padding-x:                   .4rem;
+
+$badge-pill-padding-x:              0.4rem;
+$badge-pill-width:                  $badge-font-size + ($badge-pill-padding-x * 1.5);
+$badge-pill-height:                 $badge-pill-width;

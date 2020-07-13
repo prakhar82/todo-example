@@ -1,0 +1,13 @@
+.fade {
+  &.show {
+    display: block;
+    opacity: 1;
+  }
+}
+
+.collapse {
+  &.show {
+    display: block;
+    opacity: 1;
+  }
+}

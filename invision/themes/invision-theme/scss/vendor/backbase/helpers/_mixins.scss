@@ -1,0 +1,350 @@
+@mixin text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin appearance-toggle($value: none) {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  -o-appearance: none !important;
+}
+
+/**
+ * @name Arrow classes mixin
+ *
+ * @description
+ * This will produce classes that can be used to display arrows attached on element
+ * for which the mixin is included.
+ * The classes are named using the format bb-arrow-{position}
+ *
+ * Where position is one of: top, right, bottom, left
+ *
+ * Parameters for this mixin are:
+ * size - Size of arrow in
+ * border - Size of border
+ * (it is rendered beneath arrow, so size should be greater than arrow size)
+ * offset - Arrow offset from left/top (depending on orientation)
+ * arrow-color
+ * border-color
+ */
+
+$arrow-positions: (
+  top:    ( side: bottom, offset: left ),
+  right:  ( side: left,   offset: top  ),
+  bottom: ( side: top,    offset: left ),
+  left:   ( side: right,  offset: top  ),
+);
+
+@mixin arrow($size, $border, $offset, $arrow-color, $border-color) {
+  @each $pos, $definitions in $arrow-positions {
+    $pos-side: map-get($definitions, side);
+    $pos-offset: map-get($definitions, offset);
+    &.bb-arrow-#{$pos} {
+      &:after,
+      &:before {
+        @include size(0, 0);
+        #{$pos-side}: 100%;
+        border: solid transparent;
+        content: '';
+        position: absolute;
+        pointer-events: none;
+        #{$pos-offset}: $offset;
+      }
+      &:after {
+        border-#{$pos-side}-color: $arrow-color;
+        border-width: $size;
+        margin-#{$pos-offset}: -$size;
+      }
+      &:before {
+        border-#{$pos-side}-color: $border-color;
+        border-width: $size + $border;
+        margin-#{$pos-offset}: - $size - $border;
+      }
+    }
+  }
+}
+
+/**
+ * @name Positive rotation classes mixin
+ *
+ * @description
+ * This will generate classes with transform rotate '+' deg for a given interval
+ *
+ * Parameters:
+ * $minRotationAngle - starting angle
+ * $maxRotationAngle - end angle
+ */
+
+@mixin generate-positive-rotation-classes($minRotationAngle, $maxRotationAngle) {
+  @for $i from $minRotationAngle through $maxRotationAngle {
+    .rotate-p-#{$i}-deg {
+      transform: rotate(#{$i}deg);
+    }
+  }
+}
+
+/**
+ * @name Negative rotation classes mixin
+ *
+ * @description
+ * This will generate classes with transform rotate '-' deg for a given interval
+ *
+ * Parameters:
+ * $minRotationAngle - starting angle
+ * $maxRotationAngle - end angle
+ */
+@mixin generate-negative-rotation-classes($minRotationAngle, $maxRotationAngle) {
+  @for $i from $minRotationAngle through $maxRotationAngle {
+    .rotate-n-#{$i}-deg {
+      transform: rotate(-#{$i}deg);
+    }
+  }
+}
+
+/**
+ * @name Spinner mixin
+ *
+ * @description
+ * This will add an animated spinner in the background
+ *
+ * Parameters for this mixin are:
+ * size - Width and height of the spinner
+ */
+ @mixin spinner($size) {
+  @include size($size, $size);
+  background: url(../assets/images/spinner.svg) no-repeat;
+  background-size: $size;
+}
+
+@mixin stick-right($content-width, $content-height) {
+  position: absolute;
+  width: $content-width;
+  height: $content-height;
+  top: 50%;
+  margin-top: -$content-height / 2;
+  right: 0px;
+  margin-left: 0;
+}
+
+/**
+ * @name Chart colors mixin
+ *
+ * @description
+ * Generates classes with colors for charts
+ *
+ * Parameters for this mixin are:
+ * $colors - list of colors
+ */
+@mixin generate-chart-color-classes($colors) {
+  @for $i from 1 through length($colors) {
+    .chart-color-#{$i} { color: nth($colors, $i); }
+    .chart-background-color-#{$i} { background-color: nth($colors, $i); }
+  }
+}
+
+/**
+ * @name fade animation mixin
+ *
+ * @description
+ * defines animation for fades
+ *
+ * Parameters for this mixin are:
+ * $class-name: Class name
+ * $background-from: Color value;
+ * $background-to: Color value;
+ **/
+
+@mixin animation-ease-in {
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+}
+
+@mixin fade-background-from-to($class-name, $background-from, $background-to) {
+  @keyframes fade-#{$class-name} {
+      from {background-color: $background-from;}
+      to {background-color: $background-to;}
+  }
+  .#{$class-name} {
+      background-color: $background-from;
+      animation-name: fade-#{$class-name};
+      animation-fill-mode: forwards;
+      animation-delay: 3s;
+      @include animation-ease-in;
+  }
+};
+
+// Override so that form-controls nested in form-group
+// with validation are displayed with that validation state also
+@mixin form-validation-state-nested-override($state, $color) {
+  .form-group {
+    &.is-#{$state} .form-control {
+      border-color: $color;
+
+      &:focus {
+        border-color: $color;
+        box-shadow: 0 0 0 $input-focus-width rgba($color, .25);
+      }
+
+      ~ .#{$state}-feedback,
+      ~ .#{$state}-tooltip {
+        display: block;
+      }
+    }
+  }
+}
+
+// animation / motion
+@mixin animation($what, $speed: $animation-default-duration) {
+  transition: mdc-animation-enter($what, $speed);
+  transform-origin: 100% 0;
+}
+
+@mixin badge-outline-variant($color) {
+  color: $color;
+  border-color: $color;
+
+  &[href] {
+    @include hover-focus {
+      color: darken($color, 10%);
+      border-color: darken($color, 10%);
+      background-color: transparent;
+      text-decoration: none;
+    }
+  }
+}
+
+@mixin ruler-background($color: color('neutrals', 'black')) {
+  background-image: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 42 22'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg fill='#{$color}' fill-rule='nonzero'%3E%3Crect x='8' y='16' width='1' height='6'%3E%3C/rect%3E%3Crect x='19' y='16' width='1' height='6'%3E%3C/rect%3E%3Crect x='30' y='16' width='1' height='6'%3E%3C/rect%3E%3Crect x='41' y='0' width='1' height='22'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A"), "#", "%23");
+  background-repeat: repeat-x;
+  background-position: left bottom;
+}
+
+//rb-sidebar mixins
+@mixin toggle-sidebar-labels($show) {
+  .nav {
+    li.bb-universal-nav-header,
+    span.bb-universal-nav-item-title {
+      @if $show {
+        opacity: 1;
+      }
+      @else {
+        opacity: 0;
+      }
+    }
+    li.bb-universal-nav-divider {
+      @if $show {
+        visibility: hidden;
+      }
+      @else {
+        visibility: visible;
+      }
+    }
+  }
+}
+
+// Shows between 'sm' and 'md'
+@mixin small-sidebar() {
+  .rb-sidebar {
+    @include toggle-sidebar-labels(false);
+
+    &,
+    &:not(.soy-template) {
+      min-width: $sidebar-collapsed-width;
+      width: $sidebar-collapsed-width;
+      transform: translateX(0);
+    }
+
+    .nav-link {
+      padding-right: 0;
+    }
+    .bb-universal-nav {
+      &-header {
+        margin: 0;
+        height: 0;
+      }
+      &-item-title {
+        display: none;
+      }
+      &-item-menu-icon {
+        margin-right: 0;
+      }
+    }
+    
+  }
+  .sidebar-is-open {
+    .rb-sidebar {
+      @include toggle-sidebar-labels(true);
+
+      z-index: 5;
+      width: $sidebar-width;
+      transform: translateX(0);
+    }
+  }
+}
+@mixin nav-item-badge-position($toggled) {
+  @if $toggled {
+    .bb-universal-nav-item{
+      position: relative;
+
+      .bb-universal-nav-item-badge {
+        position: absolute;
+        top: 2px;
+        left: calc(50% + 6px);
+        transform: translate(-50%);
+      }
+    }
+  }
+  @else {
+    .bb-universal-nav-item{
+      position: static;
+
+      .bb-universal-nav-item-badge {
+        position: static;
+        top: auto;
+        right: auto;
+      }
+    }
+  }
+}
+
+// css hack for MS browsers only
+@mixin msBrowsersOnly() {
+  // hack for ie11
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @content;
+  }
+
+  // hack for edge
+  @supports (-ms-ime-align: auto) {
+    @content;
+  }
+}
+
+// css hack for Safari only
+@mixin safariBrowserOnly {
+  @media not all and (min-resolution: .001dpcm) {
+    @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+      @content;
+    }
+  }
+}
+
+// adds adjacent lines to elements
+// Main purpose is to allow a collection of icons to be connected
+@mixin applyAdjacentLines($parent, $child, $color, $value) {
+  .#{$parent}:not(:first-of-type) > .#{$child}-#{$color}::before,
+  .#{$parent}:not(:last-of-type) > .#{$child}-#{$color}::after {
+    content: '';
+    position: absolute;
+    top: 40%;
+    width: 50%;
+    border-top: solid $spacer/2 $value;
+  }
+
+  .#{$parent}:not(:first-of-type) > .#{$child}-#{$color}::before {
+    right: 50%;
+    left: $font-icon-size * -1;
+  }
+}

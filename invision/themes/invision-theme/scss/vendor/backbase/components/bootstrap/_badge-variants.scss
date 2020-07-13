@@ -1,0 +1,37 @@
+// Badge
+//
+// Overwriting bootstrap badge component
+.badge {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  @extend .font-weight-medium;
+
+  abbr {
+    text-decoration: none;
+  }
+}
+@each $color, $value in $badge-palette {
+  &.badge-#{$color} {
+    @include badge-variant($value);
+  }
+}
+
+.badge-pill {
+  min-width: $badge-pill-width;
+  height: $badge-pill-height;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-outline {
+  border: $btn-outline-border-width solid transparent;
+  background-color: transparent;
+
+  // Contextual variations for outlined badges
+  @each $color, $value in $badge-outline-palette {
+    &.badge-#{$color} {
+      @include badge-outline-variant($value);
+    }
+  }
+}

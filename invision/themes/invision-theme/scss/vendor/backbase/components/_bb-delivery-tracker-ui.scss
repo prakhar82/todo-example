@@ -1,0 +1,17 @@
+.bb-delivery-tracker-step-text {
+  word-wrap: break-word;
+}
+
+@each $color, $value in $background-palette {
+  @include applyAdjacentLines("bb-delivery-tracker-step", "bb-delivery-tracker-step-icon", $color, $value);
+}
+
+.bb-delivery-tracker-step.active ~ .bb-delivery-tracker-step > .bb-delivery-tracker-step-icon {
+  &::after, &::before {
+    border-color: map-deep-get($color-palette, "neutrals", "greyer");
+  }
+}
+
+.bb-delivery-tracker-step.active > .bb-delivery-tracker-step-icon::after {
+  border-color: map-deep-get($color-palette, "neutrals", "greyer");
+}

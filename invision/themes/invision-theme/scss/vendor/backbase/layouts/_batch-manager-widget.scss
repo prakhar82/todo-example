@@ -1,0 +1,27 @@
+.batch-manager__button--reject {
+  margin: 0 0.75rem;
+}
+
+.batch-upload__container {
+  padding: 1.5rem 0;
+}
+
+.batch-manager__table--tools-small {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.batch-manager__table-tools-button {
+  width: 50%;
+  padding-right: 0.5rem;
+}
+
+.batch-manager__table-tools-button + .batch-manager__table-tools-button {
+  padding-right: 0;
+  padding-left: 0.5rem;
+}
+
+.batch-upload__title {
+  margin-bottom: 1rem;
+}

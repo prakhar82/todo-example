@@ -1,0 +1,17 @@
+/**
+ * Modifier that fades out the background to its normal state
+ * for a list-group-item
+ *
+ * @example:
+ * <ul class="list-group">
+ *   <li class="list-group-item list-group-item-fade-success">
+ *     ...
+ *   </li>
+ *   <li class="list-group-item">
+ *     ...
+ *   </li>
+ * </ul>
+ */
+
+@include fade-background-from-to('list-group-item-fade-success', $success-bright, inherit);
+@include fade-background-from-to('list-group-item-fade-info', $info-bright, inherit);

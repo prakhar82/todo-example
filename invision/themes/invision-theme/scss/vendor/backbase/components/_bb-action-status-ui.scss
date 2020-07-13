@@ -1,0 +1,7 @@
+$action-status-spacer: $spacer*0.25 !default;
+
+.bb-action-status {
+  display: flex;
+  margin-top: $action-status-spacer;
+  margin-bottom: $action-status-spacer;
+}

@@ -1,0 +1,56 @@
+.bb-product-selector-ui {
+  box-shadow: $box-shadow-sm; //@TODO: Deprecate in BDS3.3.0
+
+  .btn {
+    overflow: hidden;
+  }
+
+  .product-item-group {
+    .btn,
+    .btn.active:focus,
+    .product-item {
+      box-shadow: none;
+    }
+
+    .btn.active {
+      .product-item {
+        box-shadow: inset 4px 0 0 $blue;
+      }
+    }
+
+    & > *:not(:last-of-type) .product-item {
+      border-bottom-left-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+    }
+    & > *:not(:first-of-type) .product-item {
+      border-top-left-radius: 0 !important;
+      border-top-right-radius: 0 !important;
+      border-top: 1px solid $gray-100;
+    }
+
+    & > .btn {
+      @include hover-focus-active {
+        & .product-item {
+          .product-item-content {
+            background-color: $primary-bright;
+          }
+        }
+      }
+    }
+
+    & > .btn:focus,
+    & > .btn:active {
+      & .product-item {
+        .product-item-content {
+          box-shadow: inset $input-btn-focus-box-shadow;
+        }
+      }
+    }
+  }
+
+  .dropdown-menu {
+    overflow-y: auto;
+    max-height: $product-selector-dropdown-menu-height;
+  }
+
+}

@@ -1,0 +1,30 @@
+.pagination {
+  align-items: center;
+}
+
+.page-link {
+  @include border-radius($btn-border-radius);
+  .disabled & {
+    &:focus,&.focus {
+      box-shadow: none;
+    }
+  }
+}
+
+.page-item {
+  &:not(:first-child) {
+    @extend .ml-1;
+  }
+
+  &:first-child {
+    .page-link {
+      @extend .ml-0;
+      @include border-left-radius($btn-border-radius);
+    }
+  }
+  &:last-child {
+    .page-link {
+      @include border-right-radius($btn-border-radius);
+    }
+  }
+}

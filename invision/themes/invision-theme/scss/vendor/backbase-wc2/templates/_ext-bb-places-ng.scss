@@ -1,0 +1,22 @@
+.ext-bb-places-ng .places-map {
+  min-height: 600px;
+}
+
+//Search bar for gmap
+.form-control-overlay {
+  position: absolute;
+  top: 10px;
+  left: 16px;
+  width: 40%;
+  min-width: 250px;
+  z-index: 2;
+
+  .btn.fa {
+    font-weight: 900;
+  }
+}
+
+.ext-bb-places-ng .places-list {
+  max-height: 600px;
+  overflow: scroll;
+}

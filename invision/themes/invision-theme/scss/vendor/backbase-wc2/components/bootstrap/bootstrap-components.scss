@@ -1,0 +1,17 @@
+//This file handles:
+// * Sass partials that output actual CSS are handled here
+// * Do not define any new sass helpers here
+// * Bootstrap and UI-Bootstrap overrides
+
+//SECTION: UI-Bootstrap 3-to-4 Patch
+//Patch fix @extend class remaps
+@import 'uib-accordion-ng';
+@import 'uib-datepicker-ng';
+@import 'uib-dropdown-ng';
+@import 'uib-modal-ng';
+@import 'uib-tooltip-ng';
+@import 'uib-typeahead-popup-ng';
+
+@import 'badges';
+@import 'card';
+@import 'transition';

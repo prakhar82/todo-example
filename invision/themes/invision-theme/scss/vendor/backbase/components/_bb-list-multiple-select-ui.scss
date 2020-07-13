@@ -1,0 +1,8 @@
+bb-list-multiple-select-ui {
+  .bb-input-checkbox-label {
+    display: flex;
+    &:hover {
+      background-color: color('neutrals', 'lighter');
+    }
+  }
+}

@@ -1,0 +1,15 @@
+////
+/// Mixins
+/// @group helpers
+////
+
+//Your new custom sass mixins belong here -- which output some css values via the `@include` syntax keyword
+//This is where the custom theme overrides or extends existing Backbase mixins
+//It is not recommended to directly override Bootstrap mixins.
+//Please refer to the generated sassdocs for reusable mixins API documentations
+
+/// EXAMPLE: Set flexbox to element
+// @mixin flex {
+//   display: -webkit-flex;
+//   display: flex;
+// }

@@ -1,0 +1,113 @@
+.bb-search-box {
+  border-radius: $border-radius;
+
+  .form-control {
+    @include hover-focus-active {
+      box-shadow: none;
+    }
+  }
+
+  .bb-search-box-clear {
+    height: 1rem;
+    line-height: 1rem;
+
+    & > i {
+      font-size: 1rem;
+    }
+  }
+
+  &.has-input-btn {
+    .input-group-btn {
+      & > button {
+        @extend .btn-outline-primary;
+
+        border-color: $input-border-color;
+        border-top-right-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
+
+        &:not(:disabled):not(.disabled) {
+          &:hover, &:focus, &:active {
+            border-color: $input-border-color;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+
+  &:focus-within {
+    &.has-input-btn {
+      .form-control {
+        border-right-color: transparent;
+      }
+      .input-group-btn {
+        & > button {
+          border-color: $input-focus-border-color;
+        }
+      }
+    }
+
+    .form-control {
+      border-color: $input-focus-border-color;
+    }
+
+    box-shadow: $input-btn-focus-box-shadow;
+  }
+
+  .bb-search-box-filter & {
+    border-radius: $btn-border-radius;
+
+
+    .form-control {
+      @extend .pl-4;
+
+      border-color: $secondary;
+      border-top-left-radius: $btn-border-radius;
+      border-bottom-left-radius: $btn-border-radius;
+    }
+
+    &.has-input-btn {
+      .input-group-btn {
+        & > button {
+          @extend .btn-outline-secondary;
+
+          border-color: $secondary;
+          border-top-right-radius: $btn-border-radius;
+          border-bottom-right-radius: $btn-border-radius;
+          padding: $search-box-input-btn-padding-y $input-btn-padding-x;
+
+          &:not(:disabled):not(.disabled) {
+            &:hover, &:focus, &:active {
+              border-color: $secondary;
+              box-shadow: none !important;
+            }
+          }
+
+          i {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+
+    &:focus-within {
+      box-shadow: 0 0 0 $btn-focus-width rgba(color("secondary"), .5);
+      border-color: color("secondary");
+
+      .form-control {
+        border-color: color("secondary");
+      }
+
+      &.has-input-btn {
+        .input-group-btn {
+          & > button {
+            @include hover-focus-active {
+              border-color: color("secondary");
+              box-shadow: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

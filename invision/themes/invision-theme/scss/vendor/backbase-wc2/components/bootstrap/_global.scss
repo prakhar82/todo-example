@@ -1,0 +1,11 @@
+.modal-open {
+  [uib-modal-window].in {
+    @extend .show;
+    .modal-dialog {
+      transform: translate(0, 0);
+    }
+  }
+  [uib-modal-backdrop].in {
+    opacity: $modal-backdrop-opacity;
+  }
+}

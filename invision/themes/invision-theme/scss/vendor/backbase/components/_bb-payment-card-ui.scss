@@ -1,0 +1,71 @@
+.bb-payment-card {
+  display: block;
+  position: relative;
+  box-sizing: content-box;
+  background-size: contain;
+  background-image: url(#{$path-to-images}/bb-payment-card-ui/payment-card-default.svg);
+  background-repeat: no-repeat;
+  width: 100%;
+  max-width: $payment-card-max-width;
+  border-radius: .5rem;
+  box-shadow: $box-shadow-md;
+
+  .bb-payment-card-container, .bb-payment-card__container {
+    padding-top: $payment-card-aspect-ratio * 100%;
+  }
+
+  .bb-payment-card-logo, .bb-payment-card__logo {
+    position: absolute;
+    top: $payment-card-logo-top;
+    left: $payment-card-logo-left;
+    width: $payment-card-logo-width;
+  }
+
+  .bb-payment-card-vendor, .bb-payment-card__vendor {
+    position: absolute;
+    right: $payment-card-vendor-right;
+    bottom: $payment-card-vendor-bottom;
+    width: $payment-card-vendor-width;
+  }
+
+  .bb-payment-card-number, .bb-payment-card__number {
+    position: absolute;
+    top: $payment-card-number-top;
+    left: $payment-card-number-left;
+    color: white;
+    font-size: 1.25rem;
+    @extend .font-weight-medium;
+  }
+
+  .bb-payment-card-name, .bb-payment-card__name {
+    position: absolute;
+    top: $payment-card-name-top;
+    left: $payment-card-name-left;
+    color: white;
+    @extend .font-weight-medium;
+  }
+
+  .bb-payment-card-expiration-date {
+    position: absolute;
+    bottom: $payment-card-expiration-date-bottom;
+    left: $payment-card-expiration-date-left;
+    color: white;
+    @extend .text-small;
+  }
+
+  &.bb-payment-card-gold-card {
+    background-image: url(#{$path-to-images}/bb-payment-card-ui/payment-card-gold.svg);
+  }
+  
+  &.bb-payment-card-green-card {
+    background-image: url(#{$path-to-images}/bb-payment-card-ui/payment-card-green.svg);
+  }
+  
+  &.bb-payment-card-blue-card {
+    background-image: url(#{$path-to-images}/bb-payment-card-ui/payment-card-blue.svg);
+  }
+  
+  &.bb-payment-card-black-card {
+    background-image: url(#{$path-to-images}/bb-payment-card-ui/payment-card-black.svg);
+  }
+}

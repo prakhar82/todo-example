@@ -1,0 +1,182 @@
+$account-kind-color-list: (
+  "current-account": $yellow,
+  "savings-account": $orange,
+  "term-deposit": $tango,
+  "credit-card": $indigo,
+  "debit-card": $indigo,
+  "loan": $purple,
+  "investment-account": $teal,
+) !default;
+
+.product-item-group {
+  box-shadow: $box-shadow-sm; //@TODO: Deprecate in BDS3.3.0
+}
+
+.product-item-group {
+  > *:not(:last-of-type) > .product-item {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+  > *:not(:first-of-type) > .product-item {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-top: 1px solid color('neutrals', 'light');
+  }
+}
+
+div[class^="bb-product-item-"] {
+  &.product-item {
+    color: initial;
+    overflow: hidden;
+    padding-left: $spacer * 0.25;
+
+    &.active {
+      box-shadow: inset 4px 0 0 color('selected');
+    }
+  }
+}
+
+bb-product-item-basic-account-ui:after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid $neutral-6;
+}
+
+bb-product-item-basic-account-ui:last-child:after {
+  border-bottom: none;
+}
+
+.bb-product-item-basic-account {
+  padding: $spacer * 1.5;
+  background-color: $white;
+}
+
+.product-item-content {
+  padding: $spacer * 1.5;
+  background-color: color('neutrals', 'white');
+}
+
+.product-item-content__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-item-content__owner {
+  margin-top: $spacer * 1.5;
+}
+
+.owner__text {
+  font-size: 0.875rem;
+}
+
+.account-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.account-info__title,
+.account-amount {
+  font-weight: $font-weight-bold;
+  font-size: $font-size-highlight;
+}
+
+.account-info__icon {
+  vertical-align: middle;
+}
+
+.account-info__product-number {
+  color: $neutral-9;
+  font-size: 0.875rem;
+}
+
+@include media-breakpoint-down(sm) {
+  .product-item-content {
+    padding: $spacer * 2;
+  }
+  .product-item-content__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .account-info {
+      white-space: normal;
+    }
+
+    .account-amount {
+      margin-top: $spacer * .5;
+    }
+  }
+}
+
+// bb-product-item-card
+.bb-product-item-card {
+  display: flex;
+  flex-direction: column;
+  height: $product-item-card-height;
+}
+
+.bb-product-item-card__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bb-product-item-card__kind {
+  align-items: center;
+  display: flex;
+  overflow: hidden;
+}
+
+.bb-product-item-card__kind--icon {
+  margin-right: $product-item-card-header-items-space-between;
+}
+
+.bb-product-item-card__kind--text {
+  @include text-truncate();
+  color: $product-item-card-kind-color;
+  font-size: $product-item-card-kind-text-font-size;
+  font-weight: bold;
+}
+
+.bb-product-item-card__buttons {
+  display: flex;
+  align-items: center;
+}
+
+.bb-product-item-card__favorite {
+  margin-right: $product-item-card-header-items-space-between;
+}
+
+.bb-product-item-card__body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+  margin-top: $product-item-card-body-top-space;
+}
+
+.bb-product-item-card__account-number {
+  color: $product-item-card-account-number-color;
+  font-size: $product-item-card-account-number-font-size;
+  margin-top: $product-item-card-account-number-top-space;
+}
+
+.bb-product-item-card__balance {
+  font-size: $product-item-card-balance-font-size;
+  text-align: right;
+}
+
+@each $type, $color in $account-kind-color-list {
+  .bb-accounts-#{$type} {
+    &.bb-accounts--favorite {
+      background-color: $color;
+      color: color('neutrals', 'white');
+    }
+  }
+}
+
+.product-item-content__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

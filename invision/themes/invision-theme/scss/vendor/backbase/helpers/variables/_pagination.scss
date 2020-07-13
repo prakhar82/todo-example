@@ -1,0 +1,24 @@
+// Pagination
+
+$pagination-color: $link-color;
+$pagination-bg: color("neutrals", "white");
+$pagination-border-color: transparent;
+
+$pagination-hover-bg: map-get($theme-outline-hover-colors, "primary");
+$pagination-hover-color: $link-hover-color;
+$pagination-hover-border-color: $pagination-border-color;
+
+$pagination-active-color:color("neutrals", "white");
+$pagination-active-bg: color("primary");
+$pagination-active-border-color: $pagination-active-bg;
+
+$pagination-disabled-color: $text-muted;
+$pagination-disabled-bg: color("neutrals", "white");
+$pagination-disabled-border-color: $pagination-border-color;
+
+$pagination-bullet-active-color: color("primary");
+$pagination-bullet-inactive-color: rgba(color("primary"), 0.3);
+
+//WC2
+$pagination-nav-color: color("secondary");
+$pagination-nav-hover-bg: map-get($theme-outline-hover-colors, "secondary");

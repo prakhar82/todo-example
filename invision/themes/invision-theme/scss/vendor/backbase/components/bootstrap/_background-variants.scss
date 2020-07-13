@@ -1,0 +1,7 @@
+//To account for dark bg colors
+@each $color, $value in $background-palette {
+  @include bg-variant(".bg-#{$color}", $value);
+  .bg-#{$color} {
+    color: color-yiq($value) !important;
+  }
+}

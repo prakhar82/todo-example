@@ -1,0 +1,85 @@
+.bb-notifications-btn, .bb-notifications-btn:not(:disabled):not(.disabled):focus {
+  text-decoration: none;
+}
+
+.bb-notifications-badge {
+  top: $notification-badge-count-top;
+  left: $notification-badge-count-left;
+}
+
+.bb-notification-details {
+  cursor: pointer;
+
+  .bb-notification-details-title {
+    font-size: 1rem;
+    word-break: break-all; // it's a fallback for IE (IE doesn't support `break-word`)
+    word-break: break-word;
+  }
+
+  .bb-notification-details-date {
+    flex-shrink: 0;
+  }
+}
+
+.bb-notifications-list-wrapper {
+  width: $notifications-badge-list-wrapper-width;
+}
+
+.bb-notifications-list-item-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+
+  &__title {
+    font-size: 1rem;
+    font-weight: $font-weight-bold;
+    text-align: left;
+  }
+}
+
+.bb-notifications-list-body {
+  overflow-y: scroll;
+  max-height: $notifications-badge-list-body-max-height;
+}
+
+.bb-notifications-list-item {
+  display: flex;
+  width: 100%;
+  padding: 1rem 1rem 0.5rem 1rem;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 1px solid color('neutrals', 'white');
+  background-color: color('neutrals', 'white');
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  &:active {
+    color: initial;
+  }
+}
+
+.bb-notifications-list-item--unread {
+  background-color: color('neutrals', 'lighter');
+}
+
+.bb-notifications-list-item:hover, .bb-notifications-list-item:focus {
+  background-color: color('neutrals', 'light');
+}
+
+.bb-notifications-list-item-content {
+  width: $notifications-badge-list-item-content-width;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  color: color('neutrals', 'dark');
+}
+
+.bb-notifications-list-item-content__box-orient {
+  /*! autoprefixer: off */
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+}

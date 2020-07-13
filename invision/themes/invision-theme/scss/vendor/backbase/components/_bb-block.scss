@@ -1,0 +1,49 @@
+/// Space content vertically using a bottom margin.
+///
+/// @name bb-block
+///
+/// @example html
+///   <div class="bb-block">Content</div>
+///   <div class="bb-block bb-block--no-margin">Content with no margin bottom</div>
+///   <div class="bb-block bb-block--fill">Content with 100% width</div>
+///   <div class="bb-block bb-block--xs">Content with xs margin bottom</div>
+///   <div class="bb-block bb-block--sm">Content with sm margin bottom</div>
+///   <div class="bb-block bb-block--md">Content with md margin bottom</div>
+///   <div class="bb-block bb-block--lg">Content with lg margin bottom</div>
+///   <div class="bb-block bb-block--xl">Content with xl margin bottom</div>
+.bb-block {
+}
+
+.bb-block--no-margin {
+  margin-bottom: 0;
+}
+
+.bb-block--xs {
+  margin-bottom: $spacer * 0.25;
+}
+
+.bb-block--sm {
+  margin-bottom: $spacer * 0.5;
+}
+
+.bb-block--md {
+  margin-bottom: $spacer;
+}
+
+.bb-block--lg {
+  margin-bottom: $spacer * 1.5;
+}
+
+.bb-block--xl {
+  margin-bottom: $spacer * 2;
+}
+
+/// @deprecated Use .bb-block--full-width
+.bb-block--fill {
+  width: 100%;
+}
+
+.bb-block--full-width {
+  width: 100%;
+}
+

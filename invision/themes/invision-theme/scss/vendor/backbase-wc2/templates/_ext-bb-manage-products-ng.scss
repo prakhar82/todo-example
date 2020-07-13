@@ -1,0 +1,19 @@
+//Applied on: ext-bb-manage-products
+//TODO: Figure out if notification-stripes are supposed to be fixed or relative
+.notifications {
+  position: fixed;
+  z-index: 100;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  top: $navbar-top-height;
+  margin-left: 0;
+  width: 100%;
+
+
+  @include media-breakpoint-up(sm) {
+    margin-left: 100px;
+    width: auto;
+  }
+}
+

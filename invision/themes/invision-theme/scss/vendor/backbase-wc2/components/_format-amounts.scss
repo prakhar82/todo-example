@@ -1,0 +1,8 @@
+/// format-amount styles (e.g. $10.00, €10.00) ===
+.amount-decimal-points, .amount-decimals {
+  font-size: 0.75em;
+}
+
+.amount-currency, .amount-decimal-points, .amount-decimals, .amount-sign, .amount-whole-number {
+  line-height: 1em;
+}

@@ -1,0 +1,37 @@
+/* Overriding some of ngx-chart classes for turnovers bar-chart */
+
+.bb-chart {
+  .chart-legend {
+    width: 100% !important;
+
+    .legend-label-text {
+      width: 100%;
+    }
+
+    .legend-labels {
+      background: transparent;
+    }
+
+    .legend-label-color {
+      border-radius: 100%;
+    }
+  }
+
+  .grid-panel {
+    &.odd {
+      rect {
+        fill: transparent;
+      }
+    }
+
+    &.forecast {
+      rect {
+        fill: map-deep-get($color-palette, "neutrals", "lightest");
+      }
+    }
+  }
+}
+
+:root {
+  --chart-group-bar-color: #{$blue-dark},#{$blue-lighter};
+}

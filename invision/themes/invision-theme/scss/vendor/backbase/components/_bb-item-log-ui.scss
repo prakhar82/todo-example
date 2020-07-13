@@ -1,0 +1,50 @@
+.bb-item-log__record,
+.item-log__record {
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: $item-log-item-bottom-padding;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    border-left: $item-log-item-border;
+    height: $item-log-row-height;
+    left: $item-log-item-left-position;
+    top: $item-log-item-top-position;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+    &:before {
+      display: none;
+    }
+  }
+
+  .bb-item-log-record__icon,
+  .item-log-record__icon {
+    margin: $item-log-icon-top-margin;
+    margin-left: 0;
+    z-index: 1;
+  }
+
+  .bb-item-log-record__details,
+  .item-log-record__details {
+    margin-top: $item-log-details-top-margin;
+  }
+}
+
+.bb-item-log__pending-record,
+.item-log__pending-record {
+  @extend .item-log__record;
+
+  &::before {
+    border-left: $item-log-pending-item-border;
+  }
+}
+
+.bb-item-log__pending-record--details,
+.item-log__pending-record--details {
+  @extend .bb-item-log-record__details;
+}

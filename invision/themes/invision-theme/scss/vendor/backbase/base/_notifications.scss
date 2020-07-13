@@ -1,0 +1,28 @@
+// Notifications
+
+$notification-base-indent: 16px;
+$notification-spacing-small: 10px;
+$notification-height: 90px;
+$notification-spacing: 12px;
+$notification-offset: 5px;
+$notification-popover-custom-line-height: 1;
+$notification-height: 90px;
+$notification-popup-wrapper-top: 60px;
+$notification-popup-wrapper-right: 0;
+$notification-z-index: 2000;
+
+//  Notification Badge
+$notification-badge-margin-top: 4px;
+$notification-badge-btn-padding: 8px 9px 5px 9px;
+$notification-badge-btn-dot-padding: 0 3px;
+$notification-badge-btn-dot-top: -1px;
+$notification-badge-btn-dot-right: 0;
+$notification-badge-btn-dot-size: 18px;
+$notification-badge-btn-dot: $primary;
+$notification-badge-count-top: 0;
+$notification-badge-count-left: 28px;
+
+//  Notification Popover
+$notification-popover-list-height: $notification-height * 3 + 2px;
+/* transform translate x = badge width / 2 - arrow right offset - arrow width / 2 - popover border width */
+$notification-popover-arrow-translate-x: 7px;

@@ -1,0 +1,7 @@
+%sticky-cell {
+  position: -webkit-sticky;
+  position: sticky;
+  background-clip: padding-box; // restores top and bottom borders for cells with position: sticky
+  background-color: inherit; // fixes background color of pinned columns in WC2 widget
+  border-bottom: 1px solid rgba(color("neutrals", "black"), 0.15); // fixes opacity for border-bottom of sticky cells
+}

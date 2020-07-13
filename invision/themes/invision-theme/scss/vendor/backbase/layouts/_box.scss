@@ -1,0 +1,19 @@
+.scrollable-box-content {
+  height: $box-layout-fixed-content-height;
+  overflow-y: auto;
+  @extend .border;
+  @extend .bg-white;
+}
+
+.fluid-image-box-layout {
+  @extend .d-flex;
+  @extend .justify-content-center;
+
+  .be-ex-article {
+    @extend .p-0;
+  }
+
+  img {
+    @extend .img-fluid;
+  }
+}

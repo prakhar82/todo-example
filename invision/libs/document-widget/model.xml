@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalog>
+  <widget>
+    <name>bb-document-widget-ang</name>
+    <properties>
+      <property name="classId">
+        <value>DocumentWidgetComponent</value>
+      </property>
+      <property name="src">
+        <value>$(itemRoot)/index.html</value>
+      </property>
+      <property name="render.requires">
+        <value>render-bb-widget-3</value>
+      </property>
+      <property name="title" label="Title" readonly="true" viewHint="admin,designModeOnly">
+        <value type="string">DocumentWidget Widget</value>
+      </property>
+      <property name="thumbnailUrl">
+        <value>$(itemRoot)/icon.png</value>
+      </property>
+      <property name="label">
+        <value>Angular DocumentWidget Widget</value>
+      </property>
+       <property name="getDocumentsLib_endpoint" label="getDocumentsLib_endpoint" readonly="true" viewHint="admin,designModeOnly">
+        <value>/gateway/api/document-service/v1/documentslib</value>
+      </property>
+
+       <property name="navTitle" label="Navigation title" viewHint="admin,designModeOnly">
+        <value type="string">Document Library</value>
+      </property>
+
+      <property name="createSideMenu" label="Create Transfer Side Menu" viewHint="admin,designModeOnly">
+        <value>true</value>
+      </property>
+
+      <property name="route" label="Navigation Route" viewHint="admin,designModeOnly">
+        <value type="string">document-library</value>
+      </property>
+
+    </properties>
+  </widget>
+</catalog>

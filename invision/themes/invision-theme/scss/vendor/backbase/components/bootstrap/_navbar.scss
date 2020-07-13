@@ -1,0 +1,76 @@
+/**
+ * --------------------------------------------------------------------------
+ * Bootstrap's navbar overrides
+ * (Affects Universal Widgets -- containers, layouts)
+ * @description Navigation overrides. For navbar we have defined brand logo size, also colors and spacing.
+ */
+.navbar-default {
+  background-color: transparent;
+}
+
+.nav .row {
+  margin: 0;
+}
+
+.navbar-brand {
+  @extend .ml-3;
+  max-width: $navbar-brand-width;
+
+  & img {
+    max-width: 0.9 * $navbar-brand-width;
+  }
+}
+
+.navbar {
+  border: none;
+  padding: 0;
+
+  @include media-breakpoint-up(md) {
+    .navbar-right {
+      margin-right: 0;
+      width: $navbar-right-width;
+    }
+  }
+
+  .nav li.nav-item {
+    border-left: 4px solid transparent;
+    @include animation(border-color, 500ms);
+
+    & a {
+      @include animation(background-color, 500ms);
+      color: $nav-link-color;
+
+      &:focus {
+        @include animation(background-color, 500ms);
+        background-color: $navigation-link-focus-bgcolor;
+      }
+
+
+      &:hover {
+        color: $nav-link-hover-color;
+        @include animation(background-color, 500ms);
+        background-color: $navigation-link-hover-bgcolor;
+      }
+    }
+
+    &:hover:not(.active) {
+      @include animation(border-color, 500ms);
+
+      border-color: $navigation-link-hover-bgcolor;
+    }
+
+    &:active:not(.active) {
+      @include animation(border-color, 500ms);
+
+      background-color: $navigation-link-active-bgcolor;
+    }
+
+    &.active {
+      border-left-color: color('selected');
+
+      a {
+        background-color: $navigation-link-active-bgcolor;
+      }
+    }
+  }
+}

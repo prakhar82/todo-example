@@ -1,0 +1,18 @@
+.ext-bus-initiate-payment-ng {
+  textarea {
+    resize: none;
+  }
+
+  .occurence-field {
+    display: inline;
+  }
+
+  .amount-block {
+    float: none;
+    display: table;
+  }
+
+  .cross-currency-info > span {
+    display: inline-block;
+  }
+}

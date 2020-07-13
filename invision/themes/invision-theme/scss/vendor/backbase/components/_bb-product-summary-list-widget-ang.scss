@@ -1,0 +1,89 @@
+$product-summary-balance-color: $text-support !default;
+
+.bb-product-summary-balance {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.bb-product-summary-balance__tooltip {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  color:$product-summary-balance-color;
+}
+
+.bb-product-summary-balance__title {
+  margin-right: $spacer / 4;
+}
+
+.bb-product-summary-balance__amount {
+  font-size: $h3-font-size;
+  font-weight: $font-weight-medium;
+  line-height: 1.2;
+}
+
+.bb-product-kind {
+  margin-top: $spacer;
+  padding: $spacer / 4 0;
+  border: none;
+}
+
+.bb-product-kind__header {
+  display: flex;
+  justify-content: space-between;
+  padding: $spacer 0;
+}
+
+.bb-product-kind__header--collapsed {
+  border-bottom: 1px solid $neutral-6;
+}
+
+.bb-product-kind__title {
+  display: flex;
+  align-items: center;
+  font-size: $h6-font-size;
+  font-weight: $font-weight-medium;
+  line-height: 1.2;
+}
+
+.bb-product-kind__title-icon {
+  margin-right: $spacer;
+  color: $primary;
+}
+
+.bb-product-kind__balance {
+  display: flex;
+  align-items: center;
+}
+.bb-product-kind__balance-icon {
+  color: $neutral-7;
+}
+
+.bb-product-kind__balance-block {
+  margin-right: $spacer;
+  font-size: $h6-font-size;
+  font-weight: $font-weight-medium;
+}
+
+.bb-product-kind__balance-title {
+  font-weight: $font-weight-regular;
+}
+
+.bb-product-kind__item-group {
+  box-shadow: $box-shadow-sm;
+}
+
+.bb-product-kind__item {
+  width: 100%;
+  text-align: left;
+  background-color: $white;
+  border-radius: $border-radius;
+}
+
+.bb-product-kind__item.bb-list__item {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+

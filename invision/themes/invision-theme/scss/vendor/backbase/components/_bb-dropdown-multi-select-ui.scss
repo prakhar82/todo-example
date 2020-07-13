@@ -1,0 +1,30 @@
+.bb-dropdown-multi-select__result {
+  width: calc(100% - #{$font-icon-size});
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.bb-dropdown-multi-select__options-list {
+  max-height: $pre-scrollable-max-height;
+  overflow-y: scroll;
+}
+
+.bb-dropdown-multi-select__item {
+  padding: $spacer * 0.25;
+}
+
+.bb-dropdown-multi-select--empty {
+  color: $text-muted;
+}
+
+.bb-dropdown-multi-select--disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+
+  .bb-dropdown-multi-select__toggle {
+    color: $text-muted;
+    background-color: color('neutrals', 'lighter');
+    cursor: not-allowed;
+  }
+}

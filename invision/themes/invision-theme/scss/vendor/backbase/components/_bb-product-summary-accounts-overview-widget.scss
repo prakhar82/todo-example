@@ -1,0 +1,122 @@
+.bb-account__table--header {
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}
+
+.bb-account__table--row {
+  @include media-breakpoint-down(sm) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 0 1rem;
+  }
+}
+
+.bb-account__favorite {
+  text-align: center;
+}
+
+.bb-account__favorite--yes {
+  color: $account-favorite-yes-color;
+}
+
+.bb-account__favorite--no {
+  color: $account-favorite-no-color;
+}
+
+.bb-account__account-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  @include media-breakpoint-down(sm) {
+    flex-grow: 1;
+  }
+}
+
+.bb-account__account-name--icon {
+  margin-right: $account-kind-right-space;
+}
+
+.bb-account__account-name--name {
+  font-weight: bold;
+}
+
+.bb-account__account-name--number {
+  color: $dark;
+}
+
+.bb-accounts__currency {
+  @include media-breakpoint-down(sm) {
+    padding-right: 0;
+    font-weight: bold;
+  }
+}
+
+.bb-account__balance {
+  text-align: right;
+}
+
+.bb-account__balance--available {
+  font-weight: bold;
+  @include media-breakpoint-down(sm) {
+    text-align: left;
+  }
+}
+
+.bb-account__row-buttons {
+  display: flex;
+  justify-content: space-around;
+  @include media-breakpoint-down(sm) {
+    margin-left: auto;
+  }
+}
+
+.bb-account__balance--small-screen {
+  display: none;
+  @include media-breakpoint-down(sm) {
+    display: block;
+    width: 100%;
+    text-align: right;
+    padding-top: 0 !important;
+  }
+}
+
+.bb-account__amount {
+  font-weight: bold;
+  .bb-amount__value .symbol {
+    margin-right: 0.5rem;
+  }
+}
+
+.accounts-overview__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.accounts-overview__search {
+  @include media-breakpoint-down(xs) {
+    margin-bottom: 1rem;
+  }
+}
+
+.accounts-overview__toggle {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.accounts-overview__sort {
+  margin-right: 1rem;
+}
+
+.accounts-overview__header-sort-item {
+  display: flex;
+  align-items: center;
+}
+
+.accounts-overview__card {
+  margin-bottom: 1rem;
+}

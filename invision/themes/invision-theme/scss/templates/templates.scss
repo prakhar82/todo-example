@@ -1,0 +1,10 @@
+//ENTRY POINT: Specific Extensions/Templates Styling Layer
+
+//CHECKPOINT: Does scope of style belong here or in components styling? Answer following:
+//Case #1: The style only applies to the components WITHIN the extension. --> Proceed with 'templates'.
+//Case #2: The style only applies to the UI component, REGARDLESS of which extension is applied. --> STOP. Please go to 'components' styles.
+
+//USAGE
+//Example: @import 'ext-bb-my-dropdown-ng';
+
+@import 'ext-bb-example-extension-ng';

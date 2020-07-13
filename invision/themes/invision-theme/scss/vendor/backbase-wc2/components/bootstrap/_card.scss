@@ -1,0 +1,8 @@
+.card-clear,
+.card-header-clear,
+.card-body-clear,
+.card-footer-clear {
+    border: 0;
+    background-color: $body-bg;
+    padding: $card-spacer-y 0;
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="320px" height="192px" viewBox="0 0 271 173" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>💳 Credit Card State/In Active</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="255.378138" height="156.618623" rx="3.79076923"></rect>
+        <filter x="-4.9%" y="-7.3%" width="109.8%" height="116.0%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMorphology radius="1" operator="erode" in="SourceAlpha" result="shadowSpreadOuter2"></feMorphology>
+            <feOffset dx="0" dy="3" in="shadowSpreadOuter2" result="shadowOffsetOuter2"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.12 0" type="matrix" in="shadowBlurOuter2" result="shadowMatrixOuter2"></feColorMatrix>
+            <feOffset dx="0" dy="3" in="SourceAlpha" result="shadowOffsetOuter3"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter3" result="shadowBlurOuter3"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.14 0" type="matrix" in="shadowBlurOuter3" result="shadowMatrixOuter3"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
+                <feMergeNode in="shadowMatrixOuter3"></feMergeNode>
+            </feMerge>
+        </filter>
+        <rect id="path-4" x="0" y="0" width="264" height="157" rx="7.58153846"></rect>
+    </defs>
+    <g id="↳-Activate-Card" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="3b---activate-card---card-details---cvv-code" transform="translate(-728.000000, -132.000000)">
+            <g id="Modal-Copy" transform="translate(420.000000, 63.000000)">
+                <g id="💳-Credit-Card-State/In-Active" transform="translate(312.000000, 76.000000)">
+                    <g id="Background">
+                        <g id="UI-Elements/Shadows/Level-2/4-Round" transform="translate(3.798561, 0.000000)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g id="Mask" fill="black" fill-opacity="1">
+                                <use filter="url(#filter-3)" xlink:href="#path-1"></use>
+                            </g>
+                        </g>
+                        <mask id="mask-5" fill="white">
+                            <use xlink:href="#path-4"></use>
+                        </mask>
+                        <g id="Mask"></g>
+                        <g id="2-Colors/1-Action/1-$primaryMap/1-default" mask="url(#mask-5)" fill="#00569C">
+                            <rect id="1-Action/1-$primaryMap/1-default" x="0" y="0" width="266.160393" height="158.284779"></rect>
+                        </g>
+                    </g>
+                    <g id="Card-Content" transform="translate(0.000000, 24.640000)">
+                        <g id="Card-Formatter">
+                            <rect id="Rectangle-Copy" fill="#FFFFFF" x="36.0863309" y="49.1622857" width="213.669065" height="34.0354286" rx="1.89538462"></rect>
+                            <text id="✏️-Last-4-Digits" font-family="Roboto-Regular, Roboto" font-size="15.1630769" font-weight="normal" line-spacing="20.8492308" fill="#55585A">
+                                <tspan x="216.472247" y="71.7553846">123</tspan>
+                            </text>
+                            <rect id="Rectangle" fill="#000000" x="0" y="0" width="264" height="34.0354286"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

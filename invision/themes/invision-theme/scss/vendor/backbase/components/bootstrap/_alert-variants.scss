@@ -1,0 +1,23 @@
+@each $color, $value in $alert-palette {
+  .alert-#{$color} {
+    @include alert-variant(
+      map-get($alert-palette, $color),
+      transparent,
+      color("neutrals", "darkest")
+    );
+  }
+}
+
+.alert-icon {
+  margin-right: 0.25rem;
+}
+
+.alert-body {
+  display: flex;
+}
+
+.alert-content {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+}

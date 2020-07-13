@@ -1,0 +1,6 @@
+$progress-height: 0.5rem;
+$progress-border-radius: ($border-radius * 4);
+
+.progress-bar {
+  @include border-radius($progress-border-radius);
+}

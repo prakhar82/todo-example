@@ -1,0 +1,7 @@
+.bb-progress-tracker-item-container {
+  width: $progress-tracker-width;
+  position: absolute;
+  right: 0;
+  z-index: $zindex-progress-tracker;
+  background-color: $white;
+}

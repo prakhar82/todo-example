@@ -1,0 +1,39 @@
+ui-bb-paginator-ng {
+  .fa {
+    font-size: $font-icon-size-sm;
+  }
+}
+
+.page-range {
+  &:disabled,
+  &.disabled {
+    cursor: auto;
+    .page-link {
+      color: $pagination-nav-color;
+    }
+  }
+}
+
+.page-first,
+.page-previous,
+.page-next,
+.page-last {
+  .page-link {
+    display: flex;
+    align-items: center;
+    padding: $btn-icon-padding-y-sm $btn-icon-padding-x-sm;
+  }
+  &:not(:disabled):not(.disabled) {
+    .page-link {
+      color: $pagination-color;
+      @include hover {
+        background-color: $pagination-nav-hover-bg;
+      }
+
+      &:active:focus,
+      &:focus {
+        box-shadow: 0 0 0 $btn-focus-width rgba($pagination-nav-color, 0.5);
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+/**
+ * @description
+ * Component for rendering css only progress indicator
+ *
+ * @example
+ * <div class="progress-indicator donut rotate-anticlockwise"
+ *  <div class="donut-left-slice"></div>
+ *
+ *  <div class="donut-right-slice"></div>
+ *
+ *  <div class="progress-indicator-donut-overlay"></div>
+ * </div>
+ */
+
+// @TODO: This include should be backported to whitelabel theme
+@include generate-negative-rotation-classes(0, 180);
+@include generate-positive-rotation-classes(0, 180);
+
+.progress-indicator {
+  position: relative;
+  
+  &.donut {
+    overflow: hidden;
+    width: 50%;
+    padding-bottom: 50%;
+    border-radius: 50%;
+    background-color: color("neutrals", "lighter");
+    margin: 0 auto;
+
+    .donut-left-slice, .donut-right-slice {
+      position: absolute;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      transition: transform 0.6s ease-in-out;
+    }
+    .donut-left-slice {
+      border-bottom-left-radius: 1000px;
+      border-top-left-radius: 1000px;
+      right: 0;
+      transform-origin: center left;
+      z-index: 1;
+    }
+
+    .donut-right-slice {
+      border-bottom-right-radius: 1000px;
+      border-top-right-radius: 1000px;
+      left: 0;
+      transform-origin: center right;
+      z-index: 2;
+    }
+
+    .donut-upper-slice {
+      z-index: 3;
+    }
+
+    .transition-base {
+      transition: transform 0.3s linear;
+    }
+
+    .reset-slice {
+      transform: rotate(0deg);
+      transition: none;
+      background-color: inherit!important;
+    }
+
+    &.rotate-anticlockwise {
+      .donut-left-slice {
+        left: 0;
+        right: auto;
+        z-index: 2;
+        transform-origin: center right;
+      }
+
+      .donut-right-slice {
+        right: 0;
+        left: auto;
+        z-index: 1;
+        transform-origin: center left;
+      }
+
+      .donut-upper-slice {
+        z-index: 3;
+      }
+    }
+  }
+
+  &-donut-overlay {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 90%;
+    height: 90%;
+    z-index: 5;
+    border-radius: 50%;
+    background: color('neutrals', 'white');
+
+    .label-amount-left {
+      margin: 0;
+    }
+  }
+
+  .d-table {
+    display: table;
+    width: 100%;
+    height: 100%;
+  }
+
+  .d-table-cell {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+  }
+}

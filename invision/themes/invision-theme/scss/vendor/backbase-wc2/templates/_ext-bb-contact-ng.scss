@@ -1,0 +1,172 @@
+.ext-bus-contact-list-ng,
+.ext-bus-contact-authorizations-list-ng,
+.ext-bus-contact-request-list-ng,
+.authorize-concact-details-modal {
+
+  .ellipsis {
+    @include text-overflow;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .contact-buttons {
+    position: absolute;
+    right: $gutter;
+
+    .contacts-edit-btn {
+      margin-left: $spacing;
+    }
+
+    .btn-reject {
+      margin-left: 1rem;
+    }
+  }
+
+  .contact-name {
+    padding-right: $contact-name-right-padding;
+  }
+
+  .contacts-header {
+    border-bottom: 1px solid $borders-color;
+    padding: $gutter;
+    margin-bottom: -1px;
+
+
+    &__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .contacts-search {
+      min-height: 3rem;
+      input {
+        height: 100%;
+        margin: 0 (-$font-icon-size - $borders-width);
+        padding: 0 ($font-icon-size + 0.33rem + $borders-width);
+      }
+
+      .fa {
+        position: relative;
+
+        &:first-child {
+          left: $spacing;
+        }
+
+        &:last-child {
+          right: $spacing;
+        }
+      }
+    }
+  }
+
+  .contact-group-char {
+    font-weight: bold;
+  }
+
+  .contacts-block,
+  .contact-block {
+    padding: 0;
+  }
+  @include media-breakpoint-up(lg) {
+    .contacts-block,
+    .contact-block {
+        border-right: 1px solid $borders-color;
+        min-height: $contact-panel-min-height;
+        & + div {
+          border-left: 1px solid $borders-color;
+          left: -1px;
+        }
+    }
+  }
+
+  .contacts-search-count {
+    border-top-width: 0;
+    font-size: $font-size-sm;
+  }
+
+  .contact-details-row {
+    margin-top: $gutter;
+  }
+
+  .contact-details-col {
+    margin-bottom: $gutter;
+  }
+
+  .contact-details-separator {
+    border-bottom: solid 1px $borders-color;
+  }
+
+  .contacts-form-save-btn {
+    margin-left: $spacing;
+  }
+
+  .contact-account-block,
+  .separate-block {
+    background-color: color('neutrals', 'white');
+    border: solid 1px $borders-color;
+    border-radius: $border-radius;
+    box-shadow: 0 $border-radius $border-radius -3px $borders-color;
+    margin: $gutter 0;
+    padding: $gutter;
+  }
+
+  .contact-account-bank-block {
+    margin-top: $spacing;
+  }
+
+  .contact-accounts-count {
+    margin-bottom: ($line-height-base / 2);
+    margin-top: ($line-height-base / 2);
+  }
+
+  .status {
+    text-align: center;
+    white-space: initial;
+  }
+
+  .contacts-empty {
+    height: $contact-panel-min-height;
+    text-align: center;
+    &-label {
+      color: color("neutrals", "darker");
+      display: block;
+      font-size: $font-size-lg;
+      position: relative;
+      top: 50%;
+    }
+  }
+}
+
+.ext-bus-contact-authorizations-list-ng {
+  .contact-name {
+    padding-right: $contact-name-auth-right-padding;
+  }
+}
+
+
+.contact-list-item {
+  border-radius: 0;
+  &:first-child {
+    background: color('neutrals', 'lighter');
+  }
+
+  &.contact-group-char {
+    border-bottom-width: 3px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+
+  &.striped {
+    &:not(.hover-item):not(.contact-list-item-selected),
+    &.hover-item:not(:hover):not(:focus) {
+      background-color: $table-accent-bg;
+    }
+  }
+
+  @at-root {
+    .contact-list-item-selected {
+      background-color: $component-active-bg !important;
+    }
+  }
+}

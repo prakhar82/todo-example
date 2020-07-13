@@ -1,0 +1,73 @@
+////
+/// Example Component
+/// @group components
+/// @author Mark de Jong
+////
+
+/// Component wrapper class
+/// === Tooltip Seciont ===
+//Applied on: ext-bb-product-details-ng
+@at-root { 
+  .tooltip {
+    &.in { 
+      @extend .tooltip.show;
+    }
+  }
+
+  .tooltip-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+  }
+
+  .tooltip.left {
+    margin-left: -$tooltip-default-size;
+
+    .tooltip-arrow {
+      top: 50%;
+      right: -$tooltip-default-size;
+      margin-top: -$tooltip-default-size;
+      border-width: $tooltip-default-size 0 $tooltip-default-size $tooltip-default-size;
+      border-left-color: #000;
+    }
+  }
+
+  .tooltip.right {
+    margin-right: -$tooltip-default-size*20;
+    padding: 0 $tooltip-default-size;
+
+    .tooltip-arrow {
+      top: 50%;
+      left: 0;
+      margin-top: -$tooltip-default-size;
+      border-width: $tooltip-default-size $tooltip-default-size $tooltip-default-size 0;
+      border-right-color: #000;
+    }
+  }
+
+  .tooltip.top {
+    margin-top: -$tooltip-default-size;
+
+    .tooltip-arrow {
+      left: 50%;
+      bottom: -$tooltip-default-size;
+      margin-left: -$tooltip-default-size;
+      border-width: $tooltip-default-size $tooltip-default-size 0;
+      border-top-color: #000;
+    }
+  }
+
+  .tooltip.bottom {
+    margin-top: $tooltip-default-size;
+
+    .tooltip-arrow {
+      left: 50%;
+      top: -$tooltip-default-size;
+      margin-left: -$tooltip-default-size;
+      border-width: 0 $tooltip-default-size $tooltip-default-size;
+      border-bottom-color: #000;
+    }
+  }
+}

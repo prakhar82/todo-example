@@ -1,0 +1,25 @@
+ui-bb-dropdown-select-ng {
+  .dropdown {
+    .dropdown-menu {
+      max-height: 12rem;
+      overflow-y: scroll;
+    }
+
+    .btn {
+      border-width: 0;
+      border-radius: 0;
+    }
+
+    .dropdown-item {
+      &:not(:hover).active {
+        background: transparent;
+      }
+
+      .dropdown-item-content {
+        background: transparent;
+        border: none;
+        width: 100%;
+      }
+    }
+  }
+}
