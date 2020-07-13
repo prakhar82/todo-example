@@ -49,11 +49,7 @@ private createTransferSideMenu(
   };
 }
 
-ngOnInit() {
-  // this.transferService.getPendingCounData().subscribe((count: number) => {
-  //   this.pendingCount = count;
-  // });
-}
+ngOnInit() {}
 
 
 }
