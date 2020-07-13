@@ -17,3 +17,12 @@ protocols: [ HTTP, HTTPS ]
         body:
           application/json:
             type: !include schemas/document-response.json
+/documentslib:
+  displayName: Documents Library
+
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include schemas/document-response.json
