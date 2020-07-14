@@ -2,28 +2,34 @@
   "status": 200,
   "Documents": [
     {
-      "name": "Happy",
-      "type": "Permanent",
+      "name": "Deed of pledge",
+      "type": "Contract",
       "date": "30.04.2020",
-      "document": "Happy Life"
+      "document": "Deed of pledge"
     },
     {
-      "name": "Sumit",
+      "name": "Deed of pledge",
       "type": "Contract",
-      "date": "09.02.2020",
-      "document": "Sumit Life"
+      "date": "30.04.2020",
+      "document": "Deed of pledge"
     },
     {
-      "name": "Raj",
+      "name": "Deed of pledge",
       "type": "Contract",
-      "date": "09.02.2020",
-      "document": "Hello"
+      "date": "30.04.2020",
+      "document": "Deed of pledge"
     },
     {
-      "name": "Cancel",
-      "type": "Permanentr",
-      "date": "09.02.2020",
-      "document": "Time is money"
+      "name": "Deed of pledge",
+      "type": "Contract",
+      "date": "30.04.2020",
+      "document": "Deed of pledge"
+    },
+    {
+      "name": "Deed of pledge",
+      "type": "Contract",
+      "date": "30.04.2020",
+      "document": "Deed of pledge"
     }
   ]
 }

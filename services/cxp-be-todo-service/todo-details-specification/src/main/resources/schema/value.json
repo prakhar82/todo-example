@@ -13,12 +13,16 @@
     },
 	"dueDate": {
       "type": "string"
+    },
+    "startDate": {
+      "type": "string"
     }
   },
   "required": [
     "title",
     "done",
     "tags",
-	"dueDate"
+	"dueDate",
+    "startDate"
   ]
 }

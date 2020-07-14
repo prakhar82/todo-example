@@ -7,10 +7,14 @@
 	},
     "value": {
       "$ref": "value.json"
+    },
+    "name": {
+      "type": "string"
     }
   },
   "required": [
     "id",
-	"value"
+	"value",
+    "string"
   ]
 }

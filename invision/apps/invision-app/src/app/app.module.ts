@@ -7,7 +7,7 @@ import { BackbaseCoreModule } from '@backbase/foundation-ang/core';
 import { environment } from '../environments/environment';
 import { PersonalWidgetModule } from '@backbase/personal-widget';
 import { DocumentWidgetModule } from '@backbase/document-widget';
-import { NavigationWidgetModule } from '@backbase/navigation-widget';
+
 import { InvisionHeaderWidgetModule } from '@backbase/invision-header-widget';
 
 import { NavigationSpaWidgetModule } from '@backbase/universal-ang/navigation';
@@ -33,7 +33,6 @@ import { DocumentModule } from '@backbase/document';
     PersonalWidgetModule,
     DocumentModule,
     DocumentWidgetModule,
-    NavigationWidgetModule,
     InvisionHeaderWidgetModule,
     ContainersModule,
     NavigationSpaWidgetModule,
