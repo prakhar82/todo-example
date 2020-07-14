@@ -40,7 +40,7 @@ public class DocumentListController implements PersonalDocumentsApi {
         List<Document> documents =null;
         try {
             json = executeRequest();
-            // @formatter:off
+            // @formatter:off 
 
             documents = new ObjectMapper().readValue(new JSONObject(json).getJSONArray("Documents").toString(), new TypeReference<ArrayList<Document>>(){});
         } catch (IOException e) {
