@@ -4,32 +4,98 @@
     {
       "name": "Deed of pledge",
       "type": "Contract",
-      "date": "30.04.2020",
-      "document": "Deed of pledge"
+      "date": "18.07.2020",
+      "document": "Deed of pledge",
+      "category": "Packages",
+      "read": false
+    },
+    {
+      "name": "Deed of pledge",
+      "type": "Contract",
+      "date": "18.07.2020",
+      "document": "Deed of pledge",
+      "category": "Payments",
+      "read": false
+    },
+    {
+      "name": "Deed of pledge",
+      "type": "Contract",
+      "date": "18.07.2020",
+      "document": "Deed of pledge",
+      "category": "Packages",
+      "read": false
+    },
+    {
+      "name": "Deed of pledge",
+      "type": "Contract",
+      "date": "18.07.2020",
+      "document": "Deed of pledge",
+      "category": "Payments",
+      "read": true
+    },
+    {
+      "name": "Deed of pledge",
+      "type": "Contract",
+      "date": "18.07.2020",
+      "document": "Deed of pledge",
+      "category": "Packages",
+      "read": true
+    },
+    {
+      "name": "Deed of pledge",
+      "type": "Contract",
+      "date": "18.07.2020",
+      "document": "Deed of pledge",
+      "category": "Payments",
+      "read": true
+    },
+    {
+      "name": "Deed of pledge",
+      "type": "Contract",
+      "date": "18.07.2020",
+      "document": "Deed of pledge",
+      "category": "Packages",
+      "read": true
+    },
+    {
+      "name": "Deed of pledge",
+      "type": "Contract",
+      "date": "18.07.2020",
+      "document": "Deed of pledge",
+      "category": "Payments",
+      "read": false
     },
     {
       "name": "Deed of pledge",
       "type": "Contract",
       "date": "30.04.2020",
-      "document": "Deed of pledge"
+      "document": "Deed of pledge",
+      "category": "Packages",
+      "read": true
     },
     {
       "name": "Deed of pledge",
       "type": "Contract",
       "date": "30.04.2020",
-      "document": "Deed of pledge"
+      "document": "Deed of pledge",
+      "category": "Packages",
+      "read": true
     },
     {
       "name": "Deed of pledge",
       "type": "Contract",
       "date": "30.04.2020",
-      "document": "Deed of pledge"
+      "document": "Deed of pledge",
+      "category": "Payments",
+      "read": true
     },
     {
       "name": "Deed of pledge",
       "type": "Contract",
       "date": "30.04.2020",
-      "document": "Deed of pledge"
+      "document": "Deed of pledge",
+      "category": "Loans and Deposits",
+      "read": true
     }
   ]
 }

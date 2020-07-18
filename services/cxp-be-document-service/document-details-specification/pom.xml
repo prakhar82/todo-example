@@ -22,7 +22,7 @@
             <plugin>
                 <groupId>com.backbase.codegen</groupId>
                 <artifactId>raml-api-maven-plugin-1-0</artifactId>
-                <!-- These options change the default configuration managed in backbase-spec-starter-parent -->
+                <!-- These options change the default configuration managed in backbase-spec-starter-parent-->
                 <configuration>
                     <inputFile>src/main/resources/api.raml</inputFile>
                     <outputFile>target/generated-sources</outputFile>

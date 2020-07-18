@@ -13,11 +13,18 @@
     },
     "document": {
       "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "read": {
+      "type": "boolean"
     }
   },
   "required": [
     "name",
     "type",
-	"document"
+	"document",
+    "read"
   ]
 }
