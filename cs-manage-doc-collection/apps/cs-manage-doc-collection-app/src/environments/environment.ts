@@ -2,8 +2,8 @@ import { createMocksInterceptor } from '@backbase/foundation-ang/data-http';
 
 import { Item } from '@backbase/foundation-ang/core';
 import { ExternalServices } from '@backbase/foundation-ang/start';
-import { DocumentDataMocksProvider } from '../../../../libs/document-data/src/document-data-mocks.service'
 import { Environment } from './type';
+import { DocumentDataMocksProvider } from '../../../../libs/document-data/src/document-data-mocks.service'
 import {Provider} from "@angular/core";
 
 const services: ExternalServices = {};
