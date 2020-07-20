@@ -1,0 +1,42 @@
+<div class="container mt-5">
+   <div class="row">
+
+   <div class="col-8 table_section">
+    <div class="filter_section d-flex justify-content-end mb-4">
+      <span class="mr-4"><i class="fa fa-filter" aria-hidden="true"></i>Filter</span>
+      <button class="btn btn-outline-secondary">Upload Document</button>
+      </div>
+     <table class="table table-hover">
+      <thead>
+        <tr>
+        <th>Document</th>
+        <th>Type</th>
+        <th>Date</th>
+        <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of responseDocuments;let i=index">
+        <td>{{data.document}}</td>
+        <td>{{data.type}}</td>
+        <td>{{data.date}}</td>
+        <td>
+          <span><i class="fa fa-file-image-o" aria-hidden="true"></i></span>
+          <span><i class="fa fa-download" aria-hidden="true"></i></span>
+          <span><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+        </td>
+        </tr>
+      </tbody>
+      </table>
+      <div class=" pagination_section">
+        <ul class="pagination breadcrumb">
+          <li class="page-item"><a class="page-link" href="#"><span> < </span></a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#"> <span> > </span></a></li>
+          <li class="page-item"><a class="page-link page_link mr-4" href="#">1-10 of 14 items</a></li>
+        </ul>
+      </div>
+  </div>
+ </div>
+ </div>

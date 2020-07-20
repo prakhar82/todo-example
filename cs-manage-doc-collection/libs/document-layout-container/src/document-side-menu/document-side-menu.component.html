@@ -1,0 +1,21 @@
+<div class="lp-widget-ubp-submenu">
+  <div class="bp-g-model">
+    <div class="panel-launcher">
+      <!-- Side menu panel -->
+      <div class="panel-heading panel-round clearfix cursor-pointer">
+
+      </div>
+      <!-- Side menu list -->
+      <ul class="p-none" *ngIf="documentTabs">
+        <ng-template ngFor let-tab [ngForOf]="transferTab">
+          <li  class="list-group-item  cursor-pointer"
+
+            (click)="navigateTo(tab.route)">
+            <span class="cen">{{ tab?.navTitle }}</span>
+
+          </li>
+        </ng-template>
+      </ul>
+    </div>
+  </div>
+</div>
