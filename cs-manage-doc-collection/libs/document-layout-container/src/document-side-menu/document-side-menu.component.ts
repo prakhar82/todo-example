@@ -8,20 +8,21 @@ import { RouterService } from '@backbase/foundation-ang/core';
   templateUrl: './document-side-menu.component.html'
 })
 export class DocumentSideMenuComponent implements OnInit, OnChanges {
+  documentTab: any;
   clicked: any;
   @Input() documentTabs: any;
-  
+
   constructor(private router: RouterService) { }
 
   ngOnInit() {}
-    
+
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.documentTabs) {
-      this.documentTabs = this.documentTabs.filter((tab:any) => {
+      this.documentTab = this.documentTabs.filter((tab:any) => {
         return tab.createSideMenu === 'true';
       });
-      
+
     }
   }
   /**

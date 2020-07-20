@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
   templateUrl: './document-layout-container.component.html'
 })
 export class DocumentLayoutContainerComponent implements OnInit {
+
 constructor(private modelTree: ItemModelTree) { }
 
 readonly documentTabs = this.modelTree.children.pipe(

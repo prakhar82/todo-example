@@ -2,8 +2,9 @@ import { createMocksInterceptor } from '@backbase/foundation-ang/data-http';
 
 import { Item } from '@backbase/foundation-ang/core';
 import { ExternalServices } from '@backbase/foundation-ang/start';
-import { DocumentDataMocksProvider } from ''
+import { DocumentDataMocksProvider } from '../../../../libs/document-data/src/document-data-mocks.service'
 import { Environment } from './type';
+import {Provider} from "@angular/core";
 
 const services: ExternalServices = {};
 
@@ -11,11 +12,6 @@ const pageModel: Item = {
   name: 'app-container',
   properties: {},
   children: [{
-      name: 'navigation-widget',
-      properties: {
-        classId: 'NavigationWidgetComponent'
-      }
-    }, {
       name: 'document-library-widget',
       properties: {
         classId: 'DocumentLibraryWidgetComponent'
@@ -35,7 +31,7 @@ const pageModel: Item = {
 
 export const environment: Environment = {
   production: false,
-  mockProviders: [createMocksInterceptor()],
+  mockProviders: [createMocksInterceptor(),DocumentDataMocksProvider] as Array<Provider>,
   bootstrap: {
     pageModel,
     services,

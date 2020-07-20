@@ -7,7 +7,7 @@
       </div>
       <!-- Side menu list -->
       <ul class="p-none" *ngIf="documentTabs">
-        <ng-template ngFor let-tab [ngForOf]="transferTab">
+        <ng-template ngFor let-tab [ngForOf]="documentTab">
           <li  class="list-group-item  cursor-pointer"
 
             (click)="navigateTo(tab.route)">

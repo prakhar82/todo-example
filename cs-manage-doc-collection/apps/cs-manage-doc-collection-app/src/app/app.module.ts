@@ -9,7 +9,6 @@ import { DocumentLayoutContainerModule } from '@backbase/document-layout-contain
 import { PersonalDocumentWidgetModule } from '@backbase/personal-document-widget';
 import { DocumentDataModule } from '@backbase/document-data';
 import { DocumentLibraryWidgetModule } from '@backbase/document-library-widget';
-import { NavigationWidgetModule } from '@backbase/navigation-widget';
 
 @NgModule({
   declarations: [
@@ -22,9 +21,8 @@ import { NavigationWidgetModule } from '@backbase/navigation-widget';
     DocumentLayoutContainerModule,
     PersonalDocumentWidgetModule,
     DocumentDataModule,
-    DocumentLibraryWidgetModule,
-    NavigationWidgetModule
-  ],
+    DocumentLibraryWidgetModule
+    ],
   providers: [...environment.mockProviders || []],
   bootstrap: [AppComponent]
 })
