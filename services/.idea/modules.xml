@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/cxp-be-document-service/cxp-be-document-service.iml" filepath="$PROJECT_DIR$/cxp-be-document-service/cxp-be-document-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cxp-be-todo-service/cxp-be-todo-service.iml" filepath="$PROJECT_DIR$/cxp-be-todo-service/cxp-be-todo-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cxp-be-document-service/document-details-service/document-details-service.iml" filepath="$PROJECT_DIR$/cxp-be-document-service/document-details-service/document-details-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cxp-be-document-service/document-details-specification/document-details-specification.iml" filepath="$PROJECT_DIR$/cxp-be-document-service/document-details-specification/document-details-specification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services.iml" filepath="$PROJECT_DIR$/services.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cxp-be-todo-service/todo-details-service/todo-details-service.iml" filepath="$PROJECT_DIR$/cxp-be-todo-service/todo-details-service/todo-details-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cxp-be-todo-service/todo-details-specification/todo-details-specification.iml" filepath="$PROJECT_DIR$/cxp-be-todo-service/todo-details-specification/todo-details-specification.iml" />
+    </modules>
+  </component>
+</project>

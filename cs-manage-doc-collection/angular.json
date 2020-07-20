@@ -51,7 +51,9 @@
               "apps/cs-manage-doc-collection-app/src/favicon.ico",
               "apps/cs-manage-doc-collection-app/src/assets"
             ],
-            "styles": [],
+            "styles": [
+              "themes/document-theame/scss/main.scss"
+            ],
             "scripts": []
           },
           "configurations": {

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="todo-details-service" />
+        <module name="document-details-service" />
+        <module name="todo-details-specification" />
+        <module name="document-details-specification" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cxp-be-document-service" target="1.8" />
+      <module name="cxp-be-todo-service" target="1.8" />
+      <module name="document-details-service" target="1.8" />
+      <module name="document-details-specification" target="1.8" />
+      <module name="services" target="1.8" />
+      <module name="todo-details-service" target="1.8" />
+      <module name="todo-details-specification" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

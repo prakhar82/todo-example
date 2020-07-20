@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.backbase.buildingblocks:communication:2.2.52">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/backbase/buildingblocks/communication/2.2.52/communication-2.2.52.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/backbase/buildingblocks/communication/2.2.52/communication-2.2.52-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/backbase/buildingblocks/communication/2.2.52/communication-2.2.52-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
