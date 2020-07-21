@@ -58,9 +58,9 @@ Drag Manageable Area from catalog to create master page (lean page)
 Open Exprience Catalog to add your imported widgets and containers
 ````
 
-![ScreenShot](./images/open-experience catalog.JPG?raw=true "open exprience catalog")
+![ScreenShot](./images/openExperienceCatalog.JPG?raw=true "open exprience catalog")
 
-![picture](https://github.com/prakhar82/todo-example/blob/master/cs-manage-doc-collection/images/open-experience catalog.JPG)
+![picture](https://github.com/prakhar82/todo-example/blob/master/cs-manage-doc-collection/images/openExperienceCatalog.JPG)
 
 
 Add all widgets by searching and add by clicking on + symbol on each widget
