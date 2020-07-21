@@ -14,62 +14,42 @@ calhost --portal-username admin --portal-password admin --portal-context gateway
 ````
 http://localhost:8080/gateway/cxp-manager
 ```` 
-````
+
 Click on `Create` button
-````
+
 ![Alt text](./images/create-experience-button.jpg?raw=true "Create button")
-![picture](https://github.com/prakhar82/todo-example/blob/master/cs-manage-doc-collection/images/create-experience-button.jpg)
-````
+
 Provide Portal name on create new experience popup
-````
-![Alt text](./images/create-new-experience-popup.jpg?raw=true "Create new experience")
 
-![picture](https://github.com/prakhar82/todo-example/blob/master/cs-manage-doc-collection/images/create-new-experience-popup.jpg)
+![Alt text](./images/create-new-experience-popup.JPG?raw=true "Create new experience")
 
-````
 Open Portal and create your lean master page by clecking on `+` symbol on `MASTER PAGES` section
-````
-![Alt text](./images/pages.jpg?raw=true "pages")
 
-![picture](https://github.com/prakhar82/todo-example/blob/master/cs-manage-doc-collection/images/pages.jpg)
+![Alt text](./images/pages.JPG?raw=true "pages")
 
-````
 Select `Based on` Lean Page and provide page Title like master-lean-page and finaly click save button.
-````
-![Alt text](./images/master-page.jpg?raw=true "master page")
 
-![picture](https://github.com/prakhar82/todo-example/blob/master/cs-manage-doc-collection/images/master-page.jpg)
+![Alt text](./images/master-page.JPG?raw=true "master page")
 
-````
 Master page looks like as below 
-````
-![Alt text](./images/master-page-created.jpg?raw=true "master pages")
 
-![picture](https://github.com/prakhar82/todo-example/blob/master/cs-manage-doc-collection/images/master-page-created.jpg)
+![Alt text](./images/master-page-created.JPG?raw=true "master pages")
 
-````
 Drag Manageable Area from catalog to create master page (lean page)
-````
-![ScreenShot](./images/drag-manageable-area.jpg?raw=true "manageable area")
 
-![picture](https://github.com/prakhar82/todo-example/blob/master/cs-manage-doc-collection/images/drag-manageable-area.jpg)
+![ScreenShot](./images/drag-manageable-area.JPG?raw=true "manageable area")
 
-````
+
 Open Exprience Catalog to add your imported widgets and containers
-````
+
 
 ![ScreenShot](./images/openExperienceCatalog.JPG?raw=true "open exprience catalog")
-
-![picture](https://github.com/prakhar82/todo-example/blob/master/cs-manage-doc-collection/images/openExperienceCatalog.JPG)
 
 
 Add all widgets by searching and add by clicking on + symbol on each widget
 
 ![ScreenShot](./images/add-widget-into-portal-catalog.JPG?raw=true "add widget into portal catalog")
 
-![picture](https://github.com/prakhar82/todo-example/blob/master/cs-manage-doc-collection/images/add-widget-into-portal-catalog.JPG) 
-
- 
 
  
  [<<Back](./README.md)
