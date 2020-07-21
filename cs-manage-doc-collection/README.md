@@ -14,4 +14,3 @@ npm run ng -- generate app --name=cs-manage-doc-collection-app
 #### [5. Create Personal Document widget](./libs/personal-document-widget/README.md) 
 #### [6. Create Document Library Widget](./libs/document-library-widget/README.md)
 #### [7. Package and import ](./PACKAGEIMPORT.md)
-#### [7. Create Portal]
