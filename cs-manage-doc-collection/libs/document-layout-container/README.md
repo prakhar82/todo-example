@@ -26,26 +26,41 @@ Open ./lib/document-layout-container/model.xml
 </catalog>
 ```
 #### ./lib/document-layout-container/src/document-side-menu.component.html
+```angular2
+<ng-container>
+  <div class="row m-auto  max-width min-height-container">
+    <div class="col-sm-12 col-md-3 ">
+      <document-side-menu [documentTabs]="documentTabs | async" >
+      </document-side-menu>
+    </div>
 
-#### ./lib/document-layout-container/src/document-layout-container.component.html
+    <div class="col-sm-12 col-md-9 ">
+      <bb-area></bb-area>
+      <bb-router-outlet></bb-router-outlet>
+    </div>
+  </div>
+</ng-container>
+```
+
+#### ./lib/document-layout-container/src/document-layout-container.component.ts
 
 import following components
-````
+```angular2
 import { ItemModelTree, RoutableContainer, mapObservableArray } from '@backbase/core-ang';
 import { combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
-````
+```
 Make component as Routable component by adding @RoutableContainer()
-````
+```angular2
 @RoutableContainer()
 @Component({
   selector: 'bb-document-layout-container',
   templateUrl: './document-layout-container.component.html'
 })
-````
+```
 Append below code inside <b>DocumentLayoutContainerComponent</b> class to create tree structure side menu
 
-````
+```angular2
 constructor(private modelTree: ItemModelTree) { }
 
 readonly documentTabs = this.modelTree.children.pipe(
@@ -82,10 +97,11 @@ private createTransferSideMenu(
     createSideMenu: createSideMenu || 'false'
   };
 }
-````
+```
+
 ###### create folder <u>document-side-menu</u> inside ./lib/document-layout-container/src/
 ###### create file <u><b>document-side-menu.component.html</b></u> inside <u>document-side-menu</u> folder and add following code
-````
+```angular2
  <div class="bp-g-model">
     <div class="panel-launcher">
       <!-- Side menu panel -->
@@ -107,9 +123,9 @@ private createTransferSideMenu(
   </div>
 </div>
 
-````
+```
 ###### create file <u><b>document-side-menu.component.ts</b></u> inside <u>document-side-menu</u> folder and add following code
-````  
+```angular2  
 import { Component, OnInit, Input, SimpleChanges, OnChanges } from '@angular/core';
 import { RouterService } from '@backbase/foundation-ang/core';
 
@@ -150,10 +166,10 @@ export class DocumentSideMenuComponent implements OnInit, OnChanges {
   }
 }
                     
-````
+```
 #### ./lib/document-layout-container/src/document-layout-container.module.ts
 import DocumentSideMenuComponent into module
-````
+```angular2
 import { DocumentSideMenuComponent } from './document-side-menu/document-side-menu.component';
 ````
 Declare into 
@@ -172,4 +188,5 @@ Declare into
 })
 export class DocumentLayoutContainerModule { }
 ```
+
 [<<Back](./README.md)
