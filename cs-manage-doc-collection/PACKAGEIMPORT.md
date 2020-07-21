@@ -61,9 +61,9 @@ Open Exprience Catalog to add your imported widgets and containers
 
 ![picture](https://github.com/prakhar82/todo-example/blob/master/cs-manage-doc-collection/images/open-experience catalog.JPG)
 
-````
+
 Add all widgets by searching and add by clicking on + symbol on each widget
-````
+
 ![ScreenShot](./images/add-widget-into-portal-catalog.JPG?raw=true "add widget into portal catalog")
 
 ![picture](https://github.com/prakhar82/todo-example/blob/master/cs-manage-doc-collection/images/add-widget-into-portal-catalog.JPG) 
