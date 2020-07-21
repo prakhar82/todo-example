@@ -31,3 +31,4 @@ http://localhost:8080/gateway/cxp-manager
 ######Add all widgets search and add by clicking on + symbol on each widget
 ![Alt text](./images/add-widget-into-portal-catalog.jpg?raw=true "add widget into portal catalog")
  
+ [<<Back](./README.md)
