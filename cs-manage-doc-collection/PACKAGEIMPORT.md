@@ -11,9 +11,8 @@ bb-import package dist/provisioning-packages/cx6/cs-manage-doc-collection-app.zi
 calhost --portal-username admin --portal-password admin --portal-context gateway/api --portal-auth-path gateway/api/auth/login --portal-version 6.1
 ````
 ######Open Exeprience manager on browser using below URL
-``
+
 http://localhost:8080/gateway/cxp-manager
-``
 
 Click on `Create` button
 
