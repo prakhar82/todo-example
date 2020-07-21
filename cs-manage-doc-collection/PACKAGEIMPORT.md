@@ -28,10 +28,11 @@ http://localhost:8080/gateway/cxp-manager
 ![ScreenShot](./images/drag-manageable-area.jpg?raw=true "manageable area")
 ######Open Exprience Catalog to add your imported widgets and containers
 ![ScreenShot](./images/open-experience catalog.JPG?raw=true "open exprience catalog")
-#####Add all widgets search and add by clicking on + symbol on each widget
+````
+Add all widgets search and add by clicking on + symbol on each widget
 ````
 ![picture](https://github.com/prakhar82/todo-example/blob/master/cs-manage-doc-collection/images/add-widget-into-portal-catalog.JPG) 
-````
+
  
 
  
