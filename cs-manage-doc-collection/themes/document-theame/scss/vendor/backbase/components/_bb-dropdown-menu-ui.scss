@@ -1,0 +1,122 @@
+// stylelint-disable selector-no-qualifying-type
+
+// Make the div behave like a button
+.btn-group  > div.bb-dropdown-btn-group-wrapper,
+.btn-group-vertical > div.bb-dropdown-btn-group-wrapper {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle; // match .btn alignment given font-size hack above
+
+  > .btn {
+    position: relative;
+    flex: 0 1 auto;
+
+    // Bring the hover, focused, and "active" buttons to the front to overlay
+    // the borders properly
+    @include hover {
+      z-index: 1;
+    }
+    &:focus,
+    &:active,
+    &.active {
+      z-index: 1;
+    }
+  }
+
+  // Prevent double borders when buttons are next to each other
+  .btn + .btn,
+  .btn + .btn-group > div.bb-dropdown-btn-group-wrapper,
+  .btn-group > div.bb-dropdown-btn-group-wrapper + .btn,
+  .btn-group > div.bb-dropdown-btn-group-wrapper + .btn-group > div.bb-dropdown-btn-group-wrapper {
+    margin-left: -$btn-border-width;
+  }
+}
+
+.btn-group {
+  > div.bb-dropdown-btn-group-wrapper > .btn:first-child {
+    margin-left: 0;
+  }
+
+  // Reset rounded corners
+  > div.bb-dropdown-btn-group-wrapper > .btn:not(:last-child):not(.dropdown-toggle),
+  > .btn-group:not(:last-child) > div.bb-dropdown-btn-group-wrapper > .btn {
+    @include border-right-radius(0);
+  }
+
+  > div.bb-dropdown-btn-group-wrapper > .btn:not(:first-child),
+  > .btn-group:not(:first-child) > div.bb-dropdown-btn-group-wrapper > .btn {
+    @include border-left-radius(0);
+  }
+}
+
+// Sizing
+//
+// Remix the default button sizing classes into new ones for easier manipulation.
+
+.btn-group-sm > div.bb-dropdown-btn-group-wrapper > .btn { @extend .btn-sm; }
+.btn-group-lg > div.bb-dropdown-btn-group-wrapper > .btn { @extend .btn-lg; }
+
+//
+// Vertical button groups
+//
+
+.btn-group-vertical > div.bb-dropdown-btn-group-wrapper {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  .btn,
+  .btn-group > div.bb-dropdown-btn-group-wrapper {
+    width: 100%;
+  }
+
+  > .btn + .btn,
+  > .btn + .btn-group > div.bb-dropdown-btn-group-wrapper,
+  > .btn-group > div.bb-dropdown-btn-group-wrapper + .btn,
+  > .btn-group > div.bb-dropdown-btn-group-wrapper + .btn-group > div.bb-dropdown-btn-group-wrapper {
+    margin-top: -$btn-border-width;
+    margin-left: 0;
+  }
+
+  // Reset rounded corners
+  > div.bb-dropdown-btn-group-wrapper > .btn:not(:last-child):not(.dropdown-toggle),
+  > .btn-group:not(:last-child) > div.bb-dropdown-btn-group-wrapper > .btn {
+    @include border-bottom-radius(0);
+  }
+
+  > .btn:not(:first-child),
+  > .btn-group:not(:first-child) > div.bb-dropdown-btn-group-wrapper > .btn {
+    @include border-top-radius(0);
+  }
+}
+
+.btn-group-toggle > div.bb-dropdown-btn-group-wrapper {
+  > .btn,
+  > .btn-group > div.bb-dropdown-btn-group-wrapper > .btn {
+    margin-bottom: 0; // Override default `<label>` value
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      position: absolute;
+      clip: rect(0, 0, 0, 0);
+      pointer-events: none;
+    }
+  }
+}
+
+.dropdown-menu-toggle-button__content {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-menu-toggle-button__content--full-width {
+  width: 100%;
+}
+
+.dropdown-menu__label {
+  padding: 0.25rem;
+}
+
+.dropdown-menu__label--full-width {
+  margin-right: auto;
+}

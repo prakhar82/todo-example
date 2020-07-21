@@ -1,0 +1,58 @@
+$device-information-spacer-xs: $spacer*0.25 !default;
+$device-information-spacer-sm: $spacer*0.5 !default;
+$device-information-spacer-md: $spacer !default;
+$device-information-spacer-lg: $spacer*1.5 !default;
+
+.device-information__data {
+  display: flex;
+  flex-direction: column;
+  padding-left: $device-information-spacer-md;
+}
+
+.device-information__data-name {
+  font-weight: $font-weight-bold;
+}
+
+.device-information__data-type {
+  color: color("neutrals", "dark");
+}
+
+.device-information__text--disabled {
+  color: color("neutrals", "dark");
+}
+
+.device-information__list-menu {
+  display: flex;
+  align-items: center;
+}
+
+.device-information__badge {
+  margin-right: $device-information-spacer-sm;
+}
+
+.device-information__form-device {
+  margin-bottom: $device-information-spacer-xs;
+}
+
+.device-information__form-device-type {
+  font-weight: $font-weight-bold;
+}
+
+.device-information__form-registered {
+  color: color("neutrals", "dark");
+}
+
+.device-information__form-registered-date {
+  font-weight: $font-weight-bold;
+}
+
+.device-information__modal-lower-divider {
+  margin-bottom: 0;
+}
+
+.device-information__list-group-detail {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  margin-right: $device-information-spacer-sm;
+}

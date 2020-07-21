@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="48px" viewBox="0 0 64 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 54.1 (76490) - https://sketchapp.com -->
+    <title>0EBCDBF9-5ED1-47B7-9F3A-1229595B32A5@1.00x</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M4,0 L44,0 C46.209139,-4.05812251e-16 48,1.790861 48,4 L48,44 C48,46.209139 46.209139,48 44,48 L4,48 C1.790861,48 2.705415e-16,46.209139 0,44 L0,4 C-2.705415e-16,1.790861 1.790861,4.05812251e-16 4,0 Z M50,0 L53,0 C54.6568542,-3.04359188e-16 56,1.34314575 56,3 L56,45 C56,46.6568542 54.6568542,48 53,48 L50,48 L50,0 Z M58,0 L61,0 C62.6568542,-3.04359188e-16 64,1.34314575 64,3 L64,45 C64,46.6568542 62.6568542,48 61,48 L58,48 L58,0 Z" id="path-1"></path>
+    </defs>
+    <g id="00.-Context-Switcher---Assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="assets/business/icons/service-agreement">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#D8D8D8" xlink:href="#path-1"></use>
+            <g id="2-Colors/5-Secondary/5-Purple" mask="url(#mask-2)" fill="#883D9A">
+                <rect id="Swatch" x="0" y="0" width="64" height="48"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

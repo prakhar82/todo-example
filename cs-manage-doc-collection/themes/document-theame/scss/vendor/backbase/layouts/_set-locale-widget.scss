@@ -1,0 +1,8 @@
+@import "vendor/flag-icon-css/sass/_variables.scss";
+@import "vendor/flag-icon-css/sass/_flag-icon-base.scss";
+@import "vendor/flag-icon-css/sass/_flag-icon-list.scss";
+@include media-breakpoint-down(sm) {
+  .set-locale-widget .dropdown-menu {
+    min-width: 0 !important; //overrides bootstrap [BS4]
+  }
+}

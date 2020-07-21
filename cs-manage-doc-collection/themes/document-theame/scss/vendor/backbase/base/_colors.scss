@@ -1,0 +1,338 @@
+////
+/// Baseline Color Variables
+/// Exception to the "base for primitives" file organization rule.
+/// Note 1: Reserved for exclusive use inside $color-palette map
+/// Note 2: Ensure set-defaults is loaded before this file
+/// Note 3: To extend in projects, use map-merge or directly override variables
+/// @type Color
+/// @group color-helpers
+/// @access private
+////
+
+/// Neutrals: White
+$neutral-1: $white !default;
+/// Neutrals: Almost White
+$neutral-2: #E9EFF4 !default;
+/// Neutrals: Slightly Light Gray
+$neutral-3: #F1F6FB !default;
+/// Neutrals: Almost Gray
+$neutral-4: #F8FBFE !default;
+/// Neutrals: Secondary (Default)
+$neutral-5: #DDE4E9 !default;
+/// Neutrals: Secondary (dark)
+$neutral-6: #CCD3D8 !default;
+/// Neutrals: Secondary (darker)
+$neutral-7: #B3B8BD !default;
+/// Neutrals: Disabled Text
+$neutral-8: #8C9194 !default;
+/// Neutrals: Supporting Text -- also 'dark' neutrals
+$neutral-9: #55585A !default;
+/// Neutrals: Default body Text
+$neutral-10: #111112 !default;
+/// Neutrals: Black
+$neutral-11: $black !default;
+
+$main-content-bgd-color: #FBFBFB;
+
+/// Actions: Reserved for datepicker, pagination, charts
+$blue-lighter: #107BB5 !default;
+/// Actions: TBD
+$blue-light: #086BA8 !default;
+/// Actions: Primary (Default)
+$blue: #00569C !default;
+/// Actions: Primary (dark)
+$blue-dark: #004285 !default;
+/// Actions: Primary (darker)
+$blue-darker: #00306B !default;
+/// Actions: Navigation Menu Background
+$blue-darkest: #001D52 !default;
+
+/// Support: Info
+$blue-info: #1971C2 !default;
+// Support: Info (darker)
+$blue-info-dark: #1663AC !default;
+// Support: Info (darkest)
+$blue-info-darker: #145999 !default;
+/// Support: Danger (default)
+$red: #BA293A !default;
+/// Support: Danger (darker)
+$red-dark: #A61C23 !default;
+/// Support: Danger (darkest)
+$red-darker: #910F0F !default;
+/// Support: Success (default)
+$green: #00884B !default;
+/// Support: Success (darker)
+$green-dark: #007034 !default;
+/// Support: Success (darkest)
+$green-darker: #005C25 !default;
+/// Support: Warn (default)
+$yellow-dark: #F1BE3C !default;
+/// Support: Warn (darker)
+$yellow-darker: #FBBA3B !default;
+/// Selected: Toggled Color
+$cyan: #2B9BE0 !default;
+
+/// Extended: other colors #1
+$yellow:          #FFD075 !default;
+/// Extended: other colors #2
+$orange:          #E8590C !default;
+/// Extended: other colors #3
+$tango:           #FD7E14 !default;
+/// Extended: other colors #4
+$pink:            #D24887 !default;
+/// Extended: other colors #5
+$purple:          #883D9A !default;
+/// Extended: other colors #6
+$indigo:          #4259C5 !default;
+/// Extended: other colors #6
+$light-blue:      #74C0FC !default;
+/// Extended: other colors #7
+$teal:            #12B886 !default;
+/// Extended: other colors #8
+$lime:            #94C052 !default;
+
+/// Colors Map (BS4 OVERRIDE)
+/// Overrides BS4 original $colors map as safety net
+$colors: (
+  "light-blue": $light-blue,
+  "blue":       $blue,
+  "indigo":     $indigo,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "lime":       $lime,
+  "tango":      $tango,
+  "teal":       $teal,
+  "cyan":       $cyan,
+  "white":      $white,
+  "gray":       $neutral-8,
+  "gray-dark":  $neutral-10
+) !default;
+
+///Context Colors: Primary
+$primary: $blue !default;
+///Context Colors: Secondary
+$secondary: $neutral-5 !default;
+///Context Colors: Success
+$success: $green !default;
+///Context Colors: Info
+$info: $blue-info !default;
+///Context Colors: Warning
+$warning: $yellow-dark !default;
+///Context Colors: Danger
+$danger: $red !default;
+///Context Colors: Text Light (yiq-colors; variant: light)
+$light: $neutral-4 !default;
+///Context Colors: Text Dark (yiq-colors; variant: light)
+$dark: $neutral-9 !default;
+/// Support color for text
+$support: #737373;
+
+
+/// Contextual Color Map (BS4 OVERRIDE)
+/// Overrides BS4 original $theme-colors map as safety net for regenerating UI variant classes
+/// Reserved for generating utility color classes (e.g. btn-primary)
+/// Note: To customize these colors without affecting the baseline theme-colors consumed by other Bootstrap 4 Mixins/Functions, define your own map ($**-palette) inside its corresponding base file -- (e.g. _buttons.scss, $button-palette)
+/// @require {variable} primary
+/// @require {variable} secondary
+/// @require {variable} success
+/// @require {variable} info
+/// @require {variable} warning
+/// @require {variable} danger
+/// @require {variable} light
+/// @require {variable} dark
+$theme-colors: (
+  "primary":   $primary,
+  "secondary": $secondary,
+  "success":   $success,
+  "info":      $info,
+  "warning":   $warning,
+  "danger":    $danger,
+  "light":     $light,
+  "dark":      $dark
+) !default;
+
+/// Status Tint Color Variants: Primary
+/// @require {variable} primary
+$primary-bright: mix($primary, $white, 15%) !default;
+/// Status Tint Color Variants: Success
+/// @require {variable} success
+$success-bright: mix($success, $white, 15%) !default;
+/// Status Tint Color Variants: Warning
+/// @require {variable} warning
+$warning-bright: mix($warning, $white, 15%) !default;
+/// Status Tint Color Variants: Danger
+/// @require {variable} danger
+$danger-bright: mix($danger, $white, 15%) !default;
+/// Status Tint Color Variants: Info
+/// @require {variable} info
+$info-bright: mix($info, $white, 15%) !default;
+
+/// Tint Color Variants: Grey
+/// @require {variable} neutral-7
+$grey-bright: lighten($neutral-7, 10%) !default;
+/// Tint Color Variants: Teal
+/// @require {variable} teal
+$teal-bright: lighten($teal, 10%), !default;
+/// Tint Color Variants: Indigo
+/// @require {variable} indigo
+$indigo-bright:  lighten($indigo, 10%) !default;
+/// Tint Color Variants: Red
+/// @require {variable} red
+$red-bright: lighten($red, 10%) !default;
+
+/// Outline Tint Hover Colors
+/// @require {variable} primary-bright
+/// @require {variable} success-bright
+/// @require {variable} warning-bright
+/// @require {variable} danger-bright
+/// @require {variable} info-bright
+/// @require {variable} light
+/// @require {variable} dark
+$theme-outline-hover-colors: (
+  "primary":   $primary-bright,
+  "secondary": $white,
+  "success":   $success-bright,
+  "info":      $info-bright,
+  "warning":   $warning-bright,
+  "danger":    $danger-bright,
+  "light":     $light,
+  "dark":      $dark
+) !default;
+
+/// Color Palette Map Subgroups: Primary
+/// @require {variable} blue-lighter
+/// @require {variable} blue-light
+/// @require {variable} blue
+/// @require {variable} blue-dark
+/// @require {variable} blue-darker
+/// @require {variable} blue-darkest
+$primaryMap: (
+  lighter: $blue-lighter,
+  light: $blue-light,
+  default: $blue,
+  dark: $blue-dark,
+  darker: $blue-darker,
+  darkest: $blue-darkest
+);
+/// Color Palette Map Subgroups: Secondary
+/// @require {variable} neutral-5
+/// @require {variable} neutral-6
+/// @require {variable} neutral-7
+$secondaryMap: (
+  default: $neutral-5,
+  dark: $neutral-6,
+  darker: $neutral-7
+);
+/// Color Palette Map Subgroups: Selected
+/// @require {variable} cyan
+$selectedMap: (
+  default: $cyan,
+  dark: darken($cyan, 8%),
+  darker: darken($cyan, 12%),
+);
+/// Color Palette Map Subgroups: Danger
+/// @require {variable} red
+/// @require {variable} red-dark
+/// @require {variable} red-darker
+$dangerMap: (
+  default: $red,
+  dark: $red-dark,
+  darker: $red-darker
+);
+/// Color Palette Map Subgroups: Warning
+/// @require {variable} yellow-darker
+$warningMap: (
+  default: $yellow-dark,
+  dark: $yellow-darker,
+  darker: darken($yellow-darker, 8%)
+);
+/// Color Palette Map Subgroups: Success
+/// @require {variable} green
+/// @require {variable} green-dark
+/// @require {variable} green-darker
+$successMap: (
+  default: $green,
+  dark: $green-dark,
+  darker: $green-darker
+);
+/// Color Palette Map Subgroups: Info
+/// @require {variable} blue-info
+$infoMap: (
+  default: $blue-info,
+  dark: $blue-info-dark,
+  darker: $blue-info-darker
+);
+
+/// Color Palette Map Subgroups: Neutrals
+/// @require {variable} neutral-1
+/// @require {variable} neutral-2
+/// @require {variable} neutral-3
+/// @require {variable} neutral-4
+/// @require {variable} neutral-5
+/// @require {variable} neutral-6
+/// @require {variable} neutral-7
+/// @require {variable} neutral-8
+/// @require {variable} neutral-9
+/// @require {variable} neutral-10
+/// @require {variable} neutral-11
+$neutralsMap: (
+  'white': $neutral-1, //require 'string-wrap' due to namespace collision
+  lightest: $neutral-2,
+  lighter: $neutral-3,
+  light: $neutral-4,
+  'grey': $neutral-5,
+  greyer: $neutral-6,
+  greyest: $neutral-7,
+  dark: $neutral-8,
+  darker: $neutral-9,
+  darkest: $neutral-10,
+  'black': $neutral-11
+);
+
+/// Used to store full color palette properties with map-deep-get(...), and color(...)
+/// @see map-deep-get
+/// @see color
+/// @require {variable} primaryMap
+/// @require {variable} secondaryMap
+/// @require {variable} selectedMap
+/// @require {variable} dangerMap
+/// @require {variable} warningMap
+/// @require {variable} successMap
+/// @require {variable} infoMap
+/// @require {variable} neutralsMap
+/// @require {variable} colors
+///
+/// @example
+///   map-deep-get($color-palette, "parent-prop", "child-prop")
+///
+/// @example
+///   color("parent-prop", "child-prop")
+///
+$color-palette: (
+  actions: (
+    primary: $primaryMap,
+    secondary: $secondaryMap,
+    selected: $selectedMap
+  ),
+  support: (
+    danger: $dangerMap,
+    warning: $warningMap,
+    success: $successMap,
+    info: $infoMap,
+  ),
+  neutrals: $neutralsMap,
+  extends: $colors
+) !default;
+
+/// Color Contrasts (BS4 Overrides)
+/// Customize the light and dark text colors for color contrast function.
+/// @access public
+$yiq-text-dark: map-deep-get($color-palette, "neutrals", "darkest") !default;
+
+/// Color Theme Intervals (BS4 Overrides)
+/// @access public
+$theme-color-interval: 10% !default;

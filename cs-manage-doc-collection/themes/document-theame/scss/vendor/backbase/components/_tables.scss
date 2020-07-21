@@ -1,0 +1,91 @@
+.bb-table {
+  font-size: $font-size-base;
+
+  thead {
+    th {
+      padding-top: $table-padding;
+
+      &.sortable {
+        cursor: pointer;
+
+        .th-content {
+          position: relative;
+
+          &:before {
+            @extend .bicon;
+            position: absolute;
+            right: $table-header-icon-right-position;
+          }
+        }
+
+        &:hover {
+          background-color: $table-hover-bg;
+
+          .th-content {
+            @extend .bicon-caret-down;
+          }
+        }
+
+        &.asc .th-content:before, &.asc .th-content:before:hover {
+          @extend .bicon-caret-up;
+        }
+
+        &.desc .th-content:before, &.desc .th-content:before:hover {
+          @extend .bicon-caret-down;
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      &.selected {
+        background-color: $info-bright;
+      }
+    }
+
+    th {
+      @include media-breakpoint-up(md) {
+        display: none;
+      }
+
+      display: block;
+      border-top: 0;
+    }
+  }
+
+  bb-table-checkbox, bb-table-header-checkbox {
+    .bb-input-checkbox-label {
+      .bb-input-checkbox {
+        + .bb-input-checkbox-content {
+          &:before, &:after {
+            top: calc(50% - $table-padding);
+          }
+        }
+      }
+    }
+  }
+}
+
+/** Added for compatibility with theme v2 **/
+.bb-table--text-middle {
+  text-align: center;
+}
+
+.bb-table--text-start {
+  text-align: left;
+}
+
+.bb-table--text-end {
+  text-align: right;
+}
+
+.bb-table__head--highlight {
+  background-color: map-get($neutralsMap, 'lightest');
+}
+
+/* Generates class for different row background states in a table like
+ *`.table-row-primary`, `.table-row-danger` etc */
+@each $state, $bg-value in $table-palette {
+  @include table-row-variant($state, $bg-value);
+}

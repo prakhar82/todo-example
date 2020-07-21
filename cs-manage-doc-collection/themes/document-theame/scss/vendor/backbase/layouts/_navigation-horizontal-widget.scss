@@ -1,0 +1,44 @@
+bb-navigation-horizontal-widget {
+  display: table;
+  width:100%;
+
+  .horizontal-navbar {
+    background: color('actions', 'primary', 'darkest');
+  }
+
+  .sticky-top {
+    position: fixed;
+    width: 100%;
+    z-index: $zindex-sticky;
+    top: 5rem;
+  }
+
+  .nav-item {
+    //to be changed when base font-size is 16px
+    padding: .75em 1.14289em;
+  }
+
+  .nav-item {
+    &:hover {
+      background: color('actions', 'primary', 'darker');
+    }
+    &.active{
+      background: color('actions', 'primary', 'dark');
+    }
+  }
+
+  .dropdown-menu {
+    margin-top: 1em;
+  }
+
+  a.nav-link {
+    color: color('neutrals', 'white');
+  }
+}
+
+// Desktop,Tablet -- Add more hight
+@include media-breakpoint-up(md) {
+  bb-navigation-horizontal-widget {
+    height: $nav-upper-space;
+  }
+}

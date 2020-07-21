@@ -1,0 +1,85 @@
+.bb-fx-rates-trade-order-modal > .modal-dialog {
+  max-width: 900px;
+  padding: 10px;
+}
+
+.bb-fx-rates-rate {
+  height: 78px;
+  min-width: 176px;
+  max-width: 220px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: $border-radius;
+  border-left: 4px solid transparent;
+}
+.bb-fx-rates-rate.active {
+  border-left: 4px solid  color('selected');
+}
+.bb-fx-rates-rate__label {
+  font-size: 1rem;
+  line-height: 1.375rem;
+}
+.bb-fx-rates-rate__value {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+// need for making full width for button inside bb-load-button-ui
+.bb-fx-rates-trade-order-modal__load-button {
+  .bb-load-button {
+    width: 100%;
+  }
+}
+
+bb-fx-rates-currency-pair {
+  @include media-breakpoint-down(xs) {
+    .bb-currency-input > .bb-stack {
+      flex-wrap: wrap;
+    }
+
+    .bb-currency-input__currency-selector {
+      flex-basis: 100%;
+      margin-bottom: $spacer * 0.625;
+
+      > .form-control {
+        width: 4.5rem;
+      }
+    }
+
+    .bb-currency-input__integer {
+      flex-basis: calc(100% - 5.75rem);
+    }
+
+    .bb-currency-input__decimal {
+      flex-basis: 4.25rem;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .bb-currency-input {
+      max-width: 22.375rem;
+    }
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .bb-fx-rates-rate {
+    min-width: 100%;
+    margin-bottom: 16px;
+    margin-top: 16px;
+    text-align: center;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .bb-fx-rates-trade-order-modal > .modal-dialog {
+    max-width: 600px;
+    padding: 10px;
+  }
+}
+
+.bb-fx-rates-trade-order-modal bb-account-selector-ui.invalid .ng-select-container {
+  border: 1px solid $red;
+}

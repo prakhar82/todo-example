@@ -1,0 +1,17 @@
+// Dropdowns
+//
+// Dropdown menu container and contents.
+$enable-caret: false; //disables .dropdown-toggle caret include
+$dropdown-bg: color("neutrals", "white");
+$dropdown-border-color: $border-color;
+$dropdown-divider-bg: $border-color;
+
+$dropdown-link-color: color("primary");
+$dropdown-link-hover-color: darken(color("primary"), 10%);
+$dropdown-link-hover-bg: $component-active-bg;
+
+$dropdown-link-active-color: color("primary");
+$dropdown-link-active-bg: $component-active-bg;
+
+$dropdown-link-disabled-color: $text-muted;
+$dropdown-header-color: $text-muted;

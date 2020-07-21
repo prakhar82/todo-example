@@ -1,0 +1,6 @@
+$max-spacing: 100;
+$spacing-step: 5;
+$tiny-height: 10px;
+// Used in: make-row(), mak-col-ready(), make-container()
+// Argument for generating row, col, container BS4 classes
+$grid-gutter-width: 32px !default;  // Default: 30px;

@@ -1,0 +1,19 @@
+// @backbase/cards-list-widget-ang - bb-payment-card.component.html
+
+.bb-payment-card-component {
+  display: inline-block;
+  width: 100%;
+  min-width: 300px;
+  max-width: 320px;
+}
+
+.bb-payment-card-icon-dialog {
+  max-width: 20rem;
+  min-height: 12rem;
+  width: 100%;
+}
+
+.bb-payment-card-back {
+  background-repeat: no-repeat;
+  background-image: url(#{$path-to-images}/bb-payment-card-activation-ui/credit-card-back.svg);
+}

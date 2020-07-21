@@ -1,0 +1,12 @@
+// Form Input
+$input-bg: color('neutrals', 'white') !default;
+$input-disabled-bg: color('neutrals', 'lighter') !default;
+$form-input-spinner-size: 1.8rem !default;
+$checkbox-outline: 2px;
+
+
+// Currency input
+$currency-selector-width: 105px !default;
+
+// Label
+$form-label-font-weight: $font-weight-medium;

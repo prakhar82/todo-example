@@ -1,0 +1,40 @@
+.bb-cash-flow-cash-out {
+  &__loading-wrapper,
+  &__error-wrapper {
+    height: 400px;
+  }
+
+  &__dot-after-word {
+    position: relative;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background-color: color("neutrals", "dark");
+      top: 50%;
+      right: -10px;
+      border-radius: 50%;
+    }
+  }
+}
+
+.bb-cash-flow-cash-out-list-item {
+  border-bottom: 1px solid color("secondary");
+
+  &__content-wrapper {
+    width: 100%;
+  }
+}
+
+.bb-cash-flow-cash-out-table {
+  &__date-header {
+    width: 130px;
+  }
+
+  &__ccy-header {
+    width: 80px;
+  }
+}

@@ -1,0 +1,20 @@
+html, body {
+  @include size(100%, 100%);
+}
+
+.h-100vh {
+  height: 100vh;
+}
+
+.w-100vw {
+  width: 100vw;
+}
+
+body {
+  background-color: color("white");
+}
+
+// Minimum width supported by widgets
+.bp-widget-body {
+  min-width: 320px;
+}

@@ -1,0 +1,16 @@
+.bb-fx-rates-changed-modal > .modal-dialog {
+  padding: 10px;
+  .bg-new-rates {
+    background-color: $warning-bright;
+  }
+  @include media-breakpoint-down(xs) {
+    table {
+      width: 100%;
+    }
+    td {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,195 @@
+// Submenu
+.bb-mega-menu__submenu {
+  background-color: $mega-menu-submenu-bg;
+  color: $mega-menu-submenu-color;
+}
+
+// Submenu link
+// These contain styles that are common to all variations of the submenu,
+// specifically the dropdown and the sidebar variants.
+//
+// This will typically be an <a> element.
+.bb-mega-menu__submenu-link {
+  align-items: center;
+
+  // Override the CXP color for <a> elements without href using !important
+  color: $mega-menu-submenu-link-color !important;
+  display: flex;
+  padding: $small-padding-height;
+
+  &:hover {
+    // reset Bootstrap :hover styles
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $mega-menu-submenu-link-hover-bg;
+    color: $mega-menu-submenu-link-color;
+  }
+}
+
+.bb-mega-menu__submenu-item-icon {
+  margin-right: $small-margin-height;
+  vertical-align: top;
+}
+
+.bb-mega-menu__submenu-item-label {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.bb-mega-menu__submenu-title {
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+}
+
+.bb-mega-menu__submenu-description {
+  font-size: $font-size-sm;
+  line-height: $line-height-base;
+  word-wrap: break-word;
+}
+
+.bb-mega-menu__submenu-link:active {
+  background-color: $mega-menu-submenu-link-active-bg;
+  color: $mega-menu-submenu-link-color;
+}
+
+.bb-mega-menu__submenu-items {
+  display: flex;
+}
+
+.bb-mega-menu__submenu-header {
+  display: none;
+}
+
+// Submenu variant: a dropdown menu below the menubar
+@mixin mega-menu-dropdown {
+  .bb-mega-menu__column {
+    display: flex;
+    flex-direction: column;
+    width: $mega-menu-submenu-column-width;
+  }
+
+  .bb-mega-menu__submenu {
+    background-color: $mega-menu-dropdown-bg;
+    border-radius: 0 0 $mega-menu-dropdown-border-radius
+      $mega-menu-dropdown-border-radius;
+    box-shadow: $mega-menu-dropdown-box-shadow;
+    color: $mega-menu-dropdown-bg;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    z-index: $mega-menu-dropdown-zindex;
+  }
+
+  // Submenu items
+  .bb-mega-menu__submenu-items {
+    @include list-unstyled();
+    flex-direction: row;
+    padding: $small-padding-height;
+  }
+
+  .bb-mega-menu__submenu-items {
+    flex-direction: row;
+  }
+
+  .bb-mega-menu__item--expanded {
+    // Ensure the expanded menu is always positioned above any other menus
+    .bb-mega-menu__submenu {
+      z-index: $zindex-popover;
+    }
+
+    .bb-mega-menu__link {
+      z-index: $zindex-popover + 1;
+    }
+  }
+
+  .bb-mega-menu__column--children {
+    margin-left: $small-margin-height;
+  }
+}
+
+// Submenu variant: horizontally sliding panels inside a sidebar
+@mixin mega-menu-sidebar-submenu {
+  .bb-mega-menu__column--children {
+    display: flex;
+    justify-content: left;
+    padding: $small-padding-height;
+  }
+
+  .bb-mega-menu__submenu {
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: $zindex-popover;
+  }
+
+  .bb-mega-menu__submenu-header {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    line-height: $line-height-base;
+    padding-bottom: $mega-menu-items-padding;
+    padding-top: $mega-menu-items-padding * 2;
+  }
+
+  .bb-mega-menu__submenu-items {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .bb-mega-menu__submenu-link {
+    justify-content: space-between;
+    min-width: $mega-menu-submenu-min-width;
+  }
+
+
+  .bb-mega-menu__submenu-title,
+  .bb-mega-menu__submenu-description {
+    overflow-wrap: anywhere;
+  }
+}
+
+// Optionally animate the sliding panels inside a sidebar
+@mixin mega-menu-sidebar-submenu-animation {
+  .bb-mega-menu {
+    overflow: overflow-y;
+  }
+
+  .bb-mega-menu__items {
+    position: relative;
+    transition: 0.3s ease-in-out;
+    transition-property: left;
+  }
+
+  .bb-mega-menu--submenu-hidden {
+    .bb-mega-menu__items {
+      left: 0;
+    }
+  }
+
+  .bb-mega-menu--submenu-visible {
+    .bb-mega-menu__items {
+      left: -100%;
+    }
+  }
+
+  .bb-mega-menu__submenu {
+    left: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  @include mega-menu-dropdown;
+}
+
+@include media-breakpoint-down(sm) {
+  @include mega-menu-sidebar-submenu;
+  @include mega-menu-sidebar-submenu-animation;
+}

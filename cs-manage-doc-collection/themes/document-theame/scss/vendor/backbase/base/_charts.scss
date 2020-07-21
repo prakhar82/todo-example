@@ -1,0 +1,37 @@
+// Chart
+$chart-bar-min-height: 350px;
+
+$chart-donut-max-width: 335px;
+$chart-donut-large-max-width: 385px;
+
+$chart-donut-slice-icon-font-size: 1.5rem;
+$chart-donut-slice-icon-line-height: 1.5rem;
+$chart-donut-slice-amount-font-size: 0.875rem;
+
+$chart-tooltip-arrow-size: 10px;
+$chart-tooltip-arrow-position-near: 25%;
+$chart-tooltip-arrow-position-default: 50%;
+$chart-tooltip-arrow-position-far: 75%;
+$chart-tooltip-arrow-border-size: 2px;
+
+$chart-colors:
+  lighten(color('primary'), 10%),
+  lighten($cyan, 10%),
+  lighten(color('success'), 10%),
+  lighten($yellow, 10%),
+  lighten($orange, 10%),
+  lighten(color('danger'), 10%),
+  lighten($pink, 10%),
+  lighten($purple, 10%),
+  lighten($indigo, 10%),
+  lighten($teal, 10%),
+  darken(color('primary'), 10%),
+  darken($cyan, 10%),
+  darken(color('success'), 10%),
+  darken($yellow, 10%),
+  darken($orange, 10%),
+  darken(color('danger'), 10%),
+  darken($pink, 10%),
+  darken($purple, 10%),
+  darken($indigo, 10%),
+  darken($teal, 10%);

@@ -1,0 +1,14 @@
+// Modal dialog
+
+// Modal header
+// Top section of the modal w/ title and dismiss
+.modal-header {
+  margin-bottom: -.5rem; // correct for the padding that .modal-body adds
+  .close {
+    margin: $modal-header-margin;
+  }
+}
+
+.modal-footer {
+  padding-top: 0; // .modal-body provides a padding already
+}

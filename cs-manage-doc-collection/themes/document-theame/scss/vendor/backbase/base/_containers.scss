@@ -1,0 +1,10 @@
+// Usage: bootstrap container overrides
+$container-vertical-padding: 32px;
+$container-horizontal-padding: 16px;
+$container-small-max-width: 600px;
+$container-medium-max-width: 840px;
+
+$container-sizes: (
+  small: $container-small-max-width,
+  medium: $container-medium-max-width,
+)

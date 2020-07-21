@@ -1,0 +1,19 @@
+.bb-ellipsis {
+  display: block;
+}
+
+.bb-ellipsis--single-line {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  word-break: break-all; // IE does not support break-word :(
+}
+
+.bb-ellipsis--line-clamp {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical;
+}

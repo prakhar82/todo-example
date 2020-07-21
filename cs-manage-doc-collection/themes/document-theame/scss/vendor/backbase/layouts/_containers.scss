@@ -1,0 +1,10 @@
+// extra container options to use separately 
+// (not to be used in combination with other container classes)
+// Options Added: .container-small, .container-medium
+@each $size, $value in $container-sizes {
+  .container-#{$size} {
+    margin: 0 auto;
+    padding: $container-vertical-padding $container-horizontal-padding;
+    max-width: $value;
+  }
+}

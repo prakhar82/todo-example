@@ -1,0 +1,43 @@
+/**
+ ** Styles for WA3 Layout Container
+ **/
+.top-side-navigation-layout {
+  &.fixed {
+    &.hideSidebar {
+      .rb-sidebar {
+        width: 0;
+      }
+    }
+  }
+  &.hideSidebar {
+    .rb-sidebar {
+      width: 0;
+    }
+  }
+}
+
+// Large
+// Large -- show full sidebar /w full labels
+@include media-breakpoint-up(lg) {
+  .rb-sidebar {
+    @include toggle-sidebar-labels(true);
+  }
+
+  // this class is only applicable for large screens
+  .small-sidebar {
+    @include small-sidebar();
+  }
+}
+
+// Small -- hides the sidebar completely on 'sm' (and below)
+@include media-breakpoint-down(sm) {
+  .rb-sidebar {
+    transform: translateX(-$sidebar-collapsed-width);
+  }
+  .main {
+    &,
+    &:not(.soy-template) {
+      padding-left: $gutter;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+/// Make text bold
+///
+/// @name bb-text-bold
+///
+/// @example html
+///   <div class="bb-text-bold">This text a bold text</div>
+.bb-text-bold {
+  font-weight: $font-weight-bold;
+}
+
+/// Make text semi bold
+///
+/// @name bb-text-semi-bold
+///
+/// @example html
+///   <div class="bb-text-semi-bold">This text a semi bold text</div>
+.bb-text-semi-bold {
+  font-weight: $font-weight-semi-bold;
+}

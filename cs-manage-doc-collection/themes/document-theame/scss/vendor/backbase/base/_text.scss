@@ -1,0 +1,15 @@
+/*
+  This partial is for text variants for conveying status contexts
+  For typographic styles, please add to _typography.scss
+*/
+
+//consumed by mixin text-emphasis-variant
+$text-emphasis-palette: (
+  "primary":   color('primary'),
+  "secondary": color('actions', 'secondary', 'darker'),
+  "success":   color('success'),
+  "info":      color('info'),
+  "warning":   color('warning'),
+  "danger":    color('danger'),
+  "support":   $text-support,
+);

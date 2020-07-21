@@ -1,0 +1,13 @@
+//Expose CSS Variables to JS 
+//(via { getCssVariable } from '@backbase/foundation-ang/ui')
+:root {
+  --chart-tooltip-caret-size: #{$chart-tooltip-arrow-size + $chart-tooltip-arrow-border-size * 2};
+  --chart-primary-color: #{$chart-primary-color};
+  --chart-negative-color: #{$chart-negative-color};
+  --chart-positive-color: #{$chart-positive-color};
+  --chart-secondary-color: #{$chart-secondary-color};
+  --chart-benchmark-color: #{$chart-benchmark-color};
+  --chart-neutral-color: #{$chart-neutral-color};
+  --chart-alert-color: #{$chart-alert-color};
+  --chart-colors: #{$chart-colors};
+}

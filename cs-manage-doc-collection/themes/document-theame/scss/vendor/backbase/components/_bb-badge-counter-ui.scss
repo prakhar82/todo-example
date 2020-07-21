@@ -1,0 +1,17 @@
+// Base class
+//
+// Requires one of the contextual, color modifier classes for `background-color`.
+
+.badge-counter {
+  color: $light;
+  line-height: 1;
+  border-radius: $border-radius-sm;
+}
+
+// Colors
+
+@each $color, $value in $theme-colors {
+  .badge-counter-#{$color} {
+    @include badge-variant($value);
+  }
+}

@@ -1,0 +1,44 @@
+/**
+ * --------------------------------------------------------------------------
+ * UI BB Currency Input component
+ * --------------------------------------------------------------------------
+ * @name ui-bb-currency-input-ng
+ * @description
+ * UI component for selecting currency and amount
+ *
+ * @example
+ *  <div class="currency-input-wrapper">
+ *    <div class="currency">
+ *      <ui-bb-dropdown-select>
+ *        <ui-bb-dropdown-option></ui-bb-dropdown-option>
+ *      </ui-bb-dropdown-select>
+ *    </div>
+ *    <div class="amount d-flex align-items-stretch">
+ *      <input class="form-control"/>
+ *    </div>
+ *    <div class="seperator d-flex align-middle">
+ *      <span />
+ *    </div>
+ *    <div class="decimals d-flex align-items-stretch">
+ *      <input class="form-control"/>
+ *    </div>
+ *  </div>
+ */
+
+.currency-input-wrapper {
+  .currency {
+    min-width: $currency-selector-width;
+  }
+
+  .amount {
+    flex-grow: 1;
+  }
+
+  .seperator {
+    line-height: 2rem;
+  }
+
+  .placeholder {
+    color: $text-muted;
+  }
+}

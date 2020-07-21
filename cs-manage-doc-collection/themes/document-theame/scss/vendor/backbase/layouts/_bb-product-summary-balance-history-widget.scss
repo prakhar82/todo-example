@@ -1,0 +1,39 @@
+.account-balance-history__header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.account-balance-history__download {
+  text-align: right;
+}
+
+.account-balance-history__table-header {
+  color: $dark;
+}
+
+.account-balance-history__table-row {
+  &:first-child {
+    border-top: unset;
+  }
+
+  td {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.account-balance-history__date {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.account-balance-history__currency {
+  font-weight: $font-weight-bold;
+}
+
+.account-balance-history__amount {
+  font-weight: $font-weight-bold;
+  text-align: right;
+}

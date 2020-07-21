@@ -1,0 +1,7 @@
+// merges into $icon-map
+$delivery-tracker-steps-list: (
+  ("ordered", "check"),
+  ("processed", "assignment"),
+  ("in-transit", "local_shipping"),
+  ("delivered", "home"),
+);

@@ -1,0 +1,28 @@
+$third-party-provider-avatar-margin-right: $spacer !default;
+$third-party-provider-content-name-font-weight: $font-weight-bold !default;
+$third-party-provider-content-name-margin-right: $spacer*0.5 !default;
+
+.bb-third-party-provider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bb-third-party-provider__wrapper {
+  display: flex;
+}
+
+.bb-third-party-provider__avatar {
+  margin-right: $third-party-provider-avatar-margin-right;
+  background-color: transparent;
+}
+
+.bb-third-party-provider__name-icon {
+  display: flex;
+  align-items: center;
+  font-weight: $third-party-provider-content-name-font-weight;
+}
+
+.bb-third-party-provider__name {
+  margin-right: $third-party-provider-content-name-margin-right;
+}

@@ -1,0 +1,43 @@
+@include form-validation-state-nested-override("valid", $form-feedback-valid-color);
+@include form-validation-state-nested-override("invalid", $form-feedback-invalid-color);
+
+// Basic form components
+button,
+.btn,
+[type=button],
+[role=button] {
+  cursor: pointer;
+}
+
+input[type="search"] {
+  box-sizing: border-box;
+}
+
+button[disabled],
+html input[disabled],
+.disabled {
+  cursor: not-allowed;
+}
+
+//
+// Textual form controls
+//
+
+.form-control {
+  // Placeholder
+  &::placeholder,
+  &::-webkit-input-placeholder,
+  &::-moz-placeholder,
+  &:-ms-input-placeholder,
+  &:-moz-placeholder {
+    color: color('neutrals', 'darker');
+  }
+}
+
+label.form-label {
+  font-weight: $form-label-font-weight;
+
+  > * {
+    font-weight: $font-weight-regular;
+  }
+}

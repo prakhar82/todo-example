@@ -1,0 +1,10 @@
+//consumed by mixin bg-variant
+$background-palette: (
+  "primary":    $primary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "lighter": color("neutrals", "lighter"),
+  "greyer": color("neutrals", "greyer"),
+);

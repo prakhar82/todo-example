@@ -1,0 +1,97 @@
+.bb-account-selector {
+  .dropdown {
+    > .btn {
+      @extend .px-3;
+      box-shadow: $box-shadow-sm;
+
+      height: $account-selector-height;
+      background-color: $white;
+
+      &:focus, &.focus {
+        background-color: $info-bright;
+      }
+
+      &:focus, &.focus {
+        outline: 0;
+        box-shadow: $input-btn-focus-box-shadow;
+      }
+
+      &:hover, &:hover:focus, &:hover.focus {
+        background-color: darken($info-bright, 5%);
+      }
+
+      &:hover:active, &:active {
+        background-color: darken($info-bright, 10%);
+      }
+
+      .placeholder {
+        font-size: $font-size-lg;
+        font-style: italic;
+        color: color("neutrals", "darker");
+      }
+
+      i {
+        @extend .ml-3;
+
+        font-size: $font-icon-size;
+      }
+    }
+  }
+
+  .dropdown-selected,
+  ui-bb-list-ng {
+    .bb-account-selector-option {
+      @extend .p-0;
+
+      .bb-account-selector-option-content {
+        color: color("neutrals", "darker");
+        @extend .font-weight-light;
+
+        strong, .amount {
+          color: color("neutrals", "darker");
+          @extend .font-weight-normal;
+          font-size: $font-size-lg;
+        }
+      }
+    }
+  }
+
+  .dropdown-item {
+    @extend .p-3;
+
+    .bb-account-selector-option {
+      align-items: center;
+      &:after {
+        @include invisible(hidden);
+        @extend .material-icons;
+        @extend .text-success;
+        @extend .ml-3;
+
+        content: 'check_circle';
+        font-size: $font-icon-size;
+      }
+
+    }
+
+    &.active {
+      .bb-account-selector-option:after {
+        @include invisible(visible);
+      }
+    }
+
+    &:not(:first-child) {
+      @extend .border-top;
+    }
+
+    &:focus-within {
+      outline: 0;
+      box-shadow: $input-btn-focus-box-shadow;
+    }
+  }
+}
+
+.bb-account-selector-option {
+  &:focus, &.focus {
+    outline: 0;
+  }
+}

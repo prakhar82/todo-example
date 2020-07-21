@@ -1,0 +1,28 @@
+// Contextual variations for account cards
+@each $color, $value in $theme-colors {
+  .bb-account-card-#{$color} .card {
+    @extend .pl-1;
+    @extend .bg-#{$color};
+
+    .card-body {
+      @extend .bg-white;
+    }
+  }
+}
+
+.bb-account-card {
+  .card { 
+    box-shadow: $box-shadow-sm;
+  }
+
+  &:not(:last-of-type) .card {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+  &:not(:first-of-type) .card {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: 0;
+  }
+}

@@ -1,0 +1,16 @@
+$user-permission-item-main-top-padding: 0.5rem !default;
+$user-permission-item-margin-sm: 0.5rem !default;
+$user-permission-item-padding-md: 1rem !default;
+
+.bb-user-permission-item {
+  padding-top: $user-permission-item-main-top-padding;
+}
+
+.bb-user-permission-item__business-function-privileges-name {
+  display: flex;
+}
+
+.bb-user-permission-item__function-item__label {
+  padding-right: 0;
+  padding-left: $user-permission-item-padding-md;
+}

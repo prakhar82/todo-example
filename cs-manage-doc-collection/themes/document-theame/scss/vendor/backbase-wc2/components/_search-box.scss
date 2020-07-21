@@ -1,0 +1,31 @@
+/// ui-bb-search-box
+@at-root { 
+  .bb-search-box-clear, .bb-search-box-icon, .bb-search-box-spinner {
+    top: 50%;
+    height: 1.8rem;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .bb-search-box {
+
+    .close.bb-search-box-clear, .bb-search-box-spinner {
+      right: 1rem;
+      z-index: 10;
+    }
+
+    &.has-input-btn {
+      .close.bb-search-box-clear, .bb-search-box-spinner {
+        right: 3.5rem;
+      }
+    }
+  }
+
+  .bb-search-box-spinner {
+    @include spinner($form-input-spinner-size);
+  }
+
+  .bb-autocomplete-search-list-inner {
+    overflow-y:auto;
+  }
+}

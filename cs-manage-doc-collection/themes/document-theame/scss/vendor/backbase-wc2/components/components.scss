@@ -1,0 +1,37 @@
+//ENTRY POINT: Component-based Styling Layer for Backbase Components styling (ui-bb-***)
+// Reserved for Singularly 'black-boxed' UI
+
+//SECTION: General styling modifications of bootstrap
+@import 'bootstrap/bootstrap-components';
+
+//SECTION: WC2 UIs
+@import 'ui-bb-account-card-ng';
+@import 'ui-bb-account-selector-ng';
+@import 'ui-bb-calendar-popup-ng';
+@import 'ui-bb-checkbox-indeterminate-ng';
+@import 'ui-bb-currency-input-ng';
+@import 'ui-bb-dropdown-select-ng';
+@import 'ui-bb-expandable-ng';
+@import 'ui-bb-filter-form-actions-ng';
+@import 'ui-bb-loading-overlay-ng';
+@import 'ui-bb-paginator-ng';
+@import 'ui-bb-search-box-ng';
+@import 'ui-bb-sortable-column-ng';
+@import 'ui-bb-stepper-ng';
+@import 'ui-bb-switcher-ng';
+
+//SECTION: Capability UIs
+//TODO: Capability-origin components should be on template side
+@import 'ui-bb-checkbox-indeterminate-ng';
+@import 'ui-bb-rich-text-editor-ng';
+
+//SECTION: reusable agnostic patterns
+//Reserved for generically functional backbase elements
+@import 'buttons';
+@import 'progress-indicators';
+@import 'format-amounts';
+@import 'icons';
+@import 'notifications';
+@import 'progress-indicators';
+@import 'rb-navbar';
+@import 'search-box';

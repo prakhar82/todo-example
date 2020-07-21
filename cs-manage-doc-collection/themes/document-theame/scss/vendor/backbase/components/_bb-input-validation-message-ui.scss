@@ -1,0 +1,7 @@
+$input-validation-spacer: $spacer*0.5 !default;
+
+.bb-input-validation-message {
+  display: block;
+  margin-top: $input-validation-spacer;
+  color: $danger;
+}

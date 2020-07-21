@@ -1,0 +1,30 @@
+/// ui-bb-notification-stripe
+//component notification-stripe
+
+.notification-stripe {
+  @extend .alert;
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  @include media-breakpoint-up(sm) {
+    width: 500px;
+  }
+
+  // Workaround to look like WC3 'alerts'
+  // !important overrides bg-* template class
+  @each $color, $value in $alert-palette {
+    &.bg-#{$color}, &.bg-#{$color} .text-muted {
+      color: color-yiq($value) !important;
+      background-color: $value !important;
+      & .notification-stripe-icon {
+        margin-right: 1rem;
+        line-height: inherit;
+        color: color($color) !important;
+      }
+    }
+  }
+  .close {
+    opacity: 1;
+    text-shadow: none;
+  }
+}

@@ -1,0 +1,32 @@
+/**
+ * --------------------------------------------------------------------------
+ * Loading overlay component
+ * --------------------------------------------------------------------------
+ * @name ui-bb-loading-overlay-ng
+ * @description
+ * Component for displaying an overlay with animated spinner on top of the content.
+ *
+ * @example
+ * <div class="bb-loading-overlay">
+ *   <div class="content">Content...</div>
+ *   <div class="bb-loading-overlay-cover"></div>
+ *   <div class="bb-loading-overlay-spinner"></div>
+ * </div>
+ */
+ .bb-loading-overlay {
+  @include clearfix;
+
+  &-cover {
+    background-color: $loading-overlay-cover-background;
+    opacity: $loading-overlay-cover-opacity;
+    z-index: $loading-overlay-cover-zindex;
+    top: 0;
+    bottom: 0;
+  }
+
+  &-spinner {
+    @extend .absolute-center;
+    @include spinner($loading-overlay-spinner-size);
+    z-index: $loading-overlay-spinner-zindex;
+  }
+}

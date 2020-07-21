@@ -1,0 +1,25 @@
+// Loading Overlay
+
+$loading-overlay-cover-zindex: 1035;
+$loading-overlay-spinner-zindex: 1037;
+$loading-overlay-spinner-size: 5rem;
+$loading-overlay-cover-background: color("neutrals", "light");
+$loading-overlay-cover-opacity: 0.6;
+
+// Loading Indicator
+$stroke-width-base: 2 !default;
+
+$loading-indicator-widths-map: (
+  sm: (
+    width: 21px,
+    stroke-width: $stroke-width-base * 1
+  ),
+  md: (
+    width: 50px,
+    stroke-width: $stroke-width-base * 2
+  ),
+  lg: (
+    width: 100px,
+    stroke-width: $stroke-width-base * 3
+  )
+);

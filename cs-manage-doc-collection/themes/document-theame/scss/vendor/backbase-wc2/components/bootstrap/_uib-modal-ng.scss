@@ -1,0 +1,71 @@
+/// Component wrapper class
+/// === Modal Seciont ===
+/// ui-bb-modal
+//Applied on: ext-bus-accounts-overview-ng
+
+//TODO: Fold this in to main .modal styles
+// .ui-bb-configure-sa-users-modal-ng.users-table-container {
+//   max-height: 70vh;
+//   overflow-y: auto;
+// }
+
+
+//Escaped for root-level DOM Modal
+@at-root {
+  .modal[uib-modal-window], .modal[uib-modal-backdrop] {
+    .modal-content {
+      border: 1px solid #e3e3e3;
+      border-radius: 4px;
+      box-shadow: 0 4px 0 0 rgba(0,0,0,.1);
+    }
+
+    & .modal-dialog {
+      margin: 3rem auto 0;
+    }
+    @include media-breakpoint-down(sm) {
+      .modal-dialog {
+        max-width: $modal-md;
+      }
+    }
+
+    //when toggled -- animation
+    //workaround for when both `.in` and `.fade` class co-exist, so !important is used
+    &.in {
+      opacity: 1 !important; 
+      & > .modal-dialog { transform: translateY(0); }
+    }
+
+    ui-bb-list-ng.list-group {
+      display: block;
+    }
+  }
+
+  //Backdrop Area
+  .modal-backdrop.in[uib-modal-backdrop] {
+    opacity: .5;
+    filter: alpha(opacity=50);
+  }
+
+  //Allows tall modals to have height limit
+  .modal-body-scrollable {
+    max-height: $modal-max-height;
+    overflow-y: auto;
+  }
+
+  // hides interfering elements when printing modal
+  @media print {
+    .modal-open {
+      visibility: hidden;
+      height: auto;
+  
+      .modal {
+        .modal-header,
+        .modal-body {
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+}
+

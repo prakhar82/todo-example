@@ -1,0 +1,38 @@
+.rb-navbar-top {
+  .navbar-toggler {
+    @extend .btn-icon;
+    @extend .btn-icon-glow;
+
+    border: none;
+    background-color: color('neutrals', 'white');
+
+    .navbar-toggler-icon {
+      @extend .d-flex;
+      @extend .bicon;
+
+      background-image: none;
+      color: color("neutrals", "darker");
+      font-size: 2rem !important;
+
+      &:before {
+        @extend .bicon-menu;
+      }
+    }
+  }
+  .btn-group {
+    > .btn {
+      &:focus, &:hover, &:active {
+        box-shadow: none;
+        outline: none;
+      }
+    }
+  }
+}
+
+.navbar-expand-md {
+  @include media-breakpoint-up(md) {
+    .navbar-toggler {
+      display: block;
+    }
+  }
+}

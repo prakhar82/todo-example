@@ -1,0 +1,89 @@
+$bb-consent-details-spacer: $spacer !default;
+$bb-consent-details-spacer-xl: $bb-consent-details-spacer * 2 !default;
+$bb-consent-details-spacer-lg: $bb-consent-details-spacer * 1.5 !default;
+$bb-consent-details-color-neutral-greyer: #c5c5c5 !default;
+$bb-consent-details-color-neutral-darker: #3c3c3c !default;
+$bb-consent-details-box-shadow: 0 .5rem 1rem rgba(color('neutrals', 'black'), 0.15) !default;
+
+.bb-consent-details-accounts-item .card-section {
+  padding: 1px 0;
+}
+
+.bb-consent-details-header {
+  padding: $spacer * 1.5;
+}
+
+.bb-consent-details-header__status-wrapper {
+  @include media-breakpoint-down(lg) {
+    display: none;
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: flex;
+  }
+}
+
+.bb-consent-details-header__status {
+  margin-right: $bb-consent-details-spacer;
+}
+
+.bb-consent-details-tpp {
+  @include media-breakpoint-up(lg) {
+    padding: $bb-consent-details-spacer-lg;
+  }
+}
+
+.bb-consent-details-tpp__info-label {
+  display: block;
+  border-bottom: 1px solid $bb-consent-details-color-neutral-greyer;
+
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}
+
+.bb-consent-details-permissions__details {
+  color: $bb-consent-details-color-neutral-darker;
+}
+
+.bb-consent-details__lg {
+  display: flex;
+  border-top: 1px solid $bb-consent-details-color-neutral-greyer;
+  margin-bottom: $spacer * 0.5;
+
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+}
+
+.bb-consent-details__lg-wrapper {
+  border-left: 1px solid $bb-consent-details-color-neutral-greyer;
+  padding: $bb-consent-details-spacer-lg;
+  width: 100%;
+}
+
+.bb-consent-details__sm {
+  border-top: 1px solid $bb-consent-details-color-neutral-greyer;
+  display: block;
+  padding: $bb-consent-details-spacer-lg;
+  width: 100%;
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}
+
+.bb-consent-details__sm-collapsible {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bb-consent-details__button {
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}
+
+.bb-consent-details__loading {
+  margin: $bb-consent-details-spacer-xl;
+  padding: $bb-consent-details-spacer-xl;
+}

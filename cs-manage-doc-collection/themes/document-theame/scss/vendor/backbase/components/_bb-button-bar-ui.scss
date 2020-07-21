@@ -1,0 +1,101 @@
+////
+//// @group Components
+////
+
+/// Group a set of buttons vertically on mobile (primary actions on top), and horizontally on bigger
+/// screens (primary actions aligned right), with margins between buttons.  In your template,
+/// include the primary button first for accessibility.  Use the `bbButton` directive and not the
+/// `bb-button-ui` element selector.
+///
+/// @name bb-button-bar
+/// @example html
+/// <div class="bb-button-bar">
+///   <button class="bb-button-bar__button btn btn-primary">Primary action</button>
+///   <button class="bb-button-bar__button btn btn-secondary">Secondary action</button>
+///   <button class="bb-button-bar__button btn btn-link">Tertiary action</button>
+/// </div>
+.bb-button-bar {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    flex-direction: row-reverse;
+  }
+}
+
+.bb-button-bar__button {
+  @include media-breakpoint-only(xs) {
+    width: 100%;
+    margin-bottom: $button-bar-button-md-margin-y;
+
+    .btn {
+      width: 100%;
+    }
+
+    &.btn-sm {
+      margin-bottom: $button-bar-button-sm-margin-y;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    margin-right: $button-bar-button-md-margin-x;
+
+    &.btn-sm {
+      margin-right: $button-bar-button-sm-margin-x;
+    }
+
+    &:first-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.bb-button-bar__button--across {
+  margin-right: auto;
+}
+
+// Modifier to align buttons on the left
+.bb-button-bar--reverse {
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+
+    .bb-button-bar__button {
+      &:first-child {
+        margin-right: $button-bar-reverse-button-margin-x;
+
+        &.btn-sm {
+          margin-right: $button-bar-button-sm-margin-x;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .bb-button-bar__button--across {
+    margin-left: auto;
+  }
+}
+
+.bb-button-bar--center {
+  justify-content: center;
+}
+
+.bb-button-bar--spacing-sm {
+  margin-top: 0.5rem;
+}
+
+.bb-button-bar--spacing-md {
+  margin-top: 1rem;
+}
+
+.bb-button-bar--spacing-lg {
+  margin-top: 1.5rem;
+}

@@ -1,0 +1,10 @@
+// if icon map prop exists, retrieve prop value,
+// map-merge delivery tracker step's prop:value to $icon-map, if icon prop exists
+@each $name, $icon in $delivery-tracker-steps-list {
+  @if $icon {
+    $icon-map: map-merge(
+      $icon-map,
+      ('delivery-tracker-step-#{$name}': $icon)
+    );
+  }
+}

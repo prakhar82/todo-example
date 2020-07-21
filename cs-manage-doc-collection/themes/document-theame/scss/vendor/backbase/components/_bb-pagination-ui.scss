@@ -1,0 +1,32 @@
+.bb-pagination {
+  display: flex;
+  justify-content: center;
+
+  .page-item:not(:first-child) {
+    margin-left: $pagination-item-margin-left;
+  }
+
+  .page-link {
+    font-weight: $pagination-item-font-weight;
+    height: $pagination-item-height;
+    min-width: $pagination-item-min-width;
+    line-height: $pagination-item-height;
+    text-align: center;
+    box-sizing: content-box;
+    padding: $pagination-item-padding-y $pagination-item-padding-x;
+
+    bb-icon-ui {
+      vertical-align: text-bottom;
+    }
+
+    .bicon {
+      position: relative;
+      top: $pagination-icon-margin;
+      margin: 0 (-$pagination-icon-margin);
+    }
+  }
+
+  .bb-pagination__ellipsis {
+    color: $primary;
+  }
+}

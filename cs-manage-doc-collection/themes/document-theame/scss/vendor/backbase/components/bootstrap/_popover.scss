@@ -1,0 +1,34 @@
+//For: NG-Bootstrap's Popover
+.rb-navbar-top {
+  .popover {
+    overflow: hidden;
+    display: inline-block;
+    opacity: 1;
+
+    &.bottom {
+      margin: 0;
+    }
+
+    &:not(.in) {
+      @include animation(transform, $animation-dropdown-menu-duration);
+
+      transform: scale(0);
+    }
+
+
+    &.in {
+      @include animation(transform, $animation-dropdown-menu-duration);
+
+      transform: scale(1);
+    }
+
+    .arrow {
+      display: none;
+    }
+  }
+}
+
+.popover.fade.in {
+  display: block;
+  opacity: 1;
+}

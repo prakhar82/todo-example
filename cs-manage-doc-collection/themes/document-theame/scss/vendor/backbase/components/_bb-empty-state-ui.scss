@@ -1,0 +1,21 @@
+.bb-empty-state-container {
+  max-width: $empty-state-container-width;
+  min-height: $empty-state-container-lg-height;
+
+  @include media-breakpoint-down(md) {
+    min-height: $empty-state-container-md-height;
+  }
+  @include media-breakpoint-down(sm) {
+    min-height: $empty-state-container-sm-height;
+  }
+}
+
+.bb-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bb-empty-state__subtitle {
+  color: color("neutrals", "darker");
+}

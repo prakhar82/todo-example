@@ -1,0 +1,31 @@
+.bb-consent-request {
+  display: block;
+  & bb-product-selector-ui .card-section {
+    padding: 1px 0;
+  }
+}
+
+.bb-consent-request__information-label {
+  font-weight: $font-weight-bold;
+}
+
+.bb-consent-request__account-information {
+  color: color("neutrals", "darker");
+}
+
+.bb-consent-request-product-selector__placeholder--spacer-xl {
+  padding: $spacer * 2;
+}
+
+.bb-consent-request-product-selector__item-group--rounded {
+  border-radius: $border-radius;
+}
+
+.product-item-group {
+ & .bb-consent-request-product-selector__item-button {
+    align-items: stretch;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+  }
+}

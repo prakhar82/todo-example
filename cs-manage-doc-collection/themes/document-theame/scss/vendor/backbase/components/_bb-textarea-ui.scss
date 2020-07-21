@@ -1,0 +1,15 @@
+.bb-textarea__char-counter {
+  color: $neutral-9;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.bb-textarea-ui {
+  &.ng-invalid.ng-touched {
+    .form-control {
+      border: 1px solid $danger;
+    }
+
+    min-height: $input-height;
+  }
+}

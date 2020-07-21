@@ -1,0 +1,55 @@
+.bb-loading-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@each $label, $map in $loading-indicator-widths-map {
+  .bb-loading-indicator--#{$label} {
+    .bb-loading-indicator__circle {
+      stroke-width: map-get($map, stroke-width);
+      width: map-get($map, width);
+      height: map-get($map, width);
+    }
+  }
+}
+
+.bb-loading-indicator__circle {
+  animation: rotate 2s linear infinite;
+  transform-origin: center center;
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.bb-loading-indicator__path {
+  animation: dash 1.5s ease-in-out infinite;
+  stroke-linecap: round;
+  stroke: color('primary');
+  stroke-dasharray: 50;
+  stroke-dashoffset: 0;
+
+  @keyframes dash {
+    0% {
+      stroke-dasharray: 1%, 300%;
+      stroke-dashoffset: 0%;
+    }
+    50% {
+      stroke-dasharray: 180%, 300%;
+      stroke-dashoffset: -70%;
+    }
+    100% {
+      stroke-dasharray: 180%, 300%;
+      stroke-dashoffset: -248%;
+    }
+  }
+}
+
+.bb-loading-indicator__text {
+  max-width: 20rem;
+  padding: 8px 16px;
+  text-align: center;
+}

@@ -1,0 +1,17 @@
+.bb-sortable {
+  &-icon-down {
+    @extend .bicon;
+    @extend .bicon-toggle-down;
+
+    font-size: $table-font-size;
+    line-height: $table-font-size;
+  }
+
+  &-icon-up {
+    @extend .bicon;
+    @extend .bicon-toggle-up;
+
+    font-size: $table-font-size;
+    line-height: $table-font-size;
+  }
+}

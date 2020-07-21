@@ -1,0 +1,138 @@
+// Mega Menu container
+// Outermost container for the actual menubar as well as loading indicators and other status messages.
+.bb-mega-menu {
+  background: $mega-menu-bg;
+  color: $mega-menu-color;
+}
+
+// Menubar
+// Implementations can either be horizontal or vertical, depending on the viewport
+// This will typically be a <ul> element
+.bb-mega-menu__items {
+  @include list-unstyled();
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+// Menubar link
+// This class must not be applied to links in the submenu
+.bb-mega-menu__link {
+  align-items: center;
+
+  // Override the CXP color for `<a>` elements without href using `!important`
+  color: $mega-menu-link-color !important;
+  display: flex;
+  height: $mega-menu-menubar-height;
+  padding-left: $mega-menu-link-padding-x;
+  padding-right: $mega-menu-link-padding-x;
+  position: relative;
+  z-index: $mega-menu-submenu-header-zindex;
+
+  &,
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: $mega-menu-link-hover-bg;
+  }
+}
+
+// Menubar link for which the submenu is visible
+.bb-mega-menu__link--expanded {
+  background-color: $mega-menu-link-active-bg;
+}
+
+.bb-mega-menu__expanded-icon {
+  display: none;
+}
+
+.bb-mega-menu__expanded-icon--vertical {
+  display: inline-flex;
+}
+
+// The horizontal version of the menu is typically displayed on desktop viewport widths
+@mixin mega-menu-menubar {
+  .bb-mega-menu__item {
+    position: relative;
+  }
+
+  .bb-mega-menu__item--secondary {
+    /* Only display the Secondary Menu icon, nothing else */
+    .bb-mega-menu__item-description,
+    .bb-mega-menu__expanded-icon {
+      display: none;
+    }
+  }
+
+  .bb-mega-menu__item-icon + .bb-mega-menu__item-description {
+    padding-left: $mega-menu-item-icon-padding;
+  }
+}
+
+// The sidebar version of the menu is typically displayed on smaller viewport widths
+@mixin mega-menu-sidebar {
+  .bb-mega-menu__item--secondary {
+    .bb-mega-menu__item-icon {
+      display: none;
+    }
+  }
+
+  .bb-mega-menu__item-description {
+    display: block;
+    width: 100%;
+  }
+
+  .bb-mega-menu__link {
+    justify-content: space-between;
+  }
+
+  .bb-mega-menu__item-icon {
+    padding-right: $mega-menu-item-icon-padding;
+  }
+
+  .bb-mega-menu__items {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+    margin: 0;
+    padding-bottom: $mega-menu-items-padding;
+  }
+
+  .bb-mega-menu__expanded-icon--horizontal {
+    display: inline-flex;
+  }
+
+  .page-flex-layout {
+    .bb-mega-menu {
+      position: fixed;
+      min-width: $mega-menu-submenu-column-width;
+    }
+    .bb-mega-menu--sidebar-visible {
+      display: block;
+    }
+    .bb-mega-menu--sidebar-hidden {
+      display: none;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  @include mega-menu-menubar;
+}
+
+@include media-breakpoint-down(sm) {
+  @include mega-menu-sidebar;
+}
+
+@include media-breakpoint-down(md) {
+  .bb-mega-menu__expanded-icon--vertical {
+    display: none;
+  }
+}
+@include media-breakpoint-up(md) {
+  .bb-mega-menu__expanded-icon--vertical {
+    display: inline-flex;
+  }
+}

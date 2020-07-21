@@ -1,0 +1,296 @@
+$btn-circle-sm-size: 1.9rem !default;
+$btn-circle-md-size: 2.375rem !default;
+
+.btn {
+  @extend .font-weight-medium;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  i + span,
+  span + i {
+    margin-left: $btn-padding-x;
+  }
+
+  &.btn-sm {
+    i {
+      font-size: $font-icon-size-sm;
+    }
+  }
+
+  &.btn-lg {
+    i {
+      font-size: $font-icon-size-lg;
+    }
+  }
+
+  &.btn-circle {
+    padding: 0;
+
+    &.btn-sm {
+      width: $btn-circle-sm-size;
+      height: $btn-circle-sm-size;
+    }
+
+    &.btn-md {
+      width: $btn-circle-md-size;
+      height: $btn-circle-md-size;
+    }
+  }
+
+  &:focus {
+    box-shadow: $btn-focus-box-shadow;
+  }
+}
+
+// For each of Bootstrap's buttons, define text, background, and border color.
+@each $color, $value in $button-palette {
+  .btn-#{$color} {
+    @include button-variant(
+      map-deep-get($button-palette, $color, "default"), //default-background
+      map-deep-get($button-palette, $color, "default"), //default-border
+      map-deep-get($button-palette, $color, "dark"),    //hover-background
+      map-deep-get($button-palette, $color, "dark"),    //hover-border
+      map-deep-get($button-palette, $color, "darker"),  //active-background
+      map-deep-get($button-palette, $color, "darker")  //active-border
+    );
+
+    &:disabled,
+    &.disabled {
+      background-color: color('neutrals', 'lighter');
+      color: $text-muted;
+    }
+
+    //For loading indicators inside 'support' status buttons
+    &:not(.btn-link) .bb-loading-indicator__path {
+      stroke: color-yiq(
+        map-deep-get($button-palette, $color, "default")
+      );
+    }
+
+    @if $color == "success" or $color == "danger" {
+      &.btn-circle {
+        color: map-deep-get($button-palette, $color, "default");
+        background-color: $neutral-5;
+
+        @include hover {
+          color: map-deep-get($button-palette, $color, "default");
+          background-color: $neutral-6;
+        }
+
+        &:not(:disabled):not(.disabled):active,
+        &:not(:disabled):not(.disabled).active {
+          color: map-deep-get($button-palette, $color, "default");
+          background-color: $neutral-7;
+        }
+
+        &:disabled,
+        &.disabled {
+          background-color: color('neutrals', 'lighter');
+          color: $text-muted;
+        }
+      }
+    }
+  }
+}
+
+// Add border width to outline buttons, different from solid buttons
+@each $color, $value in $button-outline-palette {
+  $hover-color: map-get($theme-outline-hover-colors, $color);
+  .btn-outline-#{$color} {
+
+    //Override BS4 Mixin
+    $outline-color: map-deep-get($button-outline-palette, $color, "default");
+    @include button-outline-variant($outline-color);
+
+    border-width: $btn-outline-border-width;
+
+    &:not(:disabled):not(.disabled) {
+      @include hover-focus {
+        color: color-yiq($hover-color);
+        background-color: $hover-color;
+      }
+
+      &:active,
+      &.active {
+        color: color-yiq(darken($hover-color, 10%));
+        background-color: darken($hover-color, 10%);
+      }
+    }
+  }
+}
+
+.btn-icon {
+  @include gradient-bg(transparent);
+
+  height: $btn-icon-height;
+  width: $btn-icon-width;
+  line-height: $btn-icon-height;
+  padding: $btn-icon-padding-y $btn-icon-padding-x;
+  border: none;
+  border-color: transparent;
+  color: transparent;
+  position: relative;
+
+  @include hover {
+    @include gradient-bg(transparent);
+
+    color: transparent;
+    border-color: transparent;
+  }
+
+  > i {
+    font-size: $btn-icon-font-size;
+    color: $btn-icon-color;
+  }
+
+  &.btn-sm {
+    height: $btn-icon-height-sm;
+    width: $btn-icon-width-sm;
+    line-height: $btn-icon-height-sm;
+    padding: $btn-icon-padding-y-sm $btn-icon-padding-x-sm;
+    & > i {
+      font-size: $btn-icon-font-size-sm;
+    }
+  }
+
+  &-glow {
+    z-index: 2;
+
+    &:not(:disabled):not(.disabled) {
+      &:after {
+        @include animation(transform);
+        @include size(100%, 100%);
+
+        content: "";
+        z-index: -1;
+        position: absolute;
+        background-color: $btn-icon-bg-color;
+        display: inline-block;
+        border-radius: $btn-border-radius;
+        margin: 0;
+        top: 0;
+        left: 0;
+        transform: scale(0);
+        transform-origin: 50% 50%;
+      }
+
+      &:hover:after {
+        @include animation(transform);
+
+        transform-origin: 50% 50%;
+        background-color: $btn-icon-hover-color;
+        transform: scale(1);
+      }
+
+      &:active:after {
+        @include animation(background-color);
+        background-color: $btn-icon-active-color;
+      }
+    }
+  }
+
+  @each $color, $value in $theme-colors {
+    $hover-color: map-get($theme-outline-hover-colors, $color);
+    &.btn-icon-#{$color} {
+      &, &:not(:disabled):not(.disabled) > i {
+        color: $value;
+      }
+      &.btn-icon-glow:not(:disabled):not(.disabled) {
+        &:hover:after {
+          @include animation(background-color);
+          background-color: $hover-color;
+        }
+        &:active:after {
+          @include animation(background-color);
+          background-color: darken($hover-color, 10%);
+        }
+      }
+
+      &.btn-icon-solid {
+        @include animation(background-color);
+        background-color: $value;
+        border-color: transparent;
+
+        &, &:not(:disabled):not(.disabled) > i {
+          color:color("neutrals", "white");
+        }
+
+        &.btn-icon-glow:not(:disabled):not(.disabled) {
+          &:hover:after {
+            @include animation(background-color);
+            background-color: darken($value, 10%);
+          }
+          &:active:after {
+            @include animation(background-color);
+            background-color: darken($value, 15%);
+          }
+        }
+      }
+    }
+
+    // Fix active and disabled state from regular buttons
+    &.btn-#{$color} {
+      &:not(:disabled):not(.disabled):active,
+      &.disabled,
+      &:disabled {
+        background-color: transparent;
+        color: transparent;
+        border-color: transparent;
+      }
+    }
+  }
+
+  &-shade {
+    @include animation(background-color);
+    background-color: color("neutrals", "light");
+    transform: scale(1);
+  }
+}
+
+.btn-link {
+  color: $btn-link-color;
+
+  &:not(:disabled):not(.disabled) {
+    @include hover {
+      color: $btn-link-color;
+      background-color: color("neutrals", "lighter");
+      text-decoration: $btn-link-hover-decoration;
+    }
+
+    &.active, &:active {
+      color: darken($btn-link-color, 10%);
+      background-color: color("neutrals", "light");
+    }
+
+    &:focus {
+      text-decoration: $btn-link-hover-decoration;
+    }
+  }
+}
+
+.btn-unstyled {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  font-weight: normal;
+  padding: 0 0;
+
+  &:not(:disabled):not(.disabled) {
+    @include hover {
+      background-color: transparent;
+    }
+
+    &.active,
+    &:active {
+      background-color: transparent;
+    }
+  }
+}
+
+button,
+[type="submit"],
+[type="button"],
+[type="reset"] {
+  @include appearance-toggle();
+}

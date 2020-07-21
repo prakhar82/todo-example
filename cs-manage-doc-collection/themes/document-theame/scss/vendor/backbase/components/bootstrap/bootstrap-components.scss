@@ -1,0 +1,32 @@
+//This file handles:
+// * Sass partials that output actual CSS are handled here
+// * Do not define any new sass helpers here
+
+//SECTION: Bootstrap 4 Class Overrides
+
+//First, apply resets
+@import 'reset';
+
+//After, apply remaining styling
+//Overrides to Bootstrap 4 default generated class styles
+@import 'alert-variants';
+@import 'background-variants';
+@import 'badge-variants';
+@import 'button-variants';
+@import 'button-group';
+@import 'cards';
+@import 'dropdowns';
+@import 'forms';
+@import 'input-group';
+@import 'lists';
+@import 'modal';
+@import 'navbar';
+@import 'nav-tabs';
+@import 'pagination';
+@import 'popover';
+@import "progress";
+@import 'shadows';
+@import 'tables';
+@import 'text-variants';
+@import 'typography';
+@import 'weight';

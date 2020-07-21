@@ -1,0 +1,77 @@
+$dropdown-icon-margin: 0.5rem !default;
+
+.bb-dropdown-single-select {
+  @include appearance-toggle();
+  cursor: pointer;
+  &::-ms-expand {
+    display: none;
+  }
+  &:disabled {
+    box-shadow: none;
+    border: none;
+    cursor: not-allowed;
+  }
+}
+
+.bb-dropdown-single-select-icon {
+  float: right;
+  margin-top: -2.25em; //to center align inside dropdown
+  pointer-events: none;
+}
+
+.bb-dropdown__select {
+  @include appearance-toggle();
+  padding-right: 2rem;
+  cursor: pointer;
+
+  &::-ms-expand {
+    display: none;
+  }
+
+  &:disabled {
+    border: unset;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+}
+
+.bb-dropdown__icon {
+  display: flex;
+  align-items: center;
+  float: right;
+  height: $input-height;
+  margin-top: calc(-1 * #{$input-height});
+  margin-right: 0.5rem;
+  pointer-events: none;
+}
+
+.bb-dropdown__select {
+  @include appearance-toggle();
+  padding-right: $dropdown-icon-margin * 2 + 1rem;
+  cursor: pointer;
+
+  &::-ms-expand {
+    display: none;
+  }
+
+  &:disabled {
+    color: $input-disabled-color;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+
+  &:disabled + .bb-dropdown__icon {
+    color: $input-disabled-color;
+  }
+}
+
+.bb-dropdown__icon {
+  display: flex;
+  align-items: center;
+  float: right;
+  height: $input-height;
+  margin-top: calc(-1 * #{$input-height});
+  margin-top: calc(-#{$input-line-height * 1em} - #{$input-padding-y * 2}); // IE11 compatibility
+  margin-right: $dropdown-icon-margin;
+  pointer-events: none;
+}

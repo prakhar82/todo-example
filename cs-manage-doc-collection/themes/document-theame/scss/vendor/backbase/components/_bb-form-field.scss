@@ -1,0 +1,34 @@
+/// Generic class for modifying input widths.
+///
+/// @name bb-form-field
+///
+/// @example html - default
+///   <input class="bb-form-field" />
+///   <bb-text-input-ui class="bb-form-field bb-form-field--xl"></bb-text-input-ui>
+///   <bb-password-input-ui class="bb-form-field bb-form-field--lg"></bb-password-input-ui>
+///   <bb-text-input-ui class="bb-form-field bb-form-field--md"></bb-text-input-ui>
+///   <bb-email-input-ui class="bb-form-field bb-form-field--sm"></bb-email-input-ui>
+///   <bb-text-input-ui class="bb-form-field bb-form-field--xs"></bb-text-input-ui>
+.bb-form-field {
+  display: block;
+}
+
+.bb-form-field--xl {
+  max-width: $bb-form-field-width-xl;
+}
+
+.bb-form-field--lg {
+  max-width: $bb-form-field-width-lg;
+}
+
+.bb-form-field--md {
+  max-width: $bb-form-field-width-md;
+}
+
+.bb-form-field--sm {
+  max-width: $bb-form-field-width-sm;
+}
+
+.bb-form-field--xs {
+  max-width: $bb-form-field-width-xs;
+}

@@ -1,0 +1,52 @@
+$transaction-list-font-size-subtitle: $font-size-subtitle !default;
+$transaction-list-subtitle-color: $color-neutral-dark !default;
+$transaction-list-font-weight-bold: $font-weight-bold !default;
+
+.bb-transaction-list-controls__search-box {
+  @include media-breakpoint-down(md) {
+    margin-bottom: $spacer-md;
+  }
+}
+
+.bb-transaction-list-header-amount {
+  flex-direction: column-reverse;
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+    margin-left: auto;
+  }
+}
+
+.bb-transaction-item-description__title,
+.bb-transaction-list-header-amount__value {
+  font-weight: $transaction-list-font-weight-bold;
+}
+
+.bb-transaction-item-description__subtitle {
+  color: $transaction-list-subtitle-color;
+  font-size: $transaction-list-font-size-subtitle;
+}
+
+.bb-transaction-item-category {
+  display: none;
+
+  @include media-breakpoint-up(sm) {
+    display: inline-block;
+  }
+}
+
+.bb-transaction-list-item-detail-header {
+  display: flex;
+}
+
+.bb-transaction-list-item-detail-header__category-detail {
+  display: none;
+
+  @include media-breakpoint-up(sm) {
+    display: inline-block;
+  }
+}
+
+.bb-transactions-list-pending-header__tooltip {
+  margin-left: $spacer-sm;
+  vertical-align: middle;
+}

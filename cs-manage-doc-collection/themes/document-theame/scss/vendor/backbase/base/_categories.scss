@@ -1,0 +1,86 @@
+// merges into $icon-map
+$category-list: (
+  ("home", "bicon-home", color("teal")),
+  ("mortgage", "bicon-home", color("teal")),
+  ("rent", "bicon-home", color("teal")),
+
+  ("health-beauty", "bicon-favorite", color("pink")),
+  ("beauty", "bicon-favorite", color("pink")),
+  ("health-fitness", "bicon-favorite", color("pink")),
+
+  ("food-drinks", "bicon-restaurant", color("tango")),
+  ("alcohol-bars", "bicon-restaurant", color("tango")),
+  ("fast-food", "bicon-restaurant", color("tango")),
+  ("groceries", "bicon-restaurant", color("tango")),
+  ("restaurants", "bicon-restaurant", color("tango")),
+
+  ("transportation", "bicon-directions-car", color("lime")),
+  ("car", "bicon-directions-car", color("lime")),
+  ("public-transport", "bicon-directions-car", color("lime")),
+
+  ("shopping", "bicon-shopping-cart", color("pink")),
+  ("clothing", "bicon-shopping-cart", color("pink")),
+  ("electronics", "bicon-shopping-cart", color("pink")),
+
+  ("hobbies-entertainment", "bicon-local-play", color("purple")),
+
+  ("bills-utilities", "bicon-description", color("light-blue")),
+  ("internet", "bicon-description", color("light-blue")),
+  ("mobile-phone", "bicon-description", color("light-blue")),
+  ("utilities", "bicon-description", color("light-blue")),
+
+  ("income", "bicon-add-box", color("light-blue")),
+  ("bonus", "bicon-add-box", color("light-blue")),
+  ("salary-wages", "bicon-add-box", color("light-blue")),
+
+  ("other-income", "bicon-toll", color("indigo")),
+  ("interest-income", "bicon-toll", color("indigo")),
+  ("rental-income", "bicon-toll", color("indigo")),
+
+  ("transfers", "bicon-swap-horiz", color("orange")),
+
+  ("uncategorised", "bicon-help-outline", color("gray")),
+
+  ("pending", "bicon-access-time", color("gray")),
+
+  // Business banking categories
+  // Spending
+  ("suppliers", false, color("yellow")),
+  ("salaries", false, color("orange")),
+  ("office-rent", false, color("red")),
+  ("loan-repayment", false, color("tango")),
+  ("miscellaneous", false, color("pink")),
+
+  // Income
+  ("intercompany-receivable", false, color("teal")),
+  ("term-deposit", false, color("tango")),
+  ("direct-debit-collections", false, color("blue")),
+  ("intracompany-receivable", false, color("indigo")),
+  ("interest-received", false, color("purple"))
+);
+
+$chart-categories-colors: ();
+
+// Populate $chart-categories-colors map
+@each $category, $icon, $color in $category-list {
+  $iconContent: null;
+
+  @if $icon {
+    $iconContent: map-get($icon-map, str-slice($icon, 7));
+  }
+
+  $chart-categories-colors: append(
+    $chart-categories-colors,
+    #{$category $color $iconContent},
+    'comma'
+  );
+}
+
+
+// For Chart Coloring
+:root {
+  @each $category, $icon, $color in $category-list {
+    --chart-color-#{$category}: #{$color};
+  }
+  --chart-categories-colors: #{$chart-categories-colors};
+}

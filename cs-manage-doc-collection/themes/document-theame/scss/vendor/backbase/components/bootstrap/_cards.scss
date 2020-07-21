@@ -1,0 +1,57 @@
+$card-spacer-x: $spacer * 2 !default;
+$card-section-border-color: $border-color !default;
+$card-border-radius: $border-radius * 0.5 !default;
+
+//
+// Cards
+//
+.card-account-balance {
+  flex: 3;
+}
+
+.card--highlight {
+  background-color: map-get($neutralsMap, 'lightest');
+  border-color: map-get($neutralsMap, 'lightest');
+}
+
+.card-section {
+  position: relative;
+  flex: 1 1 auto;
+  padding: $card-spacer-x;
+  color: $card-color;
+
+  // Displays a border underneath the card section
+  &::after {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: calc(100% - 2 * #{$card-spacer-x});
+    margin-left: $card-spacer-x;
+    border-bottom: 1px solid $card-section-border-color;
+    content: "";
+  }
+
+  // Removes the border underneath the section on the last item
+  &:last-of-type::after {
+    display: none;
+  }
+
+  &:first-child {
+    border-top-left-radius: $card-border-radius;
+    border-top-right-radius: $card-border-radius;
+  }
+
+  &:last-child {
+    border-bottom-right-radius: $card-border-radius;
+    border-bottom-left-radius: $card-border-radius;
+  }
+}
+
+.card-section--highlight {
+  background-color: map-get($neutralsMap, 'lightest');
+
+  // Removes the border underneath highlighted sections
+  &::after {
+    display: none;
+  }
+}

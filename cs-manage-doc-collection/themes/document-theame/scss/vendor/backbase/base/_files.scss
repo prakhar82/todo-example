@@ -1,0 +1,111 @@
+$file-icon-width: 38px;
+$file-icon-height: 48px;
+$file-icon-font-size: 1rem;
+$file-icon-md-font-size: 0.575rem;
+$file-icon-sm-font-size: 0.4rem;
+$file-icon-md-width: 21px;
+$file-icon-sm-width: 12px;
+$file-icon-md-height: 26px;
+$file-icon-sm-height: 16px;
+$file-icon-fold-size: 5px;
+$file-icon-md-fold-size: 3px;
+$file-icon-sm-fold-size: 2px;
+$file-icon-border-radius: 2px;
+$file-icon-fold-border-radius: 2px;
+$file-icon-left-margin: 2px;
+$file-icon-background-size: 18px;
+$file-icon-md-background-size: 12px;
+$file-icon-sm-background-size: 8px;
+$file-icon-bb-sepa-line-height: calc(#{$file-icon-height} * 1.6);
+$file-icon-background-color: color("neutrals", "greyest");
+$file-icon-xls-background-color: color('teal');
+$file-icon-csv-background-color: color('indigo');
+$file-icon-bb-sepa-background-color: color('red');
+$file-icon-pdf-background-color: $red-dark;
+$file-icon-pdf-fold-color: $red-bright;
+$file-icon-img-background-color: color("actions", "primary", "light");
+$file-icon-img-fold-color: color("actions", "primary", "lighter");
+$file-icon-unknown-font-size: 2rem;
+$file-icon-unknown-md-font-size: 1.2rem;
+$file-icon-unknown-sm-font-size: $file-icon-sm-font-size;
+$file-icon-unknown-background-color: $grey-bright;
+$file-icon-unknown-fold-color: color("neutrals", "grey");
+
+$bicon-size-map: (
+  md: (
+    border-width: $file-icon-md-fold-size,
+    font-size: $file-icon-md-font-size,
+    width: $file-icon-md-width,
+    height: $file-icon-md-height,
+    line-height: $file-icon-md-height,
+  ),
+  sm: (
+    border-width: $file-icon-sm-fold-size,
+    font-size: $file-icon-sm-font-size,
+    width: $file-icon-sm-width,
+    height: $file-icon-sm-height,
+    line-height: $file-icon-sm-height,
+  )
+);
+
+$file-icon-map: (
+  xls: (
+    content: '.xls',
+    md-content: 'XLS',
+    sm-content: 'X',
+    bg-color: $file-icon-xls-background-color,
+    fold-color: $teal-bright,
+  ),
+  csv: (
+    content: '.csv',
+    md-content: 'CSV',
+    sm-content: 'C',
+    bg-color: $file-icon-csv-background-color,
+    fold-color: $indigo-bright,
+  ),
+  mts: (
+    content: '.mts',
+    md-content: 'MTS',
+    sm-content: 'M',
+    bg-color: $file-icon-background-color,
+    fold-color: $grey-bright,
+  ),
+  blk: (
+    content: '.blk',
+    md-content: 'BLK',
+    sm-content: 'B',
+    bg-color: $file-icon-background-color,
+    fold-color: $grey-bright,
+  ),
+  bb-sepa: (
+    content: 'SEPA',
+    md-content: '',
+    sm-content: '',
+    bg-color: $file-icon-bb-sepa-background-color,
+    fold-color: $red-bright,
+  ),
+  pdf: (
+    content: '.pdf',
+    md-content: 'PDF',
+    sm-content: 'P',
+    bg-color: $file-icon-pdf-background-color,
+    fold-color: $file-icon-pdf-fold-color,
+  ),
+  img: (
+    content: 'IMG',
+    md-content: 'IMG',
+    sm-content: 'I',
+    bg-color: $file-icon-img-background-color,
+    fold-color: $file-icon-img-fold-color,
+  ),
+  unknown: (
+    content: '?',
+    font-size: $file-icon-unknown-font-size,
+    md-content: '?',
+    md-font-size: $file-icon-unknown-md-font-size,
+    sm-content: '?',
+    sm-font-size: $file-icon-unknown-sm-font-size,
+    bg-color: $file-icon-unknown-background-color,
+    fold-color: $file-icon-unknown-fold-color,
+  )
+);

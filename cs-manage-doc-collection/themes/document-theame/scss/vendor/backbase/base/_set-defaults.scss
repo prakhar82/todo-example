@@ -1,0 +1,69 @@
+//This partial is the exposed BS4 variables that are overridden, unset, and reset with new default values inside base/...
+
+//Colors Section: Clear original variables
+//This allows !default keyword to be applied on existing 
+
+//General Colors (BS4)
+$blue:   null;
+$indigo: null;
+$purple: null;
+$pink:   null;
+$red:    null;
+$orange: null;
+$yellow: null;
+$green:  null;
+$teal:   null;
+$cyan:   null;
+
+//Contextual Colors (BS4)
+$primary:   null;
+$secondary: null;
+$success:   null;
+$info:      null;
+$warning:   null;
+$danger:    null;
+$light:     null;
+$dark:      null;
+
+//Color Maps (BS4)
+$theme-colors: null;
+$colors: null;
+$body-color: null;
+$input-bg: null;
+$card-bg: null;
+$input-disabled-bg: null;
+$btn-disabled-opacity: null;
+$btn-focus-box-shadow: null;
+
+//Color Utilities (BS4)
+// Customize the light and dark text colors for use in our YIQ color contrast function.
+$yiq-text-dark: null;
+$theme-color-interval: null;
+
+//Typography Section: Clear original variables (BS4)
+$font-family-sans-serif:      null;
+$headings-font-family:        null;
+$font-size-base:              null;
+$font-size-lg:                null;
+$font-size-sm:                null;
+$font-weight-light:           null;
+$font-weight-bold:            null;
+$line-height-base:            null;
+$h1-font-size:                null;
+$h2-font-size:                null;
+$h3-font-size:                null;
+$h4-font-size:                null;
+$h5-font-size:                null;
+$h6-font-size:                null;
+$headings-margin-bottom:      null;
+$headings-font-family:        null;
+$headings-line-height:        null;
+$headings-color:              null;
+$display-line-height:         null;
+$lead-font-size:              null;
+$lead-font-weight:            null;
+$small-font-size:             null;
+$text-muted:                  null;
+
+// Grids Section
+$grid-gutter-width:           null;

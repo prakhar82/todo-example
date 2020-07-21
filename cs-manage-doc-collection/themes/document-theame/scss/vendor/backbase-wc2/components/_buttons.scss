@@ -1,0 +1,38 @@
+div[class^="uib-"] .btn-default {
+  @extend .btn-secondary;
+}
+
+.btn {
+  border-radius: $btn-border-radius;
+  border-width: $btn-border-width;
+
+  .btn-outline-light {
+    @extend .btn-secondary;
+  }
+}
+.button-toolbar {
+  @include media-breakpoint-down(sm) {
+    .btn {
+      width: 100%;
+      display: block;
+      margin-bottom: $btn-block-spacing-y;
+    }
+
+    ui-bb-submit-dropup-ng {
+      width: 100%;
+
+      .btn-dropup-group,
+      .btn-group {
+        width: 100%;
+      }
+
+      .dropdown-toggle {
+        width: auto;
+      }
+
+      .dropdown-menu {
+        width: 100%;
+      }
+    }
+  }
+}

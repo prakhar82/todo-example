@@ -1,0 +1,83 @@
+////
+//// @group Components
+////
+
+/// @name bb-toolbar
+///
+/// @description
+/// Group a set elements horizontally. The elements can be grouped directly as children of the bb-toolbar element or
+/// can be further grouped in sections
+///
+/// @example
+/// <div class="bb-toolbar">
+///   <div class="bb-toolbar__section">
+///     Some title
+///   </div>
+///   <div class="bb-toolbar__section bb-toolbar__section--align-end">
+///     <button bbButton color="success" circle="true"  class="bb-toolbar__item">
+///       <bb-icon-ui name="check"></bb-icon-ui>
+///     </button>
+///     <button bbButton color="danger" circle="true" class="bb-toolbar__item">
+///       <bb-icon-ui name="times"></bb-icon-ui>
+///     </button>
+///   </div>
+/// </div>
+/// <div class="bb-toolbar">
+///   <button bbButton color="success" circle="true" class="bb-toolbar__item">
+///     <bb-icon-ui name="check"></bb-icon-ui>
+///   </button>
+///   <button bbButton color="danger" circle="true" class="bb-toolbar__item">
+///     <bb-icon-ui name="times"></bb-icon-ui>
+///   </button>
+/// </div>
+
+.bb-toolbar {
+  display: flex;
+  align-items: center;
+  padding: $toolbar-padding;
+
+  &.bb-toolbar--sm {
+    padding: $toolbar-padding-sm;
+  }
+
+  &.bb-toolbar--np {
+    padding: 0;
+  }
+}
+
+.bb-toolbar__section {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.bb-toolbar__section--align-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  .bb-toolbar__item {
+    margin-right: 0;
+    margin-left: $toolbar-margin-item;
+
+    &.bb-toolbar__item--sm {
+      margin-left: $toolbar-margin-item-sm;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.bb-toolbar__item {
+  margin-right: $toolbar-margin-item;
+
+  &.bb-toolbar__item--sm {
+    margin-right: $toolbar-margin-item-sm;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

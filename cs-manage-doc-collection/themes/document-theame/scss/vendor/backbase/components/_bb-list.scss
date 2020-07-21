@@ -1,0 +1,27 @@
+$list-separator-line-width: 1px !default;
+$list-separator-color: map-get($neutralsMap, 'grey') !default;
+$list-spacing: 1.5rem !default;
+$list-spacing-sm: 0.5rem !default;
+
+.bb-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.bb-list__item:not(:last-child) {
+  margin-bottom: $list-spacing;
+  padding-bottom: $list-spacing;
+  border-bottom: $list-separator-line-width solid $list-separator-color;
+}
+
+.bb-list__item--no-separator {
+  border-bottom: unset;
+}
+
+.bb-list--density-sm {
+  .bb-list__item {
+    margin-bottom: $list-spacing-sm;
+    padding-bottom: $list-spacing-sm;
+  }
+}

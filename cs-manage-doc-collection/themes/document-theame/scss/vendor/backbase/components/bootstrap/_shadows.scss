@@ -1,0 +1,10 @@
+//Implanted from BS4@4.1 -- which has !important
+//shadow utility class
+//@TODO: Remove once upgrade to version that carries class
+
+.shadow-none { box-shadow: none !important; }
+.shadow-sm { box-shadow: $box-shadow-sm !important; }
+.shadow-md { box-shadow: $box-shadow-md !important; }
+.shadow-lg { box-shadow: $box-shadow-lg !important; }
+//Preserve Default shadow sizing -lg
+.shadow { box-shadow: $box-shadow-lg !important; }

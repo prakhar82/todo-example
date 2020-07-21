@@ -1,0 +1,12 @@
+.ext-bb-user-grant-access-ng,
+.ext-bb-sa-user-privileges-ng {
+  .bb-card-buttons-hover {
+    display: none;
+  }
+  .bb-card:hover {
+    background-color: $component-active-bg;
+    .bb-card-buttons-hover {
+      display: block;
+    }
+  }
+}

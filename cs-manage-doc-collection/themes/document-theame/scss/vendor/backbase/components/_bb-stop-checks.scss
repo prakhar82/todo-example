@@ -1,0 +1,68 @@
+.bb-stop-checks__table--name {
+  font-weight: bold;
+}
+
+.bb-stop-checks-details__modal-header {
+  width: $stop-checks-wide;
+  margin-top: $stop-checks-align;
+  margin-right: $stop-checks-align;
+}
+
+.bb-stop-checks-details__modal-header-title {
+  margin-bottom: $stop-checks-align;
+}
+
+.bb-stop-checks-details__modal-header-submitted-info {
+  display: inline-block;
+  margin-left: $stop-checks-align;
+  color: $text-muted;
+}
+
+.bb-stop-checks-details__modal-header-submitted-info__text {
+  display: inline-block;
+  margin-right: $stop-checks-align/2;
+}
+
+.bb-stop-checks-details__modal-header-button-print {
+  margin: 0 $stop-checks-align 0 0;
+  padding: 0;
+  border: none;
+  opacity: $stop-checks-muted-opacity;
+}
+
+.bb-stop-checks-details__modal-header-button-close {
+  margin: 0;
+  padding: 0;
+  border: none;
+  opacity: $stop-checks-muted-opacity;
+}
+
+.bb-stop-checks-details__modal-body-chapter-title {
+  margin-top: $stop-checks-align;
+}
+
+.bb-stop-checks-details__modal-body-chapter-divider {
+  margin-top: 0;
+}
+
+.bb-stop-checks-details__modal-body-account-label {
+  margin-bottom: $stop-checks-align/2;
+  font-weight: bold;
+}
+
+.bb-stop-checks-details__modal-body-row {
+  margin-bottom: $stop-checks-align*1.5;
+}
+
+.bb-stop-checks__table-body-label {
+  font-weight: bold;
+  margin-top: $stop-checks-align;
+}
+
+.bb-stop-checks-empty__container {
+  margin-top: $stop-checks-align*4;
+}
+
+.bb-stop-checks-error__container {
+  margin-top: $stop-checks-align*4;
+}
