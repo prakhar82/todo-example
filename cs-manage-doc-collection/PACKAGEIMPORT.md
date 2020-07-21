@@ -25,10 +25,10 @@ http://localhost:8080/gateway/cxp-manager
 ######You will see your master page as below 
 ![Alt text](./images/master-page-created.jpg?raw=true "master pages")
 ######Drag Manageable Area from catalog to create master page (lean page)
-![Alt text](./images/drag-manageable-area.jpg?raw=true "manageable area")
+![ScreenShot](./images/drag-manageable-area.jpg?raw=true "manageable area")
 ######Open Exprience Catalog to add your imported widgets and containers
-![Alt text](./images/open-experience catalog.JPG?raw=true "open exprience catalog")
+![ScreenShot](./images/open-experience catalog.JPG?raw=true "open exprience catalog")
 ######Add all widgets search and add by clicking on + symbol on each widget
-![Alt text](./images/add-widget-into-portal-catalog.jpg?raw=true "add widget into portal catalog")
+![ScreenShot](./images/add-widget-into-portal-catalog.jpg?raw=true "add widget into portal catalog")
  
  [<<Back](./README.md)
