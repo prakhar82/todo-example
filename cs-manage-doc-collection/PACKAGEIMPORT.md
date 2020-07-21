@@ -16,7 +16,7 @@ http://localhost:8080/gateway/cxp-manager
 
 Click on `Create` button
 
-![Alt text](./images/create-experience-button.jpg?raw=true "Create button")
+![Alt text](./images/create-experience-button.JPG?raw=true "Create button")
 
 Provide Portal name on create new experience popup
 
