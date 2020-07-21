@@ -29,6 +29,6 @@ http://localhost:8080/gateway/cxp-manager
 ######Open Exprience Catalog to add your imported widgets and containers
 ![ScreenShot](./images/open-experience catalog.JPG?raw=true "open exprience catalog")
 ######Add all widgets search and add by clicking on + symbol on each widget
-![ScreenShot](./images/add-widget-into-portal-catalog.jpg "add widget into portal catalog")
+![picture](/images/add-widget-into-portal-catalog.JPG) 
  
  [<<Back](./README.md)
