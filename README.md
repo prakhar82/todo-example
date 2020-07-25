@@ -1,5 +1,17 @@
 ## todo-example
 
+## Important Link
+### Prerequisites:
+https://community.backbase.com/documentation/foundation_angular/4-26-0/prerequisites#prerequisites
+### Trails:
+https://community.backbase.com/trails/build_your_first_wa3_experience
+### UI-Component:
+https://wa3.backbase.com/foundation/4.18.0/howto/create-ui-components#shared-throughout-developers
+### Develop a new widget:
+https://community.backbase.com/documentation/foundation_angular/4-26-0/develop_a_new_widget#develop_a_new_widget
+### Out of box widget:
+https://community.backbase.com/trails/build_your_first_wa3_experience
+
 ### Prerequisites for Widget Collection 3
 
 Download 10.x version of NodeJS from https://nodejs.org/en/download and follow the installation instructions for latest LTS versiBy default npm (NodeJS Package Manager) is installed at the same time. However please install npm v6.0.1 separately to avoid problems with breaking changes that can happen later.on.
