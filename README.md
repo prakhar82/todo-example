@@ -1,5 +1,37 @@
 ## todo-example
 
+### Prerequisites for Widget Collection 3
+
+Download 10.x version of NodeJS from https://nodejs.org/en/download and follow the installation instructions for latest LTS versiBy default npm (NodeJS Package Manager) is installed at the same time. However please install npm v6.0.1 separately to avoid problems with breaking changes that can happen later.on.
+```
+npm install -g npm@6.0.1
+```
+### Configure NPM Access
+Set up the npm registry
+Run below command to register npm
+
+	npm adduser --registry=https://repo.backbase.com/api/npm/npm-backbase/ --always-auth --scope=@backbase    
+	Username:  *******
+	Password:
+	Email: (this IS public) xx@abc.com
+	Logged in as  ****  to scope @backbase on https://repo.backbase.com/api/npm/npm-backbase/
+	
+### Install Command Line Tools	
+1. Install the angular-cli.(https://cli.angular.io/)
+   The Angular CLI is a command-line interface tool that you use to initialize, develop, scaffold, and maintain Angular applications.
+	```
+	npm install -g @angular/cli@8.0.0
+	```
+2. Install the Backbase schematics.
+   @bb-cli/schematics is package used for scaffolding Backbase Widget Architecture 3 files, you will need access to Backbase private npm repo, before running.
+   
+   ```
+     npm install -g @bb-cli/schematics@2.x
+   ```
+3. Install the Backbase bb-import tool
+  ```
+  npm install -g @bb-cli/bb-import@2.x
+  ```
 
 ### Install & configure your local environment
 
@@ -85,15 +117,6 @@ Run the following commands to install and use Node.js 10.18.1:
 
 	nvm install 10.18.1
 	nvm use 10.18.1
-
-### Set up the npm registry
-Run below command to register npm
-
-	npm adduser --registry=https://repo.backbase.com/api/npm/npm-backbase/ --always-auth --scope=@backbase    
-	Username:  *******
-	Password:
-	Email: (this IS public) xx@abc.com
-	Logged in as  ****  to scope @backbase on https://repo.backbase.com/api/npm/npm-backbase/
 
 ### Install Angular CLI
 	
