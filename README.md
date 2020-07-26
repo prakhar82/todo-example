@@ -148,7 +148,7 @@ Run the following commands to install and use Node.js 10.18.1:
 The following examples are based on a scaffolded application named todo-app. The minimal project and app can be scaffolded using the following commands:
 
 	ng new todo-collection --collection=@bb-cli/schematics
-	cd todo-project
+	cd todo-collection
 	npm run ng -- generate app --name=todo-app
 
 ### Scaffold ToDo Widget
