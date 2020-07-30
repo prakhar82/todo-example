@@ -12,6 +12,15 @@ https://community.backbase.com/documentation/foundation_angular/4-26-0/develop_a
 ### Out of box widget:
 https://community.backbase.com/trails/build_your_first_wa3_experience
 
+### Collapsible elements example
+https://designsystem.backbase.com/v2/components/collapsible-accordion/web
+
+### Datepicker (Range selection)
+https://designsystem.backbase.com/v2/components/input-datepicker/web
+
+### RichTextEditor
+https://designsystem.backbase.com/v2/components/rich-text-editor/web
+
 ### Prerequisites for Widget Collection 3
 
 Download 10.x version of NodeJS from https://nodejs.org/en/download and follow the installation instructions for latest LTS versiBy default npm (NodeJS Package Manager) is installed at the same time. However please install npm v6.0.1 separately to avoid problems with breaking changes that can happen later.on.
