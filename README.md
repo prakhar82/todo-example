@@ -24,6 +24,9 @@ https://designsystem.backbase.com/v2/components/rich-text-editor/web
 ### Loading component
 https://designsystem.backbase.com/v2/components/loading-indicator/web
 
+### Progressbar
+https://designsystem.backbase.com/v2/components/progressbar/web
+
 ### Prerequisites for Widget Collection 3
 
 Download 10.x version of NodeJS from https://nodejs.org/en/download and follow the installation instructions for latest LTS versiBy default npm (NodeJS Package Manager) is installed at the same time. However please install npm v6.0.1 separately to avoid problems with breaking changes that can happen later.on.
