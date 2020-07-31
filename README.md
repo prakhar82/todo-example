@@ -30,6 +30,9 @@ https://designsystem.backbase.com/v2/components/progressbar/web
 ### Table
 https://designsystem.backbase.com/v2/components/table/web
 
+### Tooltip
+https://designsystem.backbase.com/v2/components/tooltip/web
+
 ### Prerequisites for Widget Collection 3
 
 Download 10.x version of NodeJS from https://nodejs.org/en/download and follow the installation instructions for latest LTS versiBy default npm (NodeJS Package Manager) is installed at the same time. However please install npm v6.0.1 separately to avoid problems with breaking changes that can happen later.on.
