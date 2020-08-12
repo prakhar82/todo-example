@@ -5,6 +5,7 @@ import { DocumentLibraryWidgetComponent } from './document-library-widget.compon
 import { DocumentServiceService } from '../../service/document-service.service';
 import { DocumentLibraryComponent } from './sub-component/document-library/document-library.component';
 import { RouterModule, Route } from '@angular/router';
+import { CsManagedFilterModule } from '@backbase/ui-components-lib';
 
 @NgModule({
   declarations: [DocumentLibraryWidgetComponent, DocumentLibraryComponent],
@@ -14,6 +15,7 @@ import { RouterModule, Route } from '@angular/router';
     BackbaseCoreModule.withConfig({
       classMap: { DocumentLibraryWidgetComponent },
     }),
+    CsManagedFilterModule,
   ],
   /* add the provider */
   providers: [DocumentServiceService]

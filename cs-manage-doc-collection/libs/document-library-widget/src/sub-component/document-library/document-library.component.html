@@ -3,9 +3,20 @@
 
    <div class="col-8 table_section">
     <div class="filter_section d-flex justify-content-end mb-4">
+      <span class="mr-4" (click)="onFilterClick()"> 
+        <i class="fa fa-filter" aria-hidden="true"></i>Filter
+      </span>
+      <button class="btn btn-outline-secondary">Upload Document</button>
+    </div>
+    <div *ngIf="showFilterUIComponent">
+      <bb-cs-managed-filter-ui></bb-cs-managed-filter-ui>
+    </div>
+
+
+    <!-- <div class="filter_section d-flex justify-content-end mb-4">
       <span class="mr-4"><i class="fa fa-filter" aria-hidden="true"></i>Filter</span>
       <button class="btn btn-outline-secondary">Upload Document</button>
-      </div>
+      </div> -->
      <table class="table table-hover">
       <thead>
         <tr>
@@ -28,15 +39,7 @@
         </tr>
       </tbody>
       </table>
-      <div class=" pagination_section">
-        <ul class="pagination breadcrumb">
-          <li class="page-item"><a class="page-link" href="#"><span> < </span></a></li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#"> <span> > </span></a></li>
-          <li class="page-item"><a class="page-link page_link mr-4" href="#">1-10 of 14 items</a></li>
-        </ul>
-      </div>
+     
   </div>
  </div>
  </div>

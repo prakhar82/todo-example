@@ -6,6 +6,7 @@ import { RouterModule, Route } from '@angular/router';
 import { DocumentServiceService } from '../../service/document-service.service';
 //import component for render in personal-widget
 import { PersonalDocumentComponent } from './sub-component/personal-document/personal-document.component';
+import { CsManagedFilterModule } from '@backbase/ui-components-lib';
 
 @NgModule({
   declarations: [PersonalDocumentWidgetComponent, PersonalDocumentComponent],
@@ -15,6 +16,7 @@ import { PersonalDocumentComponent } from './sub-component/personal-document/per
     BackbaseCoreModule.withConfig({
       classMap: { PersonalDocumentWidgetComponent },
     }),
+    CsManagedFilterModule,
   ],
   /* add the provider */
   providers: [DocumentServiceService]

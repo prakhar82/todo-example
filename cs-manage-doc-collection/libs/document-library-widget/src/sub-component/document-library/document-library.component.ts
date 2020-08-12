@@ -23,6 +23,7 @@ export class DocumentLibraryComponent implements OnInit {
    * Response documents of personal document component
    */
   responseDocuments: Documents = <Documents>{};
+  showFilterUIComponent = false;
 
   constructor(private documentServiceService: DocumentServiceService, private model: ItemModel) {}
 
@@ -34,6 +35,10 @@ export class DocumentLibraryComponent implements OnInit {
         console.log(this.responseDocuments);
       });
     });
+  }
+  onFilterClick(){
+    this.showFilterUIComponent = true;
+    console.log("image click");
   }
 
 }

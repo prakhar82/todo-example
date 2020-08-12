@@ -22,9 +22,14 @@
         <value>Angular PersonalDocumentWidget Widget</value>
       </property>
 
-      <property name="getDocuments_endpoint" label="getDocuments_endpoint" readonly="true" viewHint="admin,designModeOnly">
-        <value>/gateway/api/document-service/v1/documents</value>
+      <property name="getDocumentsPersonal_endpoint" label="getDocumentsPersonal_endpoint" readonly="true" viewHint="admin,designModeOnly">
+        <value>/api/document-direct-integration-service/v1/documents/personal</value>
       </property>
+
+       <property name="getDocumentsCategories_endpoint" label="getDocumentsCategories_endpoint" readonly="true" viewHint="admin,designModeOnly">
+        <value>/api/document-direct-integration-service/v1/documents/categories</value>
+      </property>
+
 
       <property name="navTitle" label="Navigation title" viewHint="admin,designModeOnly">
         <value type="string">Personal Document</value>

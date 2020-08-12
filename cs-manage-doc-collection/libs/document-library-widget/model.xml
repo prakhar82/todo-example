@@ -23,7 +23,7 @@
       </property>
 
       <property name="getDocumentsLib_endpoint" label="getDocumentsLib_endpoint" readonly="true" viewHint="admin,designModeOnly">
-        <value>/gateway/api/document-service/v1/documentslib</value>
+        <value>/api/document-service/v1/documentslib</value>
       </property>
 
       <property name="navTitle" label="Navigation title" viewHint="admin,designModeOnly">

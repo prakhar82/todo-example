@@ -9,7 +9,9 @@ import { DocumentLayoutContainerModule } from '@backbase/document-layout-contain
 import { PersonalDocumentWidgetModule } from '@backbase/personal-document-widget';
 import { DocumentDataModule } from '@backbase/document-data';
 import { DocumentLibraryWidgetModule } from '@backbase/document-library-widget';
-
+import { UiComponentsLibModule } from '@backbase/ui-components-lib';
+import { from } from 'rxjs';
+import { PersonalDocumentDataModule } from '@backbase/personal-document-data';
 @NgModule({
   declarations: [
     AppComponent
@@ -21,7 +23,9 @@ import { DocumentLibraryWidgetModule } from '@backbase/document-library-widget';
     DocumentLayoutContainerModule,
     PersonalDocumentWidgetModule,
     DocumentDataModule,
-    DocumentLibraryWidgetModule
+    DocumentLibraryWidgetModule,
+    UiComponentsLibModule,
+    PersonalDocumentDataModule
     ],
   providers: [...environment.mockProviders || []],
   bootstrap: [AppComponent]
