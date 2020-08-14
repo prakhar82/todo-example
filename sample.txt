@@ -6,3 +6,21 @@ return Observable.create( observer => {
 });}
 
 import { Observable } from "rxjs/Observable";
+
+
+
+
+
+var employees = {   
+    kiran: { age:30,salary:10000},  
+    john: { age:35,salary:15000},  
+    Tom: { age: 21, salary:5000}  
+}  
+let arr = [];  
+Object.keys(employees).map(function(key){  
+    arr.push({[key]:employees[key]})  
+    return arr;  
+});  
+console.log('Object=',employees)  
+console.log('Array=',arr)
+
