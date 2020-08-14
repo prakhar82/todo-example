@@ -1,0 +1,8 @@
+getElementTemplateNames() : Observable<string[]> {
+let names : string[] = MockedElementData.getNames();
+return Observable.create( observer => {
+    observer.next(names);
+    observer.complete();
+});}
+
+import { Observable } from "rxjs/Observable";
