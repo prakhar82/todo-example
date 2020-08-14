@@ -1,0 +1,15 @@
+/**
+ * @name logo
+ * @description Placeholder that loads assets/images/logo.png as background image
+ *
+ * @example
+ * <div class="bb-logo"></div>
+ */
+
+.bb-logo {
+  background-image: url('../assets/images/logo.png');
+  background-repeat: no-repeat;
+  background-position-x: $logo-position-left;
+  height: $logo-height;
+  margin-bottom: $logo-margin-bottom;
+}

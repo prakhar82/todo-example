@@ -1,0 +1,11 @@
+.bb-fieldset {
+  @extend .mb-4;
+}
+
+.bb-fieldset__heading {
+  @extend .text-large;
+  @extend .font-weight-bold;
+  @extend .pb-2;
+  @extend .border-bottom;
+  @extend .border-secondary;
+}

@@ -1,0 +1,10 @@
+.list-item-transaction-accordion {
+  box-shadow: $box-shadow-sm;
+}
+
+.ext-bb-transactions-ng {
+  & 
+  & .dropdown-item .dropdown-item-content {
+    justify-content: unset;
+  }
+}

@@ -1,0 +1,56 @@
+/**
+ * --------------------------------------------------------------------------
+ * Bar chart component
+ * --------------------------------------------------------------------------
+ * @description
+ *
+ * Some styles are read inside code that generates canvas and
+ * because of that, examples cannot be provided for all styles.
+ *
+ * Dataset colors are defined with a class that has prefix chart-bar-dataset-
+ * followed by the index of the dataset (starting with 0). For example:
+ * .chart-bar-dataset-0 .chart-bar-dataset-1 etc.
+ *
+ * Axis font and color are defined inside .chart-bar-axis-x and .chart-bar-axis-y
+ */
+
+@at-root {
+  .chart-bar-dataset {
+    &-0 {
+      color: color("primary");
+    }
+    &-1 {
+      color: color("info");
+    }
+    &-forecast {
+      &-0 {
+        color: rgba(color("primary"), 0.5);
+      }
+      &-1 {
+        color: rgba(color("info"), 0.5);
+      }
+    }
+  }
+}
+
+.chart-bar {
+  min-height: $chart-bar-min-height;
+}
+
+.badge {
+  &-future {
+    border: 1px solid color("neutrals", "darker");
+    color: color("neutrals", "darker");
+  }
+}
+
+.chart-bar-axis {
+  font-family: $font-family-base;
+  &-x {
+    color: color("neutrals", "darker");
+  }
+  &-y {
+    color: color("neutrals", "darker");
+    padding: 10px;
+  }
+}

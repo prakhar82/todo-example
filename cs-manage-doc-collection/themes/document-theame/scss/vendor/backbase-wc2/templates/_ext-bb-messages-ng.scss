@@ -1,0 +1,23 @@
+//shared ext-bb-messages-* styles
+.ext-bb-messages-ng, .ext-bb-messages-inbox-ng {
+  & .message-body {
+    white-space: pre-line;
+  }
+
+  ui-bb-conversation-list-ng {
+    cursor: pointer;
+    & .conversation:not(.unread):not(.active) {
+      background-color: #f5f5f5;
+    }
+    & .ellipsis {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .list-group-item {
+    outline: 0;
+  }
+
+}

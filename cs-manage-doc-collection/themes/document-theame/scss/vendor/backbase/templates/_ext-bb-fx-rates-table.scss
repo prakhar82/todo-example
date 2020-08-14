@@ -1,0 +1,29 @@
+.bb-fx-rates-table-container {
+  min-height: 500px;
+}
+
+.bb-fx-rates-search {
+  @include media-breakpoint-up(md) {
+    max-width: 300px;
+  }
+}
+
+.bb-fx-rates-table {
+  table-layout: fixed;
+
+  &--header-row {
+    th {
+      &:first-child {
+        width: 90px;
+      }
+
+      &:last-child {
+        width: 18%;
+
+        @include media-breakpoint-down(lg) {
+          width: 175px;
+        }
+      }
+    }
+  }
+}

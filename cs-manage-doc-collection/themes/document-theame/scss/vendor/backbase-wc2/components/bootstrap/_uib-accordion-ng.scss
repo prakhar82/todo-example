@@ -1,0 +1,17 @@
+////
+/// Example Component
+/// @group components
+/// @author Mark de Jong
+////
+
+/// Component wrapper class
+/// === Accordions Section ===
+/// Used in : uib-accordion
+/* extend from bs4/transitions.scss */
+
+@at-root {
+  .collapse.in {
+    @extend .collapse.show;
+  }
+}
+

@@ -1,0 +1,133 @@
+$bb-approval-log-details-padding: 1.5rem !default;
+$bb-approval-log-details-heading-padding-bottom: 1rem !default;
+$bb-approval-log-details-border-bottom: 1px solid $border-color !default;
+$bb-approval-log-details-approvers-label: color("neutrals", "dark") !default;
+$bb-approval-log-details-color-dark: color("neutrals", "dark") !default;
+$bb-approval-log-details-color-black: color("neutrals", "black") !default;
+$bb-approval-log-details-color-grey: color("neutrals", "greyest") !default;
+$bb-approval-log-details-color-warning: $warning-bright !default;
+$bb-approval-log-details-color-primary: $primary-bright !default;
+$bb-approval-log-details-approvers-padding: 1rem 0 !default;
+$bb-approval-log-details-heading-padding: 0.5rem !default;
+$bb-approval-log-details-unlock-user-user-status-padding: 1rem !default;
+$bb-approval-log-details-unlock-user-user-status-border-radius: 1rem !default;
+$bb-approval-log-details-data-group-label-unchanged-margin-left: 1.5rem !default;
+$bb-approval-log-details-data-group-wrapper-padding-left: 2rem !default;
+$bb-approval-log-details-datachangelog-data-group-padding-left: 1.5rem !default;
+$bb-approval-log-details-datachangelog-data-group-label-padding-left: 0.25rem !default;
+
+.bb-approval-log-details {
+  padding: $bb-approval-log-details-padding;
+}
+
+.bb-approval-log-details__back-button {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.bb-approval-log-details-header {
+  padding-bottom: $bb-approval-log-details-heading-padding-bottom;
+  border-bottom: $bb-approval-log-details-border-bottom;
+}
+
+.bb-approval-log-details-header__subtitle {
+  color: $bb-approval-log-details-color-dark;
+}
+
+.bb-approval-log-details-header__username {
+  font-weight: $font-weight-bold;
+  color: $bb-approval-log-details-color-black;
+}
+
+.bb-approval-log-details-approvers {
+  padding: $bb-approval-log-details-approvers-padding;
+  border-bottom: $bb-approval-log-details-border-bottom;
+}
+
+.bb-approval-log-details-approvers__label {
+  color: $bb-approval-log-details-color-dark;
+}
+
+.bb-approval-log-details-footer__label {
+  color: $bb-approval-log-details-approvers-label;
+}
+
+.bb-approval-log-details-assign-permissions-item {
+  border-bottom: $bb-approval-log-details-border-bottom;
+}
+
+.bb-approval-log-details-assign-permissions-item__heading {
+  border-bottom: $bb-approval-log-details-border-bottom;
+  padding-bottom: $bb-approval-log-details-heading-padding;
+}
+
+.bb-approval-log-details-assign-permissions-item__heading-label-removed {
+  text-decoration: line-through;
+}
+
+.bb-approval-log-details-assign-permissions-item__label {
+  color: $bb-approval-log-details-color-dark;
+}
+
+.bb-approval-log-details-assign-permissions-item__value-removed {
+  color: $bb-approval-log-details-color-grey;
+  text-decoration: line-through;
+}
+
+.bb-approval-log-details-assign-permission-item__collapsible-header {
+  padding: $bb-approval-log-details-heading-padding 0;
+  border-bottom: $bb-approval-log-details-border-bottom;
+}
+
+.bb-approval-log-details-assign-permission-item__collapsible-header__toggle {
+  color: $bb-approval-log-details-color-dark;
+}
+
+.bb-permissions-changelog-data-group-wrapper {
+  padding-left: $bb-approval-log-details-data-group-wrapper-padding-left;
+}
+
+.bb-permissions-changelog-data-group {
+  padding-left: $bb-approval-log-details-datachangelog-data-group-padding-left;
+  word-break: break-all;
+  word-break: break-word;
+}
+
+.bb-permissions-changelog-data-group__label {
+  padding: 0 $bb-approval-log-details-datachangelog-data-group-label-padding-left;
+}
+
+.bb-permissions-changelog-data-group__label--added {
+  background-color: $bb-approval-log-details-color-warning;
+}
+
+.bb-permissions-changelog-data-group__label--removed {
+  text-decoration: line-through;
+  color: $bb-approval-log-details-color-grey;
+}
+
+.bb-permissions-changelog-data-group__label--unchanged {
+  margin-left: $bb-approval-log-details-data-group-label-unchanged-margin-left;
+}
+
+.bb-approval-log-details-unlock-user-changelog {
+  border-bottom: $bb-approval-log-details-border-bottom;
+}
+
+.bb-approval-log-details-unlock-user-changelog__heading {
+  padding-bottom: $bb-approval-log-details-heading-padding;
+  border-bottom: $bb-approval-log-details-border-bottom;
+}
+
+.bb-approval-log-details-unlock-user-changelog__user-status {
+  padding: $bb-approval-log-details-unlock-user-user-status-padding;
+  border-radius: $bb-approval-log-details-unlock-user-user-status-border-radius;
+}
+
+.bb-approval-log-details-unlock-user-changelog__user-status--locked {
+  background-color: $bb-approval-log-details-color-warning;
+}
+
+.bb-approval-log-details-unlock-user-changelog__user-status--active {
+  background-color: $bb-approval-log-details-color-primary;
+}

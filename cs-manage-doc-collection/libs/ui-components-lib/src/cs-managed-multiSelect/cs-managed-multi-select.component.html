@@ -1,0 +1,14 @@
+<div ngbDropdown class="custom-select" autoClose="outside">
+	<button class="custom_button" id="dropdownBasic1" ngbDropdownToggle>
+        {{categeoryDataSelected.length?categeoryDataSelected.length+' Selected':'Select Category'}}
+  </button>
+  <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="ng_dropdown">
+    <a (click)="clearAllcheck()">Clear All</a>
+    <a (click)="selectAllcheck()">Select All</a>
+        <button class="dropdown-item" *ngFor="let option of optionsList; let i = index" 
+        (click)="selectCategoryList(option)">
+          <span ><input type="checkbox" [(ngModel)]="option.checked" > </span>
+          {{option.CategoryName}}
+        </button>
+  </div>
+</div>

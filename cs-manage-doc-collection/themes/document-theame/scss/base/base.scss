@@ -1,0 +1,104 @@
+/* RECOMMENDATION 
+  This is a base file. It should include project-unique upstream variables.
+  The idea is to separate the concern between what's introduced vs overwrites in your project
+  These should not be variables that override pre-existing variables
+  Overrides belong in your helpers/helpers.scss level
+*/
+
+/* 
+  PROJECT QUICKSTART SCENARIOS: 
+
+  === Change colors: Primary map ===
+    File: [ base/base.scss ]
+
+    $primaryMap: map-merge($primaryMap, (
+      lighter: lighten($new-color, 15%),
+      light: lighten($new-color, 5%),
+      default: $new-color,
+      dark: darken($new-color, 5%),
+      darker: darken($new-color, 15%),
+      darkest: darken($new-color, 25%)
+    ));
+
+  OPTION ONE: A new function `map-deep-set` has been added to the Backbase theme in which it will make sure 
+  your color gets applied in the category and map that you are targeting.
+
+    $color-palette: map-deep-set($color-palette, "actions" "primary", $primaryMap);
+
+  OPTION TWO: Alternatively you can map-merge all colors under the category actions (primary, secondary, selected) 
+  in order for your new set of colors to get applied.
+  
+    $color-palette: map-merge($color-palette,
+      (actions: (
+        primary: $primaryMap,
+        secondary: $secondaryMap,
+        selected: $selectedMap 
+      ))
+    );
+
+  === Change colors: Buttons ===
+
+    $button-palette: map-merge($button-palette, (primary: $primaryMap));
+  
+  NOTE: btn-outline has its own map, called $button-outline-palette
+
+  === Change colors: Other UI variations ===
+
+  NOTE: A list of UIs with Bootstrap Variations are:
+      * badge-variants
+      * alert-variants
+      * bg-variants
+      * bg-gradient-variants
+      * button-variants
+      * button-outline-variants
+      * text-variants
+      * list-group-item-variants
+      * table-row-variants
+      * text-emphasis-variants
+
+  === Change typography: Base & Headings ===
+
+    New File: [ ../helpers/variables/_typography.scss ]
+
+    $font-size-base: 16px;
+    $h1-font-size:           $font-size-base * 3; // 48px
+    $h2-font-size:           $font-size-base * 2.5; //40px
+    $h3-font-size:           $font-size-base * 2; //32px
+    $h4-font-size:           $font-size-base * 1.75; //28px
+    $h5-font-size:           $font-size-base * 1.5; //24px
+    $h6-font-size:           $font-size-base * 1.375; //22px
+    $font-weight-light:           300;
+    $font-weight-regular:         normal; //400
+    $font-weight-medium:          500;
+    $font-weight-bold:            500;
+    $headings-color:              color("neutrals", "darkest");
+
+    *** For more font-related helper signatures, see `scss/vendor/backbase/base/_typography.scss` ***
+
+    /// For CSS-Compilation Output Overrides
+
+    New File: [ templates/_typography.scss ]
+
+    h1, .h1 { font-weight: $font-weight-light; }
+    h2, .h2 { font-weight: $font-weight-regular; }
+    h3, .h3 { font-weight: $font-weight-medium; }
+    h4, .h4 { font-weight: $font-weight-medium; }
+    h5, .h5 { font-weight: $font-weight-medium; }
+    h6, .h6 { font-weight: $font-weight-medium; }
+
+  === Change typography: Font-family ===
+
+    New Directory: [ THEME_ROOT/assets/fonts/New_Font_Name/.. ]
+    1. Add font files inside its own font folder
+    2. Define the font-face for added fonts inside scss/fonts/_newFontName.scss
+    3. Import file inside scss/fonts/fonts.scss
+
+    New File: [ helpers/variables/_typography.scss ]
+
+    /// Body Font Families
+    $font-family-sans-serif: "New Font Name";
+
+    /// Header Font Families
+    $headings-font-family:   "New Font Name";
+
+*/

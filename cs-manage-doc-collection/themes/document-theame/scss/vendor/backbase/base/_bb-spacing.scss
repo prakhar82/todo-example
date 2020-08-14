@@ -1,0 +1,20 @@
+////
+//// @group Spacing
+////
+
+$spacer: 1rem !default;
+
+/// Spacer default (e.g., distance between buttons)
+$spacer-md: $spacer !default;
+
+/// Spacer small
+$spacer-sm: $spacer * 0.5 !default;
+
+/// Spacer extra large (e.g., distance between widgets)
+$spacer-xl: $spacer * 2 !default;
+
+/// Spacer extra large
+$spacer-lg: $spacer * 1.5 !default;
+
+/// Spacer extra small
+$spacer-xs: $spacer * 0.25 !default;

@@ -1,0 +1,5 @@
+@each $color, $value in $text-emphasis-palette {
+  @include text-emphasis-variant(".text-#{$color}", 
+    map-get($text-emphasis-palette, $color)
+  );
+}

@@ -1,0 +1,156 @@
+$icon-background-square-border-radius: $border-radius-sm !default;
+$icon-background-size-sm: map-get($icon-circle-size-map, "sm") !default;
+$icon-background-size-md: map-get($icon-circle-size-map, "md") !default;
+$account-kind-color-list: (
+  "current-account": $yellow,
+  "savings-account": $orange,
+  "term-deposit": $tango,
+  "credit-card": $indigo,
+  "debit-card": $indigo,
+  "loan": $purple,
+  "investment-account": $teal,
+) !default;
+
+$custom-icon-color-list: (
+  "greyer": $neutral-6,
+) !default;
+
+$custom-colors: map-merge($account-kind-color-list, $custom-icon-color-list) !default;
+
+$icon-colors: map-merge($theme-colors, $custom-colors) !default;
+
+bb-icon-ui {
+  display: inline-flex;
+  i {
+    pointer-events: none;
+  }
+}
+
+.bicon, .bb-icon {
+  @extend .material-icons;
+  text-align: center;
+
+  &.animate, &.bb-icon--animate {
+    @extend .bb-loading-indicator__circle;
+  }
+
+  // Add icon-circle sizing for general icon circles
+  @each $size-abbr, $size in $icon-size-map {
+    &.bicon-#{$size-abbr},
+    &.bb-icon--#{$size-abbr} {
+      font-size: #{$size};
+      &.bb-icon__background {
+        $background-size: map-get($icon-background-size-map, $size-abbr);
+        height: $background-size;
+        line-height: $background-size;
+        width: $background-size;
+      }
+    }
+  }
+  // Add icon-circle sizing for general icon circles
+  @each $size-abbr, $size in $icon-circle-size-map {
+    &.icon-circle-#{$size-abbr} {
+      width: $size;
+      height: $size;
+      line-height: $size;
+      color: color("neutrals", "white");
+      border-radius: 50%;
+    }
+    // Default icon-circle size
+    @if $size-abbr == 'md' {
+      &.icon-circle {
+        width: $size;
+        height: $size;
+        line-height: $size;
+        color: color("neutrals", "white");
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+@each $bb-icon-name, $icon-data in $icon-map {
+  @if (type-of($icon-data) == 'string') {
+    .bicon-#{$bb-icon-name}:before,
+    .bb-icon-#{$bb-icon-name}:before {
+      content: $icon-data;
+    }
+  }
+
+  // Example class output: .bicon-category-shopping:before
+  @if (str-index('#{$bb-icon-name}', 'category') ) {
+    .bicon-#{$bb-icon-name},
+    .bb-icon-#{$bb-icon-name} {
+      //by default, category icons should have a color
+      color: map-get($icon-data, 'color');
+
+      &:before {
+        // replaces hyphens to underscore delimiters
+        content: str-replace(map-get($icon-data, 'icon'), '-', '_');
+      }
+
+      // Add sizing to only category icons, and icon-circle colors
+      @each $size-abbr, $size in $icon-size-map {
+        &.bicon-#{$size-abbr},
+        &.bb-icon--#{$size-abbr} {
+          font-size: #{$size};
+        }
+        //to make btn /w category colored, sized circles
+        // !important needed to override use of bg-{color}, bootstrap utility class
+        &.icon-circle-#{$size-abbr}, &.icon-circle,
+        &.bb-icon__background--circle {
+          background-color: map-get($icon-data, 'color') !important;
+          color: color('neutrals', 'white');
+        }
+      }
+    }
+  }
+}
+
+
+//TODO: Add feature @Input for bb-icon-ui
+.bicon-arrow-in:before,
+.bb-icon-arrow-in:before {
+  content: 'reply';
+  display: inline-block;
+  transform: rotateX(180deg);
+}
+
+.bicon-arrow-out:before,
+.bb-icon-arrow-out:before {
+  content: 'reply';
+  display: inline-block;
+  transform: rotateY(180deg);
+}
+
+.bb-icon__background {
+  color: $neutral-1;
+}
+
+@each $color, $value in $icon-colors {
+  .bb-icon--#{$color} {
+    color: $value;
+  }
+
+  .bb-icon__background--#{$color} {
+    background-color: $value;
+    &.bb-icon--inverse {
+      background-color: color('neutrals', 'white');
+      &.icon-circle {
+        color: $value;
+      }
+    }
+  }
+}
+
+.bb-icon--muted {
+  color: map-get($colors, 'gray');
+}
+
+.bb-icon__background--circle {
+  border-radius: 50%;
+}
+
+.bb-icon__background--square {
+  @include border-radius($icon-background-square-border-radius);
+}

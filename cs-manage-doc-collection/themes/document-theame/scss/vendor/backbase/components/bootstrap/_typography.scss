@@ -1,0 +1,50 @@
+// Text
+//
+// line-height, and color for body text, headings, and more.
+.highlight, strong {
+  @extend .font-weight-medium;
+}
+
+blockquote {
+  @extend .blockquote;
+}
+
+.break-word {
+  word-break: break-all; // IE does not support break-word :(
+  word-break: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+.rb-sidebar a:hover {
+  text-decoration: none;
+}
+
+//Convenience template-driven text classes smaller/larger sizing (e.g. business widgets)
+.text-small {
+  font-size: $font-size-sm;
+}
+.text-large {
+  font-size: $font-size-lg;
+}
+
+
+//Assign Select Font-weight per Heading group [BS4 OVERRIDES]
+h1, .h1 { font-weight: $font-weight-light; }
+h2, .h2 { font-weight: $font-weight-regular; }
+h3, .h3 { font-weight: $font-weight-medium; }
+h4, .h4 { font-weight: $font-weight-medium; }
+h5, .h5 { font-weight: $font-weight-medium; }
+h6, .h6 { font-weight: $font-weight-medium; }
+
+/*
+* Bootstrap Utilies Default
+.font-weight-light  { font-weight: $font-weight-light !important; }
+.font-weight-normal { font-weight: $font-weight-normal !important; }
+.font-weight-bold   { font-weight: $font-weight-bold !important; }
+.font-italic        { font-style: italic !important; }
+*/
+
+.font-weight-medium { font-weight: $font-weight-medium !important; }

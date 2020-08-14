@@ -1,0 +1,13 @@
+ui-bb-filter-form-actions-ng {
+  .card-footer {
+    @extend .card-footer-clear;
+  }
+
+  .btn + .btn {
+    @extend .ml-3;
+  }
+
+  .btn-secondary {
+    @extend .btn-outline-secondary;
+  }
+}

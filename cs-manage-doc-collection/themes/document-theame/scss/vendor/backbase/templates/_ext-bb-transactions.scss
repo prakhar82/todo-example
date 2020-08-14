@@ -1,0 +1,73 @@
+.bb-transaction-category {
+  @extend .bicon;
+  line-height: inherit;
+  
+  &-list-item {
+    & {
+      vertical-align: top;
+      line-height: 60px;
+    }
+  
+    &-name {
+      line-height: 60px;
+    }
+  }
+  
+  &-parent-label {
+    background-color: color("white");
+  }
+  
+  &-name {
+    line-height: $line-height-base * 1.5;
+  }
+  
+  &-icon {
+    width: 1.4rem;
+    text-align: center;
+    background-color: inherit;
+  }
+  
+  // Escape for WC2 support
+  @at-root { 
+    @each $category, $icon, $color in $category-list {
+      &-bg-#{$category} {
+        background-color: $color;
+      }
+      &-label-#{$category} {
+        color: $color;
+      }
+    
+      &-#{$category} {
+        @if $icon {
+          @extend .#{$icon};
+        }
+        width: 3rem;
+        height: 3rem;
+        line-height: 3rem;
+        border-radius: 50%;
+        text-align: center;
+        background-color: $color;
+        color: $color;
+
+        // Workaround for WC2 lib-bb-styles
+        &:not(.chart-donut-slice-icon):not(.budget-card-category-icon) {
+          color: color('neutrals', 'white');
+        }
+      }
+    
+    }
+    
+    &-large {
+      font-size: 1.4rem;
+      line-height: $line-height-base * 1.5;
+    }
+
+    @include media-breakpoint-up(sm) {
+      &-list-limited {
+        max-height: 335px;
+        overflow-y: scroll;
+      }
+    }
+  }
+}
+

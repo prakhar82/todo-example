@@ -1,0 +1,14 @@
+$dropdown-panel-dropdown-shadow: $dropdown-box-shadow !default;
+
+.bb-dropdown-panel {
+  position: relative;
+}
+
+.bb-dropdown-panel__dropdown {
+  width: 100%;
+  box-shadow: $dropdown-panel-dropdown-shadow;
+
+  &.dropdown-menu {
+    padding: 0;
+  }
+}

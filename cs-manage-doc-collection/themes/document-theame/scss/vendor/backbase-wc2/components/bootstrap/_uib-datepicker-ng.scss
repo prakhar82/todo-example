@@ -1,0 +1,177 @@
+/// uib-datepicker
+//Applied on: ui-bb-calendar-popup -- trigger dropdown
+@at-root {
+  .uib-datepicker-popup.dropdown-menu {
+    min-width: 265px;
+  
+    //Calendar popup content
+    //popup content seems to have no template partial to add BS4 classes, hence more styles here
+    .uib-datepicker {
+      // Override the default restyling of "uib-* .btn-default"
+      &[class^="uib-"] .btn-link,
+      &[class^="uib-"] .btn-default {
+        background-color: transparent;
+        border: none;
+        border-radius: 50%;
+        box-shadow: none;
+        color: $body-color;
+        padding: 0;
+  
+        &:disabled {
+          pointer-events: none;
+        }
+  
+        &:hover {
+          color: $cyan;
+        }
+  
+        &.active,
+        &.active:hover,
+        &:active {
+          background-color: $cyan;
+          color: color('neutrals', 'white');
+        }
+  
+        // Current day, when selected
+        // Have to force overwrite the "!important" cyan color or it is the same as the background color
+        &.active .text-info,
+        &:active .text-muted {
+          color: color('neutrals', 'white') !important;
+        }
+  
+        // Title element
+        &.uib-title:active {
+          background-color: transparent;
+          color: $cyan;
+        }
+      }
+      & table {
+        width: 100%;
+  
+        & th, td {
+          padding: 0 5px 10px;
+  
+          &:first-of-type {
+            padding-left: 16px;
+          }
+          &:last-of-type {
+            padding-right: 16px;
+          }
+        }
+  
+        & thead tr:first-of-type th {
+          padding-top: 15px;
+        }
+        & tr:last-of-type td {
+          padding-bottom: 15px;
+        }
+      }
+  
+      %selected-date {
+        background-color: $cyan;
+        color: color('neutrals', 'white');
+  
+        .text-info {
+          border: none;
+          color: color('neutrals', 'white') !important;
+        }
+      }
+  
+      & .uib-day {
+        padding: 0 5px;
+  
+        &.one-day-range .btn {
+          @extend %selected-date;
+        }
+  
+        &.date-range-start .btn,
+        &.date-range-end .btn,
+        &.date-range-captured .btn {
+          position: relative;
+          @extend %selected-date;
+  
+          &::before {
+            position: absolute;
+            content: '';
+            background-color: $cyan;
+            top: 0;
+            bottom: 0;
+            z-index: 0;
+          }
+  
+          & span {
+            position: relative;
+            z-index: 1;
+            color: color('neutrals', 'white');
+          }
+        }
+  
+        &.date-range-start .btn::before {
+          right: -5px;
+          left: 50%;
+        }
+  
+        &.date-range-end .btn::before {
+          left: -5px;
+          right: 50%;
+        }
+  
+        &.date-range-captured .btn::before {
+          left: -5px;
+          right: -5px;
+        }
+        &.range-set-inactive {
+          & .active {
+            background-color: transparent;
+            &:hover > .text-info {
+              color: color('neutrals', 'white') !important;
+            }
+            & > .text-info {
+              color: $cyan !important;
+            }
+          }
+        }
+      }
+  
+      .uib-month {
+        padding: 0 25px;
+      }
+  
+      .uib-year {
+        padding: 3px 5px 4px;
+      }
+  
+      .uib-day .btn, .uib-left, .uib-right {
+        height: 25px;
+        line-height: 25px;
+        width: 25px;
+      }
+  
+      .uib-month .btn {
+        height: 45px;
+        line-height: 45px;
+        width: 45px;
+      }
+  
+      .uib-year .btn {
+        height: 39px;
+        line-height: 39px;
+        width: 39px;
+      }
+  
+      // Custom classes to be added by JS functions
+      // The fns add them to the td. But the span is styled.
+      .highlight-date-secondary > .btn > span {
+        border: 1px solid $purple;
+        border-radius: 50%;
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+      }
+      .highlight-date-secondary > .btn.active > span,
+      .highlight-date-secondary > .btn:active > span {
+        background-color: $purple;
+      }
+    }
+  }
+}

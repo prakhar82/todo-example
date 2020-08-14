@@ -1,0 +1,11 @@
+.bb-fx-rates-spot-order-modal > .modal-dialog {
+  max-width: 900px;
+  padding: 10px;
+}
+
+@include media-breakpoint-down(md) {
+  .bb-fx-rates-spot-order-modal > .modal-dialog {
+    max-width: 600px;
+    padding: 10px;
+  }
+}

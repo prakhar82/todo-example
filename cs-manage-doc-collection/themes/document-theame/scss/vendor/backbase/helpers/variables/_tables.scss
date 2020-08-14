@@ -1,0 +1,17 @@
+//
+// Tables
+//
+// Customizes the `.table` component with basic values, each used across all table variations.
+//TODO: Colors are TBD per Design Team
+$table-accent-bg:    rgba(color('neutrals', 'black'), .02);
+$table-hover-bg:     $info-bright;
+$table-active-bg:    $table-hover-bg;
+
+$table-border-color: rgba(color('neutrals', 'black'), .1);
+
+$table-font-size:    $font-size-base * .9;
+
+$table-accent-bg:    color("neutrals", "light");
+$table-hover-bg:     color("neutrals", "lighter");
+$table-border-width: $border-width;
+$table-head-color:   $body-color;

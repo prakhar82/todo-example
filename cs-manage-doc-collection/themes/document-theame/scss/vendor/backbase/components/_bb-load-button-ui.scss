@@ -1,0 +1,31 @@
+$load-button-cropped-icon-spacing: 0.5rem !default;
+
+.bb-load-button {
+  position: relative;
+}
+
+.bb-load-button__content {
+  display: inline-flex;
+
+  bb-icon-ui {
+    &:last-child {
+      .bb-icon--cropped {
+        margin-left: $load-button-cropped-icon-spacing;
+      }
+    }
+
+    &:first-child {
+      .bb-icon--cropped {
+        margin-right: $load-button-cropped-icon-spacing;
+      }
+    }
+  }
+}
+
+.bb-load-button__loading-indicator {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -10px;
+  margin-top: calc(-0.5rem - 10px);
+}

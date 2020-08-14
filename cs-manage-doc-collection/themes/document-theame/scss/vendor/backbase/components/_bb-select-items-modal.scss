@@ -1,0 +1,25 @@
+$select-items-max-heigth: 70vh !default;
+$select-items-search-box-max-width: 50% !default;
+$select-items-sticky-header-sizer: $spacer * 0.5 !default;
+$select-items-state-height: 100vh !default;
+
+.bb-select-items {
+  display: flex;
+  flex-direction: column;
+  max-height: $select-items-max-heigth;
+}
+
+.bb-select-items__search-box {
+  max-width: $select-items-search-box-max-width;
+}
+
+.bb-select-items__sticky-header-top {
+  padding: $select-items-sticky-header-sizer 0;
+  background: color('neutrals', 'white');
+}
+
+.bb-select-items__state {
+  flex-direction: column;
+  justify-content: center;
+  height: $select-items-state-height;
+}

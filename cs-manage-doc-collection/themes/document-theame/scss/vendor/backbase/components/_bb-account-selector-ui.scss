@@ -1,0 +1,118 @@
+bb-account-selector-ui {
+  > .ng-select.ng-select-single,
+  > .ng-select.ng-select-multiple {
+    > .ng-select-container {
+      height: auto;
+      min-height: $account-selector-container-min-height;
+
+      // fix placeholder/arrow alignment with min-height and flex for IE
+      &:before {
+        content: "";
+        height: $account-selector-container-min-height; // Same height as parent min-height
+      }
+
+      > .ng-value-container {
+        padding: 0;
+
+        > .ng-placeholder {
+          position: relative;
+          top: 0;
+          padding-left: $account-selector-inner-padding-left;
+          padding-bottom: 0;
+          color: $body-color;
+        }
+
+        // fix jumping of placeholder when interacting with dropdown in Chrome (MAINT-9158)
+        .ng-input {
+          position: absolute;
+          width: auto;
+        }
+      }
+
+      &.ng-has-value {
+        box-shadow: inset 4px 0 0 color('selected');
+        &:hover {
+          box-shadow: inset 4px 0 0 color('selected');
+        }
+      }
+
+      .ng-value {
+        width: 100%;
+      }
+    }
+
+    .ng-dropdown-panel {
+      > .ng-dropdown-panel-items {
+        max-height: $account-selector-ng-dropdown-panel-max-height;
+
+        .ng-option {
+          padding: 0;
+
+          &.ng-option-marked {
+            background-color: $primary-bright;
+            .product-item-content {
+              background-color: $primary-bright;
+            }
+          }
+
+          &.ng-option-selected {
+            box-shadow: inset 4px 0 0 color('selected');
+            background-color: $primary-bright;
+            .product-item-content {
+              background-color: $primary-bright;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  > .ng-select.ng-select-multiple {
+    .ng-dropdown-panel {
+      > .ng-dropdown-panel-items {
+        .ng-option {
+          .product-item > .product-item-content {
+            padding-left: .25rem !important;
+          }
+        }
+      }
+    }
+  }
+
+  > .ng-select.ng-select-filtered {
+    .ng-placeholder {
+      // Display the placeholder even when filtering is enabled
+      display: block;
+    }
+    .ng-has-value {
+      .ng-placeholder {
+        // Never show the placeholder when there is a value
+        display: none;
+      }
+    }
+  }
+}
+
+.multiple-accounts-selected {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.5rem;
+}
+
+.multiple-accounts-selected__filters {
+  padding-top: 0.25rem;
+}
+
+.multiple-accounts-selected__number {
+  font-weight: $font-weight-bold;
+  font-size: $font-size-base;
+}
+
+.multiple-accounts-selected__items {
+  font-size: $font-size-sm;
+}
+
+.multiple-accounts-item-checkbox {
+  padding-bottom: 0.75rem;
+  padding-left: 1.5rem;
+}

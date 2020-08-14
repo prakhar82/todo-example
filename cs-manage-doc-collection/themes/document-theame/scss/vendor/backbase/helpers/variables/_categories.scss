@@ -1,0 +1,13 @@
+// if icon map prop exists, retrieve prop value,
+// map-merge categories' prop:value to $icon-map, if icon prop exists
+@each $category, $icon, $color in $category-list {
+  @if $icon {
+    $icon-map: map-merge($icon-map, (
+        'category-#{$category}': (
+          'color': $color,
+          'icon': str-slice($icon, str-index($icon, '-') + 1)
+        ),
+      )
+    );
+  }
+}

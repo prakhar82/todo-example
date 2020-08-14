@@ -1,0 +1,247 @@
+// Shim For legacy FA usages
+// Maps all used fa-* to Material equiv.
+// FA library removed -- below are the shims on existing FA
+@at-root {
+  // Default sizing from original library
+  .fa-xs {
+    font-size: 0.75em;
+  }
+  .fa-sm {
+    font-size: 0.875em;
+  }
+  .fa-lg {
+    @extend .bicon-md;
+  }
+  .fa-2x {
+    @extend .bicon-lg;
+  }
+  .fa-3x {
+    font-size: 3em;
+  }
+  .fa-4x {
+    @extend .bicon-xl;
+  }
+  .fa-5x {
+    @extend .bicon-xxl;
+  }
+  .fa-6x {
+    font-size: 6em;
+  }
+  .fa-7x {
+    font-size: 7em;
+  }
+  .fa-8x {
+    font-size: 8em;
+  }
+  .fa-9x {
+    font-size: 9em;
+  }
+  .fa-10x {
+    font-size: 10em;
+  }
+  .fa,
+  .fas {
+    @extend .bicon;
+    // Icons
+    &.fa-exclamation-triangle:before {
+      content: "report_problem"; //bicon for report-problem already reserved under 'error'
+    }
+    &.fa-bars {
+      @extend .bicon-menu;
+    }
+    &.fa-bar-chart {
+      @extend .bicon-currency-trade;
+    }
+    &.fa-exclamation-circle {
+      @extend .bicon-error;
+    }
+    &.fa-info-circle {
+      @extend .bicon-info;
+    }
+    &.fa-check-circle {
+      @extend .bicon-success;
+    }
+    &.fa-user {
+      @extend .bicon-user;
+    }
+    &.fa-address-book {
+      @extend .bicon-contacts;
+    }
+    &.fa-chevron-down {
+      @extend .bicon-toggle-down;
+    }
+    &.fa-chevron-up {
+      @extend .bicon-toggle-up;
+    }
+    &.fa-chevron-right {
+      @extend .bicon-chevron-right;
+    }
+    &.fa-caret-down {
+      @extend .bicon-caret-down;
+    }
+    &.fa-caret-up {
+      @extend .bicon-caret-up;
+    }
+    &.fa-arrow-left {
+      @extend .bicon-arrow-back;
+    }
+    &.fa-circle {
+      @extend .bicon-circle;
+    }
+    &.fa-exchange-alt {
+      @extend .bicon-exchange;
+    }
+    &.fa-filter,
+    &.fa-sliders-h {
+      @extend .bicon-filter;
+    }
+    &.fa-search {
+      @extend .bicon-search;
+    }
+    &.fa-times {
+      @extend .bicon-times;
+    }
+    &.fa-angle-left {
+      @extend .bicon-angle-left;
+    }
+    &.fa-angle-right {
+      @extend .bicon-angle-right;
+    }
+    &.fa-ellipsis-h {
+      @extend .bicon-ellipsis-h;
+    }
+    &.fa-calendar,
+    &.fa-calendar-alt {
+      @extend .bicon-calendar;
+    }
+    &.fa-list {
+      @extend .bicon-list;
+    }
+    &.fa-bell {
+      @extend .bicon-notifications;
+    }
+    &.fa-trash-alt,
+    &.fa-trash {
+      @extend .bicon-delete;
+    }
+    &.fa-check {
+      @extend .bicon-check;
+    }
+    &.fa-ellipsis-v {
+      @extend .bicon-more-vertical;
+    }
+    &.fa-ban {
+      @extend .bicon-not-interested;
+    }
+    &.fa-download {
+      @extend .bicon-download;
+    }
+    &.fa-pencil-alt {
+      @extend .bicon-edit;
+    }
+    &.fa-lock {
+      @extend .bicon-lock;
+    }
+    &.fa-star {
+      @extend .bicon-star;
+    }
+    &.fa-spinner {
+      @extend .bicon-loading;
+    }
+    &.fa-server {
+      @extend .bicon-unexpected;
+    }
+    &.fa-sign-in-alt {
+      @extend .bicon-authorizations;
+    }
+    &.fa-angle-double-left {
+      @extend .bicon-first-page;
+    }
+    &.fa-angle-double-right {
+      @extend .bicon-last-page;
+    }
+    &.fa-home {
+      @extend .bicon-home;
+    }
+    &.fa-heart {
+      @extend .bicon-favorite;
+    }
+    &.fa-utensils {
+      @extend .bicon-local-dining;
+    }
+    &.fa-car {
+      @extend .bicon-directions-car;
+    }
+    &.fa-shopping-cart {
+      @extend .bicon-shopping-cart;
+    }
+    &.fa-university {
+      @extend .bicon-school;
+    }
+    &.fa-file {
+      @extend .bicon-insert-drive-file;
+    }
+    &.fa-plus-square {
+      @extend .bicon-add-box;
+    }
+    &.fa-plus {
+      @extend .bicon-add;
+    }
+    &.fa-database {
+      @extend .bicon-attach-money;
+    }
+    &.fa-tachometer {
+      // for budgets empty-state
+      @extend .bicon-data-usage;
+    }
+    &.fa-exchange-alt {
+      @extend .bicon-exchange;
+    }
+    &.fa-archive {
+      @extend .bicon-archive;
+    }
+    &.fa-list-ul {
+      @extend .bicon-format-list-bulleted;
+    }
+    &.fa-list-ol {
+      @extend .bicon-format-list-numbered;
+    }
+    &.fa-print {
+      @extend .bicon-print;
+    }
+    &.fa-percent {
+      @extend .bicon-currency-trade;
+    }
+  }
+  .far {
+    @extend .bicon;
+    &.fa-star:before {
+      @extend .bicon-star-border;
+    }
+    &.fa-money-bill-alt:before {
+      @extend .bicon-payments;
+    }
+  }
+  //WC2-exclusive bicon variants
+  //Matching bicon-* class names will defer to their WC3 versions (e.g. .bicon-error, .bicon-warning)
+  .bicon {
+    &.bicon-alert {
+      @extend .bicon-error;
+    }
+    &.bicon-drag-n-drop {
+      @extend .bicon-menu;
+    }
+    &.bicon-authorized {
+      @extend .bicon-authorizations;
+    }
+  }
+  .glyphicon {
+    @extend .bicon;
+  }
+  .glyphicon-chevron-left {
+    @extend .bicon-chevron-left;
+  }
+  .glyphicon-chevron-right {
+    @extend .bicon-chevron-right;
+  }
+}

@@ -1,0 +1,113 @@
+.bb-input-radio-group__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.bb-input-radio-group .bb-input-radio-group-label,
+.bb-input-radio-group__group-label{
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  margin-bottom: 1rem;
+}
+
+.bb-input-radio-group .bb-input-radio-label,
+.bb-input-radio-group__radio {
+  box-shadow: none;
+  display: inline;
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: calc(#{$radio-icon-outer-size} + 8px);
+  white-space: normal;
+  text-align: left;
+
+  & > input {
+    position: absolute;
+    opacity: 0;
+    left: 0;
+  }
+
+  &::after, &::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    @extend .rounded-circle;
+  }
+
+  &::after {
+    width: $radio-icon-inner-size;
+    height: $radio-icon-inner-size;
+    left: $radio-icon-inner-x;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &::before {
+    width: $radio-icon-outer-size;
+    height: $radio-icon-outer-size;
+    border: 1px solid $radio-icon-default-color;
+    left: $radio-icon-outer-x;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &.selected:not(:disabled):not(.disabled) {
+    &::after {
+      color: $radio-icon-selected-color;
+      background-color: $radio-icon-selected-color;
+    }
+    &::before {
+      border-color: $radio-icon-selected-color;
+    }
+  }
+
+  &.disabled {
+    opacity: 1;
+
+    &::before {
+      border-color: $radio-icon-hover-color;
+    }
+  }
+
+  &.active, &:active, &.focus {
+    &:not(:disabled):not(.disabled) {
+      box-shadow: none;
+    }
+  }
+
+  &.selected.disabled {
+    &::after {
+      background-color: $radio-icon-default-color;
+    }
+  }
+
+  &.focus {
+    &::before {
+      box-shadow: $input-btn-focus-box-shadow;
+    }
+  }
+
+  &:hover:not(.selected):not(.disabled) {
+    &::before {
+      border-color: $radio-icon-hover-color;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.bb-input-radio-group__list--horizontal {
+  flex-direction: row;
+
+  .bb-input-radio-group__radio,
+  .bb-input-radio-label {
+    margin-bottom: 0;
+    margin-right: 0.5rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

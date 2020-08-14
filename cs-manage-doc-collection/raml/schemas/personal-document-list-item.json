@@ -1,0 +1,70 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"TemplateType": {
+			"type": "string"
+		},
+		"RMName": {
+			"type": "string"
+		},
+		"CategoryCode": {
+			"type": "string"
+		},
+		"Comments": {
+			"type": "string"
+		},
+		"OverallESignTransactionStatus": {
+			"type": "string"
+		},
+		"ESignTransactionDetails": {
+			"type": "object",
+			"$ref": "esign-transaction-details.json"
+		},
+		"RMPid": {
+			"type": "string"
+		},
+		"PartyName": {
+			"type": "string"
+		},
+		"ESignStatus": {
+			"type": "string"
+		},
+		"DocumentTypeId": {
+			"type": "integer"
+		},
+		"CategoryTypeId": {
+			"type": "integer"
+		},
+		"Status": {
+			"type": "string"
+		},
+		"RequestMetadataId": {
+			"type": "integer"
+		},
+		"ModifiedDate": {
+			"type": "string"
+		},
+		"CreateDate": {
+			"type": "string"
+		},
+		"FileNetDocumentCount": {
+			"type": "integer"
+		},
+		"ParentRequestMetadataId": {
+			"type": "integer"
+		},
+		"IsRead": {
+			"type": "boolean"
+		},
+		"DocumentType": {
+			"type": "string"
+		},
+		"DocumentCount": {
+			"type": "integer"
+		},
+		"EsignMetadataId": {
+			"type": "integer"
+		}
+	}
+}

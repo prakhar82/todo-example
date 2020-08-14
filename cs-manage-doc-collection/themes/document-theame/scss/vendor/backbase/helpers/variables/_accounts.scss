@@ -1,0 +1,10 @@
+// Define colors used by account type
+$account-colors: (
+  "current-account":    color("primary"),
+  "savings-account":    color("success"),
+  "term-deposit":       color("warning"),
+  "credit-card":        color("pink"),
+  "debit-card":         color("purple"),
+  "loan":               color("lime"),
+  "investment-account": color("orange")
+);

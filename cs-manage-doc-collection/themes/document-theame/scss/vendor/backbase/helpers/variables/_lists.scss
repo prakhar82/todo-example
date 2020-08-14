@@ -1,0 +1,10 @@
+// List group
+$list-group-bg:color("neutrals", "white");
+$list-group-border-color: color("neutrals", "grey");
+
+$list-group-disabled-color: $text-muted;
+
+$list-group-hover-bg: color("neutrals", "light");
+$list-group-active-color: color("primary");
+$list-group-active-bg: $component-active-bg;
+$list-group-active-border-color: $list-group-active-bg;

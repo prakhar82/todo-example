@@ -1,0 +1,107 @@
+.user-context-dropdown {
+  background: transparent;
+
+  @include media-breakpoint-up(md) {
+    max-width: $user-context-dropdown-width;
+    height: $user-context-dropdown-height;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: $user-context-dropdown-sm-padding;
+  }
+}
+
+.user-context-dropdown__selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: $border-radius;
+  padding: $select-context-item-subheader-margin;
+  width: 100%;
+  height: $user-context-dropdown-height;
+
+  &:hover,
+  &:hover:focus,
+  &hover.focus {
+    background: $select-context-hover-color;
+  }
+
+  &:active {
+    background: $select-context-active-color;
+  }
+
+  &:active::after {
+    background: transparent;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 0;
+    border-radius: $rounded-pill;
+  }
+}
+
+.user-context-menu-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-context-menu-info__name {
+  @extend .text-truncate;
+  font-weight: $font-weight-bolder;
+}
+
+.user-context-menu-info__context {
+  @extend .text-truncate;
+  font-size: $select-context-subheader-font-size;
+  color: $select-context-subheader-color;
+}
+
+.user-context-menu-info__description {
+  max-width: 9rem;
+  margin-left: $select-context-item-margin;
+  text-align: initial;
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}
+
+.user-context-dropdown__toggle {
+  padding: $select-context-item-margin;
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}
+
+.user-context-dropdown__menu {
+  min-width: 20rem;
+}
+
+.user-context-menu-item {
+  display: flex;
+  align-items: center;
+  @extend .list-group-item;
+  @extend .list-group-item-action;
+}
+
+.user-context-menu-item__details {
+  margin-left: $select-context-item-margin;
+}
+
+.user-context-menu-item__title {
+  font-weight: bold;
+}
+
+.user-context-menu-item__subtitle {
+  color: $select-context-subheader-color;
+}
+
+.user-context-modal__content {
+  margin-top: $select-context-modal-margin;
+}
+
+.user-context__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+}

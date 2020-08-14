@@ -1,0 +1,37 @@
+// Navigation
+
+$navbar-box-shadow: 0 0 1px 0 rgba(0,0,0,0.14),
+    0 1px 1px 0 rgba(0,0,0,0.12),
+    0 1px 1px 0 rgba(0,0,0,0.01);
+$navbar-height: 80px;
+$navbar-brand-width: 266px;
+$navbar-brand-height: 80px;
+$navbar-brand-height-sm: 60px;
+$navbar-brand-padding-y:            0;
+$navbar-brand-padding-y:            0;
+$navbar-brand-font-size:            $font-size-base;
+$navbar-right-width: 500px;
+$navbar-top-height: $navbar-height;
+
+$nav-tabs-link-hover-border-color:  transparent;
+
+$navigation-main-content-padding-top: 30px;
+$navigation-main-content-padding-left: 16px;
+$navigation-main-content-padding-right: 16px;
+
+$nav-link-disabled-color: $text-muted;
+$navigation-item-height: 40px;
+
+$navigation-header-font-size: 10px;
+$navigation-header-height: 14px;
+$navigation-header-margins:10px 0 8px 0;
+$navigation-header-paddings: 0 16px 0 24px;
+$navigation-header-color: color("white");
+
+// sidebar
+$sidebar-width: 280px;
+$sidebar-collapsed-width: 60px;
+$sidebar-icon-size: 20px;
+
+// navigation link widget
+$navigation-link-widget-height-sm: calc(100vh - #{$navbar-brand-height-sm});

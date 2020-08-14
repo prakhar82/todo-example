@@ -1,0 +1,10 @@
+//ENTRY POINT: Handles primal value base variable definitions
+//Note that helpers/variables are used for references of pre-defined variables.
+// (e.g. $abstract-variable: $another-base-variable)
+//The reason for the separation is to allow for finer customization of theme abstractions, at various junctions
+
+//Downstream Definitions -- Depends on above variable imports
+@import 'buttons';
+@import 'spacing';
+@import 'borders';
+@import 'typography';

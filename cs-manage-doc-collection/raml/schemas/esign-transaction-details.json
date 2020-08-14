@@ -1,0 +1,21 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"TotalUnsigned": {
+			"type": "integer"
+		},
+		"TotalSigned": {
+			"type": "integer"
+		},
+		"TotalNonConfirmedSignatures": {
+			"type": "integer"
+		},
+		"TotalSigners": {
+			"type": "integer"
+		},
+		"TotalDeclined": {
+			"type": "integer"
+		}
+	}
+}

@@ -1,0 +1,16 @@
+//
+// Tables
+//
+
+$small-table-col-margin: 120px;
+$table-bg: transparent;
+$table-padding: 0.75rem;
+$table-header-icon-right-position: -1.2rem;
+
+$table-palette: (
+  "row-primary":   $primary-bright,
+  "row-success":   $success-bright,
+  "row-info":      $info-bright,
+  "row-warning":   $warning-bright,
+  "row-danger":    $danger-bright,
+)

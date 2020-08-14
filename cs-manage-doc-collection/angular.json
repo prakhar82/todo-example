@@ -1,0 +1,392 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "",
+  "projects": {
+    "cs-manage-doc-collection-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:module": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "apps/cs-manage-doc-collection-app",
+      "sourceRoot": "apps/cs-manage-doc-collection-app/src",
+      "prefix": "bb",
+      "architect": {
+        "build": {
+          "builder": "@bb-cli/bb-ang:browser",
+          "options": {
+            "outputPath": "dist/cs-manage-doc-collection-app",
+            "index": "apps/cs-manage-doc-collection-app/src/index.html",
+            "main": "apps/cs-manage-doc-collection-app/src/main.ts",
+            "polyfills": "apps/cs-manage-doc-collection-app/src/polyfills.ts",
+            "tsConfig": "apps/cs-manage-doc-collection-app/tsconfig.app.json",
+            "assets": [
+              {
+                "input": "dist/custom-project-assets",
+                "glob": "**/*",
+                "output": "assets"
+              },
+              "apps/cs-manage-doc-collection-app/src/favicon.ico",
+              "apps/cs-manage-doc-collection-app/src/assets"
+            ],
+            "styles": [
+              "themes/document-theame/scss/main.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/cs-manage-doc-collection-app/src/environments/environment.ts",
+                  "with": "apps/cs-manage-doc-collection-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": true,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            },
+            "shared": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/cs-manage-doc-collection-app/src/environments/environment.ts",
+                  "with": "apps/cs-manage-doc-collection-app/src/environments/environment.shared.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "cs-manage-doc-collection-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "cs-manage-doc-collection-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "cs-manage-doc-collection-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/cs-manage-doc-collection-app/src/test.ts",
+            "karmaConfig": "./karma.conf.js",
+            "polyfills": "apps/cs-manage-doc-collection-app/src/polyfills.ts",
+            "tsConfig": "apps/cs-manage-doc-collection-app/src/../../../tsconfig.spec.json",
+            "environment": "dev",
+            "codeCoverage": true,
+            "codeCoverageExclude": [
+              "test.ts",
+              "**/polyfills.ts"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/cs-manage-doc-collection-app/tsconfig.app.json",
+              "apps/cs-manage-doc-collection-app/src/../../../tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "cs-manage-doc-collection-app-e2e": {
+      "projectType": "application",
+      "prefix": "bb",
+      "root": "apps/cs-manage-doc-collection-app-e2e",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/cs-manage-doc-collection-app-e2e/protractor.conf.js",
+            "devServerTarget": "cs-manage-doc-collection-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "cs-manage-doc-collection-app:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/cs-manage-doc-collection-app-e2e/tsconfig.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "document-layout-container": {
+      "root": "libs/document-layout-container",
+      "sourceRoot": "libs/document-layout-container/src",
+      "projectType": "library",
+      "prefix": "bb",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/document-layout-container/test.ts",
+            "karmaConfig": "./karma.conf.js",
+            "polyfills": "apps/cs-manage-doc-collection-app/src/polyfills.ts",
+            "tsConfig": "./tsconfig.spec.json",
+            "environment": "dev",
+            "codeCoverage": true,
+            "codeCoverageExclude": [
+              "test.ts",
+              "**/polyfills.ts"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "files": [
+              "libs/document-layout-container/**/*.ts"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "personal-document-widget": {
+      "root": "libs/personal-document-widget",
+      "sourceRoot": "libs/personal-document-widget/src",
+      "projectType": "library",
+      "prefix": "bb",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/personal-document-widget/test.ts",
+            "karmaConfig": "./karma.conf.js",
+            "polyfills": "apps/cs-manage-doc-collection-app/src/polyfills.ts",
+            "tsConfig": "./tsconfig.spec.json",
+            "environment": "dev",
+            "codeCoverage": true,
+            "codeCoverageExclude": [
+              "test.ts",
+              "**/polyfills.ts"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "files": [
+              "libs/personal-document-widget/**/*.ts"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "document-data": {
+      "root": "libs/document-data",
+      "sourceRoot": "libs/document-data/src",
+      "projectType": "library",
+      "prefix": "bb",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/document-data/test.ts",
+            "karmaConfig": "./karma.conf.js",
+            "polyfills": "apps/cs-manage-doc-collection-app/src/polyfills.ts",
+            "tsConfig": "./tsconfig.spec.json",
+            "environment": "dev",
+            "codeCoverage": true,
+            "codeCoverageExclude": [
+              "test.ts",
+              "**/polyfills.ts"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "files": [
+              "libs/document-data/**/*.ts"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "document-library-widget": {
+      "root": "libs/document-library-widget",
+      "sourceRoot": "libs/document-library-widget/src",
+      "projectType": "library",
+      "prefix": "bb",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/document-library-widget/test.ts",
+            "karmaConfig": "./karma.conf.js",
+            "polyfills": "apps/cs-manage-doc-collection-app/src/polyfills.ts",
+            "tsConfig": "./tsconfig.spec.json",
+            "environment": "dev",
+            "codeCoverage": true,
+            "codeCoverageExclude": [
+              "test.ts",
+              "**/polyfills.ts"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "files": [
+              "libs/document-library-widget/**/*.ts"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ui-components-lib": {
+      "root": "libs/ui-components-lib",
+      "sourceRoot": "libs/ui-components-lib/src",
+      "projectType": "library",
+      "prefix": "bb",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/ui-components-lib/test.ts",
+            "karmaConfig": "./karma.conf.js",
+            "polyfills": "apps/cs-manage-doc-collection-app/src/polyfills.ts",
+            "tsConfig": "./tsconfig.spec.json",
+            "environment": "dev",
+            "codeCoverage": true,
+            "codeCoverageExclude": [
+              "test.ts",
+              "**/polyfills.ts"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "files": [
+              "libs/ui-components-lib/**/*.ts"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "personal-document-data": {
+      "root": "libs/personal-document-data",
+      "sourceRoot": "libs/personal-document-data/src",
+      "projectType": "library",
+      "prefix": "bb",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/personal-document-data/test.ts",
+            "karmaConfig": "./karma.conf.js",
+            "polyfills": "apps/cs-manage-doc-collection-app/src/polyfills.ts",
+            "tsConfig": "./tsconfig.spec.json",
+            "environment": "dev",
+            "codeCoverage": true,
+            "codeCoverageExclude": [
+              "test.ts",
+              "**/polyfills.ts"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "files": [
+              "libs/personal-document-data/**/*.ts"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false,
+      "versionMismatch": false
+    },
+    "defaultCollection": "@bb-cli/schematics"
+  },
+  "schematics": {
+    "@bb-cli/schematics:widget": {
+      "npmScope": "backbase"
+    },
+    "@bb-cli/schematics:library": {
+      "npmScope": "backbase"
+    },
+    "@bb-cli/schematics:data-module": {
+      "npmScope": "backbase"
+    }
+  },
+  "defaultProject": "cs-manage-doc-collection-app"
+}

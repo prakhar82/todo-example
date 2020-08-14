@@ -1,0 +1,26 @@
+.bb-logo {
+  background-image: url(#{$path-to-images}/logo.svg);
+  background-size: contain;
+
+  // For backwards compatibility, the default class has non-responsive dimensions.
+  width: $logo-width;
+  height: $logo-height;
+
+  &.bb-logo-responsive {
+    width: 100%;
+    height: auto;
+    padding-top: $logo-aspect-ratio * 100%;
+  }
+
+  // .bb-logo-emblem is responsive by default
+  &.bb-logo-emblem {
+    background-image: url(#{$path-to-images}/logo-emblem.svg);
+    width: 100%;
+    height: auto;
+    padding-top: $logo-emblem-aspect-ratio * 100%;
+
+    &.bb-logo-inverse {
+      background-image: url(#{$path-to-images}/logo-emblem-inverse.svg);
+    }
+  }
+}

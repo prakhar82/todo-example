@@ -1,0 +1,36 @@
+ui-bb-calendar-popup-ng {
+  .form-control[readonly] {
+    background-color: color('neutrals', 'white');
+  }
+
+  .input-group {
+    &:focus-within {
+      outline: 0;
+      box-shadow: $input-btn-focus-box-shadow;
+      @include border-radius($input-border-radius);
+    }
+
+    > .form-control,
+    > .custom-select,
+    > .custom-file {
+      &:not(:disabled):not(.disabled) {
+        &:hover, &:focus, &:active {
+          border-color: $input-border-color;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  .input-group-prepend,
+  .input-group-append {
+    .btn {
+      &:not(:disabled):not(.disabled) {
+        &:hover, &:focus, &:active {
+          border-color: $input-border-color;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}

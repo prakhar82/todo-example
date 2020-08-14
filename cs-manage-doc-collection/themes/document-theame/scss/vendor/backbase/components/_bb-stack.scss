@@ -1,0 +1,344 @@
+////
+//// @group Components
+////
+
+/// Group a set elements horizontally.  The elements can be grouped directly as children of the `bb-stack` element or
+/// can be further grouped in sections.  By default, elements are not wrapped to the next line and center-aligned.
+///
+/// Modifiers exist
+/// for enabling wrapping and responsive layouts (`bb-stack--wrap`, `bb-stack__break`,
+/// `bb-stack__break--<breakpoint>-[up|down]`);
+/// for aligning to top/bottom (`bb-stack--align-top`, `bb-stack--align-bottom`);
+/// for aligning specific items to top/bottom (`bb-stack__item--align-top`, `bb-stack__item--align-bottom`);
+/// for aligning entire items and their successors to the right (`bb-stack__item--push-right`).
+///
+/// @name bb-stack
+///
+/// @example html - three sections where one takes up remaining space
+///   <div class="bb-stack">
+///     <div class="bb-stack__item">
+///       <div class="bb-avatar">
+///         <span class="bb-avatar__initials">
+///           XY
+///         </span>
+///       </div>
+///     </div>
+///     <div class="bb-stack__item bb-stack__item--fill">
+///       <div><strong>Title</strong></div>
+///       <div>x</div>
+///       <div><span class="text-muted">Muted</span></div>
+///     </div>
+///     <div class="bb-stack__item">
+///       <button class="btn btn-sm btn-success btn-circle">
+///         <i class="bb-icon bb-icon-check"></i>
+///       </button>
+///       <button class="btn btn-sm btn-danger btn-circle">
+///         <i class="bb-icon bb-icon-times"></i>
+///       </button>
+///     </div>
+///   </div>
+///
+/// @example html - push section to the right
+///   <div class="bb-stack">
+///     <div class="bb-stack__item">
+///       <div class="bb-avatar">
+///         <span class="bb-avatar__initials">
+///           XY
+///         </span>
+///       </div>
+///     </div>
+///     <div class="bb-stack__item bb-stack__item--push-right">
+///       <button class="btn btn-sm btn-success btn-circle">
+///         <i class="bb-icon bb-icon-check"></i>
+///       </button>
+///       <button class="btn btn-sm btn-danger btn-circle">
+///         <i class="bb-icon bb-icon-times"></i>
+///       </button>
+///     </div>
+///   </div>
+///
+/// @example html - responsive layout using wrap and responsive breaks
+///   <div class="bb-stack bb-stack--wrap">
+///     <div class="bb-stack__item">
+///       <div class="bb-avatar">
+///         <span class="bb-avatar__initials">
+///           XY
+///         </span>
+///       </div>
+///     </div>
+///     <div class="bb-stack__item bb-stack__item--fill">
+///       <div><strong>Title</strong></div>
+///       <div>x</div>
+///       <div><span class="text-muted">Muted</span></div>
+///     </div>
+///     <div class="bb-stack__break bb-stack__break--sm-down"></div>
+///     <div class="bb-stack__item">
+///       <button class="bb-toolbar__item btn btn-sm btn-success btn-circle">
+///         <i class="bb-icon bb-icon-check"></i>
+///       </button>
+///       <button class="bb-toolbar__item btn btn-sm btn-danger btn-circle">
+///         <i class="bb-icon bb-icon-times"></i>
+///       </button>
+///     </div>
+///   </div>
+///
+/// @example html - without wrapping divs
+///   <div class="bb-stack">
+///     <div class="bb-stack__item bb-avatar">
+///       <span class="bb-avatar__initials">
+///         XY
+///       </span>
+///     </div>
+///     <div class="bb-stack__item">
+///       <div><strong>Title</strong></div>
+///       <div>x</div>
+///       <div><span class="text-muted">Muted</span></div>
+///     </div>
+///     <button class="bb-stack__item btn btn-sm btn-success btn-circle">
+///       <i class="bb-icon bb-icon-check"></i>
+///     </button>
+///     <button class="bb-stack__item btn btn-sm btn-danger btn-circle">
+///       <i class="bb-icon bb-icon-times"></i>
+///     </button>
+///   </div>
+///
+/// @example html - aligning text vertically
+///   <div class="bb-stack bb-stack--align-top">
+///     <div class="bb-stack__item">
+///       <div class="bb-avatar">
+///         <span class="bb-avatar__initials">
+///           XY
+///         </span>
+///       </div>
+///     </div>
+///     <div class="bb-stack__item bb-stack__item--align-top">
+///       .bb-stack__item--align-top
+///     </div>
+///     <div class="bb-stack__item bb-stack__item--align-bottom">
+///       .bb-stack__item--align-top
+///     </div>
+///   </div>
+///
+/// @example html - controlling the spacing between elements
+///   <div class="bb-stack bb-stack--density-sm">
+///     <div class="bb-stack__item">
+///       default (sm)
+///     </div>
+///     <div class="bb-stack__item bb-stack__item--spacing-sm">
+///       --spacing-sm
+///     </div>
+///     <div class="bb-stack__item bb-stack__item--spacing-md">
+///       --spacing-md
+///     </div>
+///     <div class="bb-stack__item bb-stack__item--spacing-lg">
+///       --spacing-lg
+///     </div>
+///     <div class="bb-stack__item bb-stack__item--spacing-none">
+///       --spacing-none
+///     </div>
+///     <div class="bb-stack__item">
+///       default (end)
+///     </div>
+///   </div>
+
+.bb-stack {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.bb-stack--center {
+  justify-content: center;
+}
+
+
+.bb-stack--wrap {
+  flex-wrap: wrap;
+}
+
+.bb-stack--align-top {
+  align-items: flex-start;
+}
+
+.bb-stack--align-bottom {
+  align-items: flex-end;
+}
+
+// stack item
+
+.bb-stack__item {
+  margin-right: 1rem;
+  margin-left: 0;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.bb-stack--compact {
+  .bb-stack__item {
+    margin-right: 0;
+  }
+}
+
+.bb-stack--density-sm {
+  .bb-stack__item {
+    margin-right: 0.5rem;
+  }
+}
+
+
+.bb-stack--density-lg {
+  .bb-stack__item {
+    margin-right: 1.5rem;
+  }
+}
+
+.bb-stack__item--spacing-sm {
+  margin-right: 0.5rem;
+}
+
+.bb-stack__item--spacing-md {
+  margin-right: 1rem;
+}
+
+.bb-stack__item--spacing-lg {
+  margin-right: 1.5rem;
+}
+
+.bb-stack__item--spacing-none {
+  margin-right: 0;
+}
+
+// fill an item to use up the remaining space
+.bb-stack__item--fill {
+  flex-grow: 1;
+}
+
+.bb-stack__item--align-top {
+  align-self: flex-start;
+}
+
+.bb-stack__item--align-bottom {
+  align-self: flex-end;
+}
+
+.bb-stack__item--push-right {
+  margin-left: auto;
+}
+
+.bb-stack__item--push-left {
+  margin-right: auto;
+}
+
+.bb-stack__item--density-sm {
+  margin-right: 0.5rem;
+}
+
+.bb-stack__item--density-lg {
+  margin-right: 1.5rem;
+}
+
+.bb-stack__item--compact {
+  margin-right: 0;
+}
+
+.bb-stack.row,
+.bb-stack.form-row {
+  > .bb-stack__item {
+    margin-right: 0;
+  }
+}
+
+// wrap items after this item to the next line
+.bb-stack__break {
+  height: 0;
+}
+
+.bb-stack__break--spacing-sm {
+  height: $stack-break-spacing-sm;
+}
+
+.bb-stack__break--spacing-md {
+  height: $stack-break-spacing-md;
+}
+
+.bb-stack__break--spacing-lg {
+  height: $stack-break-spacing-lg;
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+  .bb-stack__break--#{$breakpoint} {
+    @include media-breakpoint-only($breakpoint) {
+      flex-basis: 100%;
+    }
+  }
+
+  .bb-stack__break-#{$infix}-up {
+    @include media-breakpoint-up($breakpoint) {
+      flex-basis: 100%;
+    }
+  }
+
+  .bb-stack__break-#{$infix}-down {
+    @include media-breakpoint-down($breakpoint) {
+      flex-basis: 100%;
+    }
+  }
+
+  .bb-stack__item--fill-#{$breakpoint} {
+    @include media-breakpoint-only($breakpoint) {
+      flex-grow: 1;
+    }
+  }
+
+  .bb-stack__item--fill-#{$infix}-up {
+    @include media-breakpoint-up($breakpoint) {
+      flex-grow: 1;
+    }
+  }
+
+  .bb-stack__item--fill-#{$infix}-down {
+    @include media-breakpoint-down($breakpoint) {
+      flex-grow: 1;
+    }
+  }
+
+  .bb-stack__item--push-right-#{$breakpoint} {
+    @include media-breakpoint-only($breakpoint) {
+      margin-left: auto;
+    }
+  }
+
+  .bb-stack__item--push-right-#{$breakpoint}-up {
+    @include media-breakpoint-up($breakpoint) {
+      margin-left: auto;
+    }
+  }
+
+  .bb-stack__item--push-right-#{$breakpoint}-down {
+    @include media-breakpoint-down($breakpoint) {
+      margin-left: auto;
+    }
+  }
+
+  .bb-stack__item--push-left-#{$breakpoint} {
+    @include media-breakpoint-only($breakpoint) {
+      margin-right: auto;
+    }
+  }
+
+  .bb-stack__item--push-left-#{$breakpoint}-up {
+    @include media-breakpoint-up($breakpoint) {
+      margin-right: auto;
+    }
+  }
+
+  .bb-stack__item--push-left-#{$breakpoint}-down {
+    @include media-breakpoint-down($breakpoint) {
+      margin-right: auto;
+    }
+  }
+}

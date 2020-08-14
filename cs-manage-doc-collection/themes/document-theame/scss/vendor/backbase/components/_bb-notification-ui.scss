@@ -1,0 +1,66 @@
+.bb-notification-foreground {
+  z-index: $notification-z-index;
+  max-width: 29.5rem;
+}
+
+.bb-notification-body {
+  flex: 1;
+}
+.bb-notification-list {
+  position: fixed;
+  top: $spacer;
+  right: $spacer;
+  left: $spacer;
+  z-index: 2000;
+
+  @include media-breakpoint-up(sm) {
+    left: auto;
+    max-width: 50%;
+  }
+
+  @include media-breakpoint-up(md) {
+    max-width: 41.66666667%;
+  }
+}
+
+// Specific alert for use in `.bb-notification-list`
+.alert-notification {
+  padding: 1rem * 1.5;
+  background-color: $alert-notification-background-color;
+  box-shadow: $box-shadow-md;
+
+  .bb-button-bar {
+    margin-top: $spacer;
+  }
+
+  &.alert-dismissible {
+    .close {
+      margin: 1rem;
+      padding: 0.25rem;
+    }
+
+    .alert-heading {
+      margin-right: 1.5rem;
+    }
+  }
+}
+
+.alert-dismissible {
+  padding-right: 3.5rem;
+
+  .close {
+    padding: 1rem;
+    text-shadow: none;
+    opacity: 1;
+  }
+}
+
+// Bootstrap override
+.alert-heading {
+  margin-bottom: $headings-margin-bottom;
+  font-weight: $font-weight-bold;
+}
+
+.alert-icon {
+  margin-right: $spacer * 0.5;
+}

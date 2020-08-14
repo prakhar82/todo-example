@@ -1,0 +1,22 @@
+.ext-bus-initiate-payment-us-domestic-wire-ng {
+  textarea {
+    resize: none;
+  }
+
+  .occurence-field {
+    display: inline;
+  }
+
+  .amount-block {
+    float: none;
+    display: table;
+  }
+
+  .cross-currency-info > span {
+    display: inline-block;
+  }
+
+  .state-dropdown .uib-dropdown-menu {
+    height: 120px;
+  }
+}

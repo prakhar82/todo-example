@@ -1,0 +1,123 @@
+.ext-bb-user-context-menu-ng {
+  .rb-sidebar & {
+    display: none;
+  }
+
+  .context-label {
+    width : 150px;
+  }
+
+  .context-avatar {
+    display: none;
+  }
+
+  .context-username {
+    display: none;
+  }
+}
+
+.rb-sidebar .ext-bb-user-context-menu-ng {
+  display: none;
+
+  .context-avatar {
+    background-color: color('neutrals', 'white');
+  }
+
+  .popover {
+    min-width: auto;
+    left: 0;
+    width: 100%;
+  }
+
+  .context-username {
+    color: color('neutrals', 'white');
+  }
+
+  @include media-breakpoint-down(sm) {
+    ui-bb-ellipsis-tooltip-ng, .dropdown-toggle {
+      display: inline-block;
+      color: color("neutrals", "white");
+      overflow: hidden;
+    }
+
+    .dropdown-toggle {
+      margin: 0 $base-margin-height 0 auto;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .sidebar-is-open .rb-sidebar .ext-bb-user-context-menu-ng {
+    display: block;
+  }
+}
+
+
+
+.ext-bb-user-context-menu-ng {
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+
+  height: 80px;
+  transition: mdc-animation-enter(background-color, $animation-default-duration);
+
+  .popover {
+    border: none;
+
+    @include media-breakpoint-down(md) {
+      max-width: 320px;
+    }
+  }
+
+  &:hover {
+    transition: mdc-animation-enter(background-color, $animation-default-duration);
+    background-color: $info-bright;
+
+    .context-avatar {
+      background-color: color('neutrals', 'white');
+    }
+  }
+
+  .context-handler {
+    align-items: center;
+    height: 80px;
+    padding: 0 0 0 $tiny-padding-height;
+
+    &:focus {
+      outline: none;
+      background-color: $info-bright;
+    }
+  }
+
+  .dropdown-toggle {
+    color: color("neutrals", "darkest");
+    margin-left: $base-margin-height;
+  }
+
+  .context-avatar {
+    display: block;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 60px;
+    width: 60px;
+    min-width: 60px;
+    height: 60px;
+    background-color: $info-bright;
+    border-radius: 50px;
+    color: color("neutrals", "darker");
+    font-size: 24px;
+  }
+
+  .context-username {
+    @extend .font-weight-bold;
+
+    display: block;
+  }
+
+  @include media-breakpoint-down(md) {
+    .dropdown-toggle, ui-bb-ellipsis-tooltip-ng {
+      display: none;
+    }
+  }
+}

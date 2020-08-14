@@ -1,0 +1,117 @@
+// Dropdown menu container and contents.
+
+.btn-dropdown-toggle {
+  @include hover-focus {
+    color: $dropdown-link-hover-color;
+    text-decoration: none;
+    @include gradient-bg($dropdown-link-hover-bg);
+  }
+}
+.dropdown-menu-right {
+  left: auto;
+  right: 0;
+}
+
+.dropdown-item {
+  color: $body-color;
+
+  a {
+    color: $dropdown-link-color;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+// full-width typeahead (to align with input component width)
+.full-width-typeahead {
+  .dropdown-menu {
+    width: 100%;
+  }
+}
+
+// scrollable typeahead
+.pre-scrollable-typeahead {
+  .dropdown-menu {
+    @extend .pre-scrollable;
+  }
+}
+
+.dropdown-menu.modal.in,
+.dropdown-menu.show,
+.dropdown {
+	.bicon-toggle-down,
+	.fa-chevron-down {
+		transform: rotate3d(1, 0, 0, 0deg);
+		transition: transform $animation-dropdown-menu-duration $mdc-animation-deceleration-curve-timing-function;
+  }
+
+  &.open {
+    .dropdown-menu {
+      @include animation(transform, $animation-dropdown-menu-duration);
+
+      transform: scale(1);
+    }
+
+    .bicon-toggle-down,
+		.fa-chevron-down {
+      transform: rotate3d(1, 0, 0, 180deg);
+      transition: transform $animation-dropdown-menu-duration $mdc-animation-deceleration-curve-timing-function;
+    }
+  }
+}
+
+.dropdown-item {
+  &:hover {
+    background-color:$primary-bright;
+  }
+
+  .dropdown-item-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:after {
+      @include invisible(hidden);
+      @extend .bicon;
+      @extend .text-success;
+      @extend .ml-3;
+      content: 'check_circle';
+    }
+  }
+
+  &.active {
+    .dropdown-item-content:after {
+      @include invisible(visible);
+    }
+  }
+}
+
+.rb-navbar-top, .rb-sidebar {
+	.dropdown-menu {
+		@include animation(transform, $animation-dropdown-menu-duration);
+		transform: scale(0);
+		display: inline-block;
+		width: 100%;
+		font-size: $font-size-base;
+		border: none;
+		box-shadow: $box-shadow-md;
+
+		.dropdown-header {
+			font-size: $font-size-base;
+			padding: $tiny-padding-height $small-padding-height;
+		}
+
+    .dropdown-option {
+      a {
+        width: 100%;
+        display: inline-block;
+        padding: $tiny-padding-height $small-padding-height;
+        color: color('neutrals', 'black');
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

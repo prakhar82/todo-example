@@ -1,0 +1,250 @@
+/**
+ * --------------------------------------------------------------------------
+ * Notification class
+ * --------------------------------------------------------------------------
+ * @name .notification
+ * @description
+ * It can display notification level icon,  date label, optional title and message.
+ *
+ * @example
+ * <div class="notification">
+ *    <div class="notification-header">
+ *       <i class="fa fa-info-circle text-info notification-level" title="info"></i>
+ *     <span class="notification-date">11/11/2017</span>
+ *  </div>
+ *  <div class="notification-popup-title">
+ *     <h5 class="notification-title ellipsis">Title</h5>
+ *     <ui-bb-message-ng>
+ *       <ui-bb-message-ng
+ *        data-template="item.message"
+ *        data-link="item.link"
+ *        data-visible-lines-length="item.title ? 1 : 2">
+ *     </ui-bb-message-ng>
+ *  </div>
+ * </div>
+ */
+
+.notification {
+  overflow: hidden;
+  position: relative;
+  padding: $notification-base-indent;
+
+  &-header {
+    color: $dark;
+    margin-bottom: $notification-spacing-small;
+  }
+
+  &-date {
+    font-size: $notification-font-size-small;
+  }
+
+  &-level {
+    vertical-align: middle;
+    margin-right: $notification-spacing-small;
+  }
+
+  &-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: inherit;
+  }
+
+  &-arrow {
+    @extend .fa-lg;
+    position: absolute;
+    top: 50%;
+    right: $notification-base-indent;
+    color: $dark;
+  }
+
+  &-popover-view {
+    background: color('neutrals', 'white');
+    height: $notification-height;
+    padding-right: $notification-base-indent * 2;
+  }
+
+  &-popover-details-view {
+    .notification-header {
+      margin-bottom: $notification-spacing;
+    }
+  }
+
+  &-single-view {
+    margin-bottom: $notification-offset;
+    padding-right: $notification-base-indent * 2;
+
+    .close {
+      top: 0;
+      right: $notification-base-indent * -1;
+      color: color('neutrals', 'darkest');
+      opacity: 1;
+    }
+  }
+
+  &-popup-view {
+    border: $default-border;
+    background: color('neutrals', 'white');
+    height: $notification-height;
+    box-shadow: $default-box-shadow;
+  }
+
+  &-sticky-view {
+    padding-left: $notification-base-indent * 3;
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+
+    .notification-level {
+      position: absolute;
+      top: $notification-base-indent;
+      left: $notification-base-indent;
+      line-height: $notification-popover-custom-line-height;
+    }
+
+    .close {
+      top: 0;
+      right: $notification-base-indent * -1;
+      color: color('neutrals', 'darkest');
+      opacity: 1;
+    }
+  }
+
+  &-unread {
+    background-color: $component-active-bg;
+  }
+
+  &-popup-wrapper {
+    position: fixed;
+    max-width: 100%;
+    width: $notification-width;
+    top: $notification-popup-wrapper-top;
+    right: $notification-popup-wrapper-right;
+    padding: $notification-offset;
+    z-index: 1000;
+  }
+
+  &-sticky-wrapper {
+    // Portal specific styles
+    .rb-content & {
+      margin-top: $notification-sticky-wrapper-margin-top;
+      margin-left: $notification-sticky-wrapper-margin-left;
+      margin-right: $notification-sticky-wrapper-margin-right;
+    }
+  }
+
+  &-badge {
+    // Portal specific styles
+    .rb-navbar-top & {
+      margin-top: $notification-badge-margin-top;
+    }
+  }
+
+  &-badge-btn-bell {
+    display: block;
+    font-size: 1.65em;
+  }
+
+  &-badge-btn-dot {
+    position: absolute;
+    top: $notification-badge-btn-dot-top;
+    right: $notification-badge-btn-dot-right;
+    text-align: center;
+    font-size: $notification-font-size-small;
+    padding: $notification-badge-btn-dot-padding;
+    background: $notification-badge-btn-dot;
+    height: $notification-badge-btn-dot-size;
+    min-width: $notification-badge-btn-dot-size;
+    line-height: $notification-badge-btn-dot-size;
+    border-radius: $notification-badge-btn-dot-size / 2;
+    color: color('neutrals', 'white');
+  }
+
+  &-badge-placeholder {
+    z-index: 1;
+  }
+
+  &-panel-title {
+    line-height: $notification-popover-custom-line-height;
+
+    a {
+      cursor: pointer;
+    }
+  }
+
+  &-panel-header {
+    border-bottom: $default-border;
+  }
+
+  &-panel-footer {
+    border-top: $default-border;
+  }
+
+  &-panel-body {
+    height: $notification-popover-list-height;
+    overflow: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    position: relative;
+  }
+
+  &-panel-empty-msg {
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $font-size-base + 2;
+    color: $dark;
+  }
+
+  &-list {
+    margin-bottom: 0;
+  }
+
+  &-list-item {
+    padding: 0;
+    border-right: 0;
+    border-left: 0;
+
+    &:first-child {
+      border-radius: 0;
+      border-top: 0;
+    }
+
+    &:last-child {
+      border-radius: 0;
+      border-bottom: 0;
+    }
+  }
+
+  &-badge-popover {
+    padding: 0;
+    min-width: $popover-max-width;
+
+    &.bottom-right,
+    &.top-right {
+      .arrow {
+        transform: translateX($notification-popover-arrow-translate-x * -1);
+      }
+    }
+
+    &.bottom-left,
+    &.top-left {
+      .arrow {
+        transform: translateX($notification-popover-arrow-translate-x);
+      }
+    }
+
+    .popover-content {
+      padding: 0;
+    }
+  }
+}
+
+// Fixes alignment issue
+@at-root { 
+  .notification-badge-btn {
+    display: block;
+    position: relative;
+    background-color: transparent;
+  }
+}

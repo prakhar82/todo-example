@@ -1,0 +1,16 @@
+{
+  "package": "./package.json",
+  "verbose": true,
+  "exclude": [
+    "vendor/bootstrap/*"
+  ],
+  "groups": {
+    "color-helpers": "Theme Color API",
+    "icon-helpers": "Iconography API",
+    "typography-helpers": "Typography API",
+    "spacing-helpers": "Spacing API",
+    "bootstrap-variant": "Bootstrap Variant API",
+    "undefined": "Uncategorized API"
+  },
+  "no-update-notifier": false
+}

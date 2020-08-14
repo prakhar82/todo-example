@@ -1,0 +1,36 @@
+#%RAML 1.0
+---
+title: Personal Documents
+version: v1
+baseUri: "document-direct-integration-service/v1"
+mediaType:  application/json
+protocols: [ HTTP, HTTPS ]
+#===============================================================
+# API resource definitions
+#===============================================================
+/documents:
+  /personal:
+    displayName: Personal Documents
+    get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: !include schemas/personal-document-list.json
+  /categories:
+    displayName: catagories
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: !include schemas/categories.json
+/documentslib:
+  displayName: Documents Library
+
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include schemas/document-response.json

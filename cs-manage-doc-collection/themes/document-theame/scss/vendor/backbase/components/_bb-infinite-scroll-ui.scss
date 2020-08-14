@@ -1,0 +1,12 @@
+.max-height-container {
+  height: auto;
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+bb-infinite-scroll-ui {
+  overflow-y: auto;
+  overflow-x: hidden;
+}

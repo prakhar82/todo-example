@@ -1,0 +1,61 @@
+//
+// Navigation-related UI
+//
+$nav-link-disabled-color: $text-muted;
+$nav-tabs-border-color: $border-color;
+
+$nav-tabs-link-hover-bg: color("neutrals", "lighter");
+$nav-tabs-link-hover-border-color:  color("selected");
+
+$nav-tabs-link-active-color: color("actions", "primary", "darker");
+$nav-tabs-link-active-bg: $primary-bright;
+
+$nav-tabs-link-active-bg: color("white");
+$nav-tabs-link-active-border-color: color("selected");
+
+//nav-link
+$nav-link-hover-color: rgba(color('neutrals', 'white'), 0.5);
+$nav-link-disabled-color: color("white");
+$nav-link-color: color("white");
+$nav-link-hover-color: color("white");
+
+$navigation-link-hover-bgcolor:color("actions", "primary", "darker");
+$navigation-link-focus-bgcolor: color("actions", "primary", "dark");
+$navigation-link-active-bgcolor:color("actions", "primary", "dark");
+$navigation-link-active-color:color("neutrals", "white");
+
+//For Universal rb-sidebar
+$gutter: 16px;
+
+$nav-upper-space: 3.75rem;
+
+// For Mega Menu
+$mega-menu-bg: color("actions", "primary", "darkest");
+$mega-menu-color: color("neutrals", "white");
+$mega-menu-item-icon-padding: 1ch;
+$mega-menu-link-color: $mega-menu-color;
+$mega-menu-link-active-bg: color("actions", "primary", "dark");
+$mega-menu-link-hover-bg: color("actions", "primary", "default");
+$mega-menu-link-padding-x: $large-padding-height;
+$mega-menu-menubar-height: 3.5rem;
+$mega-menu-zindex: $zindex-fixed;
+$mega-menu-items-padding: 4px;
+$mega-menu-submenu-min-width: 10em;
+
+// The menu header should be positioned above the box shadow of the menu
+$mega-menu-submenu-header-zindex: $mega-menu-zindex + 2;
+
+$mega-menu-submenu-bg: $mega-menu-bg;
+$mega-menu-submenu-color: $mega-menu-color;
+$mega-menu-submenu-header-link-active-bg: color("actions", "primary", "dark");
+$mega-menu-submenu-header-link-hover-bg: color("actions", "primary", "default");
+$mega-menu-submenu-link-color: $mega-menu-link-color;
+$mega-menu-submenu-link-active-bg: color("actions", "primary", "darker");
+$mega-menu-submenu-link-hover-bg: color("actions", "primary", "default");
+$mega-menu-dropdown-border-radius: $border-radius;
+$mega-menu-dropdown-box-shadow: $default-box-shadow;
+$mega-menu-dropdown-bg: color("actions", "primary", "dark");
+$mega-menu-dropdown-color: $mega-menu-color;
+$mega-menu-dropdown-zindex: $mega-menu-zindex+1;
+
+$mega-menu-submenu-column-width: 291px;

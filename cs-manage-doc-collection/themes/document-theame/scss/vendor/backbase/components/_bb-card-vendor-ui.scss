@@ -1,0 +1,20 @@
+.bb-card-vendor {
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+
+  &.bb-card-vendor-mastercard {
+    background-image: url(#{$path-to-images}/bb-card-vendor-ui/mastercard.svg);
+    padding-top: $card-vendor-mastercard-aspect-ratio * 100%;
+  }
+
+  &.bb-card-vendor-visa {
+    background-image: url(#{$path-to-images}/bb-card-vendor-ui/visa.svg);
+    padding-top: $card-vendor-visa-aspect-ratio * 100%;
+  }
+
+  &.bb-card-vendor-visa-debit {
+    background-image: url(#{$path-to-images}/bb-card-vendor-ui/visa-debit.svg);
+    padding-top: $card-vendor-visa-debit-aspect-ratio * 100%;
+  }
+}

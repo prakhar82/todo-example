@@ -1,0 +1,30 @@
+
+// Badges
+
+.badge-unauthorized,
+.badge-entered,
+.badge-announced {
+  @include badge-variant($primary);
+}
+
+.badge-authorized,
+.badge-processed {
+  @include badge-variant($success);
+}
+
+.badge-cancelled,
+.badge-cancellation_pending,
+.badge-partially_authorized,
+.badge-accepted,
+.badge-pending {
+  @include badge-variant($warning);
+}
+
+.badge-rejected,
+.badge-rejected_by_user {
+  @include badge-variant($danger);
+}
+
+.badge-deleted {
+  @include badge-variant($secondary);
+}

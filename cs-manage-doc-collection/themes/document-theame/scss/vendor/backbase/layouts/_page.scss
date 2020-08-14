@@ -1,0 +1,190 @@
+.pageContainer,
+.bp-NavigationContainer,
+.page-container {
+  @include size(100%, 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.bb-page-background {
+  background: url(#{$path-to-images}/login-background.jpg);
+  background-size: cover;
+  @extend .h-100vh;
+  @extend .w-100vw;
+  overflow: hidden;
+}
+
+//Used inside: retail-banking-experience-demo-page
+.bg-gray-light-300 {
+  background-color: $main-content-bgd-color;
+}
+
+
+/* padding clearance for cxp design mode */
+body:hover .rb-content .bp-container.bp-manageableArea {
+  &, &:hover {
+    padding: 0;
+  }
+}
+
+.page-container .sticky-top-outline {
+  margin-top: $navbar-top-height;
+}
+
+//WC2
+.rb-row-content {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+}
+
+//WC3
+/** [Start] Layout Flex Container */
+/** NG-Bootstrap is used and it requires some important! */
+.page-flex-layout {
+  height: 100vh;
+}
+
+.page-layout__main {
+  margin-top: $navbar-brand-height;
+  width: 100% !important;
+}
+
+.page-layout__main--vertical {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.overflow-hidden-container {
+  height: 100%;
+  overflow: hidden;
+
+  &:first-child {
+    height: 100%;
+    overflow-y: auto;
+    box-sizing: content-box;
+  }
+}
+
+.overflow-auto {
+  height: 100%;
+  overflow-y: auto;
+  box-sizing: content-box;
+}
+
+.page-flex-layout .min-h-100 {
+  min-height: 100vh;
+}
+
+.page-flex-layout .btn-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.page-flex-layout .btn-toggler > span {
+  @extend .bicon;
+  color: color('neutrals', 'dark');
+  font-size: $btn-icon-font-size;
+  width: 1.5em;
+}
+
+.page-flex-layout .sidebar {
+  background-color: color("actions", "primary", "darkest");
+  color: color("neutrals", "white");
+  max-width: $sidebar-collapsed-width;
+  width: $sidebar-collapsed-width !important;
+  padding-left: 0;
+  transition: width 200ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 200ms 0ms cubic-bezier(0, 0, 0.2, 1);
+  .bb-universal-nav-item-title {
+    display: none !important;
+  }
+  @include nav-item-badge-position(true);
+}
+
+.page-flex-layout .sidebar.toggle {
+  width: $sidebar-width !important;
+  max-width: $sidebar-width !important;
+}
+
+.page-flex-layout .sidebar.toggle {
+  .bb-universal-nav-item-title {
+    display: flex !important;
+  }
+  @include nav-item-badge-position(false);
+}
+
+.page-flex-layout .right-top-navbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 90%;
+}
+
+.page-flex-layout .main-content {
+  background-color: white;
+  z-index: 1;
+  flex: 2;
+  min-width: 0;
+}
+
+.page-flex-layout .top-navbar {
+  height: $navbar-brand-height;
+  background-color: white;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.12);
+}
+
+.page-flex-layout .main-content-btn-anchor {
+  position: absolute;
+  left: -1000em;
+}
+
+.page-flex-layout .main-content .container {
+  max-width: $page-layout-fixed-content-max-width;
+}
+
+@include media-breakpoint-down(md) {
+  .page-flex-layout .sidebar {
+    width: $sidebar-collapsed-width !important;
+    padding-left: 0 !important;
+
+    @include nav-item-badge-position(true);
+  }
+  .page-flex-layout .sidebar.toggle {
+      width: $sidebar-width !important;
+  }
+  .page-flex-layout .sidebar.toggle {
+    .bb-universal-nav-item-title {
+      display: flex !important;
+    }
+    @include nav-item-badge-position(false);
+  }
+}
+@include media-breakpoint-down(sm) {
+  .page-flex-layout {
+    margin-top: $navbar-brand-height-sm;
+  }
+  .page-flex-layout .top-navbar {
+    height: $navbar-brand-height-sm;
+  }
+  .page-flex-layout .sidebar {
+      width: 0px !important;
+      padding-left: 0 !important
+  }
+  .page-flex-layout .sidebar.toggle {
+      width: $sidebar-width !important;
+      display: flex !important;
+      position: absolute;
+      left: 0;
+      min-height: 100%;
+      z-index: 2;
+  }
+  .page-flex-layout .sidebar.toggle .bb-universal-nav-item-title {
+      display: flex !important;
+  }
+}
+/** [End] Layout Flex Container */

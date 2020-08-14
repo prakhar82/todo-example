@@ -1,0 +1,199 @@
+// Classes for chart line need to be in a single line to be picked up in JS
+@each $color, $value in $account-colors {
+  .chart-line-card-positive-color-#{$color} {
+    color: $value;
+  }
+
+  .chart-line-card-positive-color-#{$color}-favorite {
+    color: $value;
+  }
+}
+
+@each $color, $value in $account-bg-colors {
+  .chart-line-card-positive-background-#{$color} {
+    background-color: $value;
+  }
+
+  .chart-line-card-positive-background-#{$color}-favorite {
+    background-color: $value;
+  }
+}
+
+.ext-bus-accounts-overview-ng,
+.ext-bus-accounts-overview-lite-ng,
+.ext-bus-favorite-accounts-ng,
+.ext-bus-favorite-accounts-lite-ng {
+  td .btn-group {
+    .btn {
+      @extend .border-left-0;
+      @extend .p-0;
+    }
+
+    > .btn-group:not(:first-child) > .btn,
+    > .btn:not(:first-child) {
+      @extend .border-left-0;
+    }
+  }
+
+  .btn-group-toggle > .btn {
+    @extend .p-2;
+  }
+
+  .fa-star {
+    @extend .bicon;
+
+    &.fa {
+      @extend .bicon-star;
+    }
+
+    &.far {
+      @extend .bicon-star-border;
+    }
+  }
+
+  .bb-accounts-sortby {
+    > button {
+      @extend .btn-link;
+    }
+  }
+
+  .bb-accounts-account-type-icon,
+  .bb-accounts-account-type-description {
+    @extend .d-none;
+    color: color('neutrals', 'white');
+  }
+
+  .bb-accounts-account-type-title {
+    @extend .d-block;
+
+    text-transform: uppercase;
+    font-size: $small-font-size;
+    color: color('neutrals', 'white');
+  }
+
+  .bb-accounts-account-booked-balance h3 span{
+    color: color('neutrals', 'white');
+  }
+
+  footer {
+    @extend .px-3;
+  }
+
+  .bb-accounts-chart {
+    @extend .bg-transparent;
+
+    position: relative;
+  }
+
+  .ruler {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 22px;
+  }
+
+  .card-scrollable-x {
+    overflow-x: auto;
+  }
+
+  .bb-accounts-favorite {
+
+    .bb-accounts-account-type-title,
+    .bb-accounts-account-name,
+    .bb-accounts-account-booked-balance,
+    .bb-accounts-chart, 
+    & h4 {
+      color: color('neutrals', 'white');
+    }
+
+    .bb-accounts-account-number,
+    .bb-accounts-account-available-balance {
+      @extend .text-light;
+    }
+
+    .ruler {
+      @include ruler-background(color("neutrals", "darkest"));
+    }
+  }
+
+  @each $color, $value in $account-colors {
+    .bb-accounts-#{$color} {
+      &:not(.bb-accounts-favorite) {
+        border-left: $card-highlight-border-width solid $value;
+
+        .bb-accounts-account-type-title {
+          color: $value;
+        }
+
+        .ruler {
+          @include ruler-background(rgba($value, .2));
+        }
+      }
+
+      &.bb-accounts-favorite {
+        background-color: $value;
+      }
+    }
+  }
+}
+
+.chart-line-card-y-axes-grid-color {
+  color: transparent;
+}
+
+.chart-line-card-y-axis-zero-color {
+  color: color("neutrals", "darker");
+}
+
+@each $color, $value in $account-colors {
+  .chart-line-card-positive-color-#{$color} {
+    color: $value;
+    &-favorite {
+      color: color('neutrals', 'white');
+    }
+  }
+
+  .chart-line-card-positive-background-#{$color} {
+    background-color: rgba(lighten($value, 10%), .2);
+    &-favorite {
+      background-color: rgba(lighten($value, 20%), .2);
+    }
+  }
+}
+
+.ext-bus-favorite-accounts-lite-ng {
+  .card {
+    width: $card-fixed-width;
+  }
+
+  .card-scrollable-x {
+    margin-right: -$gutter;
+  }
+
+  .bb-accounts-favorite-add {
+    @include gradient-directional(color("primary"), lighten(color("primary"), 10%));
+  }
+
+  .line-chart-container {
+    height: $card-graph-height;
+  }
+}
+
+.bb-accounts-base {
+  &:not(.bb-accounts-favorite) {
+    border-left: $card-highlight-border-width solid color("neutrals", "grey");
+
+    .bb-accounts-account-type-title {
+      color: color("neutrals", "grey");
+    }
+
+    .ruler {
+      @include ruler-background(color("neutrals", "darkest"));
+    }
+  }
+
+  &.bb-accounts-favorite {
+    background-color: color("neutrals", "grey");
+  }
+}

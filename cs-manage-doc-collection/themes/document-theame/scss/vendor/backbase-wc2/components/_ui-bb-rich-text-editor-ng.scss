@@ -1,0 +1,36 @@
+ui-bb-rich-text-editor-ng {
+
+  &.form-control {
+    height: auto;
+
+    & .pell-button {
+
+      //fixes rich-editor styling of subscripts
+      white-space: pre;
+    }
+  }
+
+  &.d-flex {
+    & .pell-actionbar {
+      border-bottom: 0;
+      order: 2;
+    }
+
+    & .pell-content {
+      order: 1;
+    }
+  }
+
+  & .pell-button {
+    min-width: 2.7rem;
+
+    &:nth-child(5) {
+      margin-left: 2rem;
+    }
+
+    &:nth-child(6) {
+      margin-right: 2rem;
+    }
+  }
+
+}

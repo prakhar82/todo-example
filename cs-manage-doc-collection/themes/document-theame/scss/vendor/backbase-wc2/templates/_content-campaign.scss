@@ -1,0 +1,15 @@
+// grandparent not an angularJS -ng classed DOMNode
+@at-root { 
+  .content-widget-campaign-template {
+    position: relative;
+    overflow: hidden;
+
+    .content-campaign-text {
+      z-index: 1;
+
+      h1, p {
+        color: $neutral-2;
+      }
+    }
+  }
+}

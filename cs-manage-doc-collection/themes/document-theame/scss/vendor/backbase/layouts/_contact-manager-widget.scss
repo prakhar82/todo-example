@@ -1,0 +1,9 @@
+@include media-breakpoint-up(md) {
+  .contact-search-container {
+    width: $contact-search-width;
+  }
+}
+
+.bb-contact-manager__reject-button {
+  margin: 0 0.75rem;
+}

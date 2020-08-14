@@ -1,0 +1,20 @@
+.input-group-prepend,
+.input-group-append {
+  .btn {
+    border: $input-border-width solid $input-border-color;
+  }
+}
+
+.input-group-prepend {
+  .btn {
+    @include border-left-radius($input-border-radius);
+    @include border-right-radius(0);
+  }
+}
+
+.input-group-append {
+  .btn {
+    @include border-right-radius($input-border-radius);
+    @include border-left-radius(0);
+  }
+}

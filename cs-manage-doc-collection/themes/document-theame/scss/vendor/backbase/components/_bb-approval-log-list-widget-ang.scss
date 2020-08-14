@@ -1,0 +1,20 @@
+/// @name bb-approval-log-list-widget-ang
+
+/// @example html - Load Button
+/// <div class="bb-block bb-block--md bb-approval-log-list-footer">
+///   <bb-load-button-ui
+///     color="link"
+///    Load more...
+///   </bb-load-button-ui>
+/// </div>
+
+$bb-approval-log-list-table-sizer-lg: $spacer * 1.5 !default;
+
+.bb-approval-log-list-table {
+  padding: 0 $bb-approval-log-list-table-sizer-lg;
+}
+
+.bb-approval-log-list-footer {
+  margin: 0 auto;
+  text-align: center;
+}

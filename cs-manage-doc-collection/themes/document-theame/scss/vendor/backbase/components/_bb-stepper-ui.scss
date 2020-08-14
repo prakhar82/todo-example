@@ -1,0 +1,68 @@
+.bb-stepper {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  .bb-stepper__separator {
+    flex-grow: 1;
+    max-width: 100%;
+    margin: $spacer*0.5;
+    padding: 0;
+    background-color: color('neutrals', 'greyer');
+    height: 1px;
+  }
+
+  &.bb-stepper__label {
+    margin-top: 1.5rem;
+  }
+
+  .bb-step {
+    display: flex;
+    align-items: center;
+
+    &.bb-step--active {
+      .bb-step__icon {
+        background-color: color('actions', 'selected', 'default');
+      }
+
+      .bb-step__label {
+        font-weight: $font-weight-medium;
+
+        @include media-breakpoint-down(xs) {
+          display: block;
+        }
+      }
+    }
+
+    .bb-step__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.5rem;
+      height: 1.5rem;
+      color: color('neutrals', 'white');
+      line-height: 1;
+      background-color: color('neutrals', 'dark');
+      flex: 0 0 auto;
+      border-radius: 50%;
+    }
+
+    .bb-step__label {
+      margin-left: $spacer*0.5;
+
+      @include media-breakpoint-down(xs) {
+        @include text-truncate();
+
+        width: 100%;
+        margin-left: 0;
+        position: absolute;
+        top: -100%;
+        left: 0;
+        background-color: color('neutrals', 'white');
+        display: none;
+      }
+    }
+  }
+}
+

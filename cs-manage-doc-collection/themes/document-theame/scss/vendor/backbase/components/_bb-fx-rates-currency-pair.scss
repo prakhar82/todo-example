@@ -1,0 +1,30 @@
+bb-fx-rates-currency-pair {
+  bb-currency-input-ui {
+    .bb-currency-input-form-group:nth-child(2) {
+      width: 4rem;
+      input {
+        text-align: end;
+      }
+    }
+  }
+
+  .bb-switcher-button {
+    button {
+      width: 4.5rem;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    bb-currency-input-ui {
+      .currency-input-container {
+        display: block;
+        .currency-selector {
+          padding-bottom: 10px;
+        }
+      }
+      .font-weight-bold {
+        display: none;
+      }
+    }
+  }
+}

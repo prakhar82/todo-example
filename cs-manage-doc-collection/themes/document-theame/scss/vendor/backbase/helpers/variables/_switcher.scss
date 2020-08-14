@@ -1,0 +1,8 @@
+$switcher-bg-color: color("neutrals", "dark") !default;
+$switcher-border-color: color("neutrals", "dark") !default;
+$switcher-checked-bg-color: color("actions", "selected", "default") !default;
+$switcher-checked-border-color: color("actions", "selected", "default") !default;
+$switcher-slider-bg-color: color("neutrals", "white") !default;
+$switcher-slider-checked-bg-color: color("neutrals", "white");
+$switcher-disabled-bg-color: color("neutrals", "lighter") !default;
+$switcher-slider-disabled-bg-color: color("neutrals", "grey") !default;

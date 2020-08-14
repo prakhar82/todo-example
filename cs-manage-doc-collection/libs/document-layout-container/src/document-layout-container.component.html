@@ -1,0 +1,13 @@
+<ng-container>
+  <div class="row m-auto  max-width min-height-container">
+    <div class="col-sm-12 col-md-3 ">
+      <document-side-menu [documentTabs]="documentTabs | async" >
+      </document-side-menu>
+    </div>
+
+    <div class="col-sm-12 col-md-9 ">
+      <bb-area></bb-area>
+      <bb-router-outlet></bb-router-outlet>
+    </div>
+  </div>
+</ng-container>

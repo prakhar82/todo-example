@@ -1,0 +1,8 @@
+.ng-invalid.ng-touched {
+  > .input-group > input:not(:focus),
+  > input:not(:focus),
+  .bb-dropdown-multi-select-ui,
+  > select:not(:focus) {
+    @extend .is-invalid
+  }
+}

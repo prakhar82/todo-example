@@ -1,0 +1,108 @@
+.table-responsive > .table {
+  // if max-width is set to 100%,
+  // safari counts table width to be the width of container.
+  // If table contains sticky columns (not scrollable horizontally),
+  // they start to move after table is scrolled (width of container)px.
+  @include safariBrowserOnly {
+    max-width: inherit;
+  }
+}
+
+tr.portfolio-summary-position-row {
+  background-color: inherit;
+
+  &.with-pinned-first-col {
+
+    th, td {
+      &:not(:last-child) {
+        min-width: 100px;
+      }
+
+      &:first-child {
+        @extend %sticky-cell;
+
+        left: 0;
+        min-width: $portfolio-summary-pos-first-col-width;
+
+        // replaces disappeared right border for cells with position: sticky
+        &.border-right {
+          border-right: none !important;
+          box-shadow: inset -1px 0 rgba(color("neutrals", "black"), 0.1);
+        }
+      }
+
+      // fallback from position: sticky to position: absolute for IE11 and Edge
+      // IE11 doesn't support position: sticky, Edge doesn't support it well
+      @include msBrowsersOnly {
+        &:first-child {
+          width: $portfolio-summary-pos-first-col-width;
+          height: $portfolio-summary-pos-row-height;
+          position: absolute;
+          left: 0;
+          top: auto;
+        }
+
+        &:nth-child(2) {
+          padding-left: calc(#{$portfolio-summary-pos-first-col-width} + #{$portfolio-summary-pos-sibling-padding});
+        }
+
+        // fixed height for all the cells of table to have transparent behaviour
+        height: $portfolio-summary-pos-row-height;
+      }
+    }
+
+    th:first-child {
+      @include msBrowsersOnly {
+        z-index: 1; // makes border-bottom visible for th cells in IE11 and Edge
+      }
+    }
+  }
+
+  &.with-pinned-last-col {
+    th, td {
+      &:last-child {
+        @extend %sticky-cell;
+
+        right: 0;
+
+        // replaces disappeared left border for cells with position: sticky
+        &.border-left {
+          border-left: none !important;
+          box-shadow: inset 1px 0 rgba(color("neutrals", "black"), 0.1);
+        }
+      }
+
+      // fallback from position: sticky to position: absolute for IE11 and Edge
+      // IE11 doesn't support position: sticky, Edge doesn't support it well
+      @include msBrowsersOnly {
+        &:nth-last-child(2) {
+          padding-right: calc(#{$portfolio-summary-pos-sibling-padding} + #{$portfolio-summary-pos-last-col-width});
+        }
+
+        &:last-child {
+          width: $portfolio-summary-pos-last-col-width;
+          height: $portfolio-summary-pos-row-height;
+          position: absolute;
+          right: 0;
+          top: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      // fixes bug is Safari when sticky right cells overlap sibling cells
+      @include safariBrowserOnly {
+        &:nth-last-child(2) {
+          padding-right: calc(#{$portfolio-summary-pos-sibling-padding} + #{$portfolio-summary-pos-last-col-width});
+        }
+      }
+    }
+
+    th:last-child {
+      @include msBrowsersOnly {
+        z-index: 1; // makes border-bottom visible for th cells in IE11 and Edge
+      }
+    }
+  }
+}

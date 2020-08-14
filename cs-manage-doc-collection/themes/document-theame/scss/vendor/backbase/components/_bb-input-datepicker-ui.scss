@@ -1,0 +1,208 @@
+.bb-input-datepicker-ui {
+  input.datepicker-input-hidden,
+  label.datepicker-input-hidden {
+    padding: 0;
+    margin: 0;
+    width: 0;
+    font-size: 0;
+    outline: 0;
+    border: 0;
+  }
+
+  label.datepicker-input-hidden {
+    position: absolute;
+    bottom: 0;
+  }
+  input.datepicker-input-hidden {
+    visibility: hidden;
+  }
+
+  .ngb-dp-week {
+    padding-right: 0!important;
+    padding-left: 0!important;
+    border-radius: 0!important;
+  }
+
+  .ngb-dp-day {
+    width: 2.5rem!important;
+    height: 2.5rem!important;
+    &.hidden {
+      background-color: color("neutrals", "white")!important;
+    }
+  }
+
+  .ngb-dp-weekdays {
+    background-color: color("neutrals", "white") !important;
+    border: 0!important;
+  }
+
+  .ngb-dp-header {
+    padding-top: 0.5rem!important;
+    padding-bottom: 0.5rem!important;
+    background-color: color("neutrals", "white") !important;
+  }
+
+  .ngb-dp-week.ngb-dp-weekdays {
+    padding-top: 0.5rem!important;
+    padding-bottom: 0.5rem!important;
+  }
+
+  .ngb-dp-month-name {
+    color: color("extends", "blue")!important;
+    font-size: 0.875rem!important;
+    font-weight: $font-weight-bold!important;
+    height: 1.25rem!important;
+    letter-spacing: 0;
+    line-height: 1.25rem!important;
+    text-align: center!important;
+    text-transform: uppercase!important;
+  }
+
+  .ngb-dp-arrow {
+    height: 1.5rem!important;
+  }
+
+  .ngb-dp-navigation-chevron {
+    width: 0.70em!important;
+    height: 0.70em!important;
+    color: color("neutrals", "dark")!important;
+  }
+
+  .ngb-dp-arrow-btn {
+    margin: 0 1rem!important;
+  }
+
+  .ngb-dp-weekday.small {
+    color: color("neutrals", "darkest");
+    font-size: 0.875rem;
+    font-weight: $font-weight-medium;
+    font-style: normal;
+    text-align: center;
+    width: 2.5rem;
+    height: 1.25rem;
+    line-height: 1.25rem;
+
+  }
+
+  .input-group > .form-control:not(:first-child) {
+    border-top-left-radius: $input-border-radius;
+    border-bottom-left-radius: $input-border-radius;
+  }
+
+  .custom-day {
+    position: relative;
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border-radius: 50%;
+    box-shadow: none;
+    color: color("neutrals", "darkest");
+
+    &.is-faded {
+      background-color: color("actions", "primary", "lighter");
+      color: color("neutrals", "white");
+      border-radius: 0;
+    }
+
+    &.is-faded.is-hovered {
+      border-radius: 50%;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1.25rem;
+        height: 2.5rem;
+        background-color: color("actions", "primary", "lighter");
+        z-index: -1;
+      }
+    }
+
+    &.to-date {
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1.25rem;
+        height: 2.5rem;
+        background-color: color("extends", "blue");
+        z-index: -1;
+      }
+
+      &.is-faded {
+        background-color: color("extends", "blue");
+        color: color("neutrals", "white");
+        border-radius: 50%;
+      }
+
+    }
+
+    &.from-date {
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 1.25rem;
+        height: 2.5rem;
+        background-color: color("extends", "blue");
+        z-index: -1;
+      }
+
+      &.is-faded {
+        border-radius: 50%;
+        &::after {
+          background-color: color("actions", "primary", "lighter");
+        }
+      }
+
+      &.is-selected {
+        &::after {
+          display: none;
+        }
+      }
+
+      &.is-selected.is-faded {
+        &::after {
+          display: block;
+        }
+      }
+
+      &.is-selected.is-hovered:hover {
+        &::after,
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    &.is-selected,
+    &.is-range-selected,
+    &.from-date,
+    &.to-date {
+      background-color: color("extends", "blue");
+      color: color("neutrals", "white");
+    }
+
+    &.is-range-selected {
+      border-radius: 0;
+      &.to-date {
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+      }
+    }
+
+    &.is-hovered.is-faded,
+    &.is-hovered.is-range-selected,
+    &.is-hovered,
+    &:hover {
+      background-color: color("actions", "primary", "dark");
+      color: color("neutrals", "white");
+    }
+  }
+}
