@@ -1,9 +1,0 @@
-com\backbase\ubp\pb360\model\ContentServicesQueryRequest.class
-com\backbase\ubp\pb360\Application.class
-com\backbase\ubp\pb360\controllers\TranslationsApi.class
-com\backbase\ubp\pb360\model\ContentServicesQueryResponse.class
-com\backbase\ubp\pb360\model\HrefLink.class
-com\backbase\ubp\pb360\model\ContentServicesLink.class
-com\backbase\ubp\pb360\controllers\impl\TranslationsController.class
-com\backbase\ubp\pb360\routes\TranslationsRoute.class
-com\backbase\ubp\pb360\controllers\impl\TranslationsController$1.class
