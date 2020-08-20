@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.backbase.ubp.pb360.test.unit.controller.TranslationControllerTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 32.341 s - in com.backbase.ubp.pb360.test.unit.controller.TranslationControllerTest
