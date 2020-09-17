@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "accountNumber": {
+      "type": "string"
+    },
+    "typeOfDeposit": {
+      "type": "string"
+    },
+    "categoryId": {
+      "type": "string"
+    },
+    "categoryName": {
+      "type": "string"
+    },
+    "holder": {
+      "type": "string"
+    },
+    "depositAmt": {
+      "$ref": "depositAmt.json"
+    },
+    "maturityAmt": {
+      "$ref": "maturityAmt.json"
+    },
+    "interestRate": {
+      "$ref": "interestRate.json"
+    },
+    "newMaturityAmt": {
+      "$ref": "newMaturityAmt.json"
+    },
+    "depositPeriod": {
+      "type": "string"
+    },
+    "renewalDate": {
+      "type": "string"
+    },
+    "openedDate": {
+      "type": "string"
+    },
+    "productId": {
+      "type": "string"
+    },
+    "accountRouting": {
+      "$ref": "accountRouting.json"
+    },
+    "details": {
+      "$ref": "details.json"
+    },
+    "depositRenewEnable": {
+      "type": "string"
+    },
+    "depositSavedFlag": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "accountNumber",
+    "typeOfDeposit",
+    "categoryId",
+    "categoryName",
+    "holder",
+    "depositAmt",
+    "maturityAmt",
+    "interestRate",
+    "newMaturityAmt",
+    "depositPeriod",
+    "renewalDate",
+    "openedDate",
+    "productId",
+    "accountRouting",
+    "details",
+    "depositRenewEnable",
+    "depositSavedFlag"
+  ]
+}

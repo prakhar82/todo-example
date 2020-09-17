@@ -1,0 +1,285 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v2.1",
+    "title": "Deposit details API",
+    "description": "Swagger specification for deposit details api"
+  },
+  "host": "13.233.57.109:3000",
+  "basePath": "/deposits",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/{custId}": {
+      "get": {
+        "tags": [
+          "depositDetails"
+        ],
+        "description": "Gets a list of all `deposit` objects.",
+        "parameters": [
+          {
+            "name": "custId",
+            "type": "string",
+            "description": "return deposits for given custId",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with a list of `deposits` data",
+            "headers": {
+              "Strict-Transport-Security": {
+                "type": "string",
+                "description": "HTTPS strict transport security header",
+                "default": "max-age=31536000"
+              },
+              "Etag": {
+                "type": "string",
+                "description": "A unique ID identifying whether this resource has changed"
+              },
+              "Cache-Control": {
+                "type": "string",
+                "description": "Describes how long this response can be cached",
+                "default": "max-age=28800"
+              },
+              "X-Frame-Options": {
+                "type": "string",
+                "description": "Prevent this request from being loaded in any iframes",
+                "default": "DENY"
+              },
+              "X-Content-Type-Options": {
+                "type": "string",
+                "description": "Ensures each page has a content type and prevents browsers from doing MIME type sniffing",
+                "default": "nosniff"
+              }
+            },
+            "schema": {
+              "type": "object",
+              "properties": {
+                "depositDetails": {
+                  "type": "array",
+                  "items": {
+                    "properties": {
+                      "accountNumber": {
+                        "description": "accountNumber",
+                        "title": "accountNumber",
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 140
+                      },
+                      "typeOfDeposit": {
+                        "description": "typeOfDeposit",
+                        "title": "typeOfDeposit",
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 140
+                      },
+                      "categoryId": {
+                        "description": "categoryId",
+                        "title": "categoryId",
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 140
+                      },
+                      "categoryName": {
+                        "description": "categoryName",
+                        "title": "categoryName",
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 140
+                      },
+                      "holder": {
+                        "description": "holder",
+                        "title": "holder",
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 140
+                      },
+                      "depositAmt": {
+                        "type": "object",
+                        "title": "depositAmt",
+                        "properties": {
+                          "amount": {
+                            "description": "amount",
+                            "title": "amount",
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 140
+                          },
+                          "currency": {
+                            "description": "currency",
+                            "title": "currency",
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 140
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "amount",
+                            "currency"
+                          ]
+                        }
+                      },
+                      "maturityAmt": {
+                        "type": "object",
+                        "title": "maturityAmt",
+                        "properties": {
+                          "amount": {
+                            "description": "amount",
+                            "title": "amount",
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 140
+                          },
+                          "currency": {
+                            "description": "currency",
+                            "title": "currency",
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 140
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "amount",
+                            "currency"
+                          ]
+                        }
+                      },
+                      "interestRate": {
+                        "type": "object",
+                        "title": "interestRate",
+                        "properties": {
+                          "rate": {
+                            "description": "rate",
+                            "title": "rate",
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 140
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "rate"
+                          ]
+                        }
+                      },
+                      "newMaturityAmt": {
+                        "type": "object",
+                        "title": "newMaturityAmt",
+                        "properties": {
+                          "amount": {
+                            "description": "amount",
+                            "title": "amount",
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 140
+                          },
+                          "currency": {
+                            "description": "currency",
+                            "title": "currency",
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 140
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "amount",
+                            "currency"
+                          ]
+                        }
+                      },
+                      "depositPeriod": {
+                        "description": "depositPeriod",
+                        "title": "depositPeriod",
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 140
+                      },
+                      "renewalDate": {
+                        "description": "renewalDate",
+                        "title": "renewalDate",
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 140
+                      },
+                      "openedDate": {
+                        "description": "openedDate",
+                        "title": "openedDate",
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 140
+                      },
+                      "productId": {
+                        "description": "productId",
+                        "title": "productId",
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 140
+                      },
+                      "accountRouting": {
+                        "type": "object",
+                        "title": "accountRouting",
+                        "properties": {
+                          "scheme": {
+                            "description": "scheme",
+                            "title": "scheme",
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 140
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "scheme"
+                          ]
+                        }
+                      },
+                      "details": {
+                        "type": "object",
+                        "title": "details",
+                        "properties": {
+                          "value": {
+                            "description": "value",
+                            "title": "value",
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 140
+                          },
+                          "label": {
+                            "description": "label",
+                            "title": "label",
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 140
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "value",
+                            "label"
+                          ]
+                        }
+                      },
+                      "depositRenewEnable": {
+                        "description": "depositRenewEnable",
+                        "title": "depositRenewEnable",
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 140
+                      }
+                    }
+                  }
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

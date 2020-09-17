@@ -3,10 +3,15 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     	
-
+	<parent>
+        <groupId>com.boc</groupId>
+        <artifactId>services</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+	
 	<modelVersion>4.0.0</modelVersion>
-    <groupId>com.boc</groupId>
-    <artifactId>services</artifactId>
+
+    <artifactId>cxp-be-deposit-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Backbase :: Deposit :: Parent</name>
 	<packaging>pom</packaging>
@@ -19,8 +24,8 @@
     </properties>
 
     <modules>
-        <module>cxp-be-todo-service</module>
-		<module>cxp-be-deposit-service</module>
+        <module>deposit-details-specification</module>
+        <module>deposit-details-service</module>
     </modules>
 
 </project>
