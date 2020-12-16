@@ -105,7 +105,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.48</version>
+            <version>8.0.16</version>
         </dependency>
 
         <!-- Add dependencies for your integration services, e.g. BB raml specifications, integration clients -->
@@ -265,7 +265,7 @@
                             <dependency>
                                 <groupId>mysql</groupId>
                                 <artifactId>mysql-connector-java</artifactId>
-                                <version>5.1.41</version>
+                                <version>8.0.16</version>
                             </dependency>
                         </dependencies>
                     </plugin>
