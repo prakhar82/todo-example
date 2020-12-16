@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "totalCount": {
+      "type": "integer",
+      "description": "Total number of records in CSV file"
+    },
+    "failureCount": {
+      "type": "integer",
+      "description": "Total number of duplicate records in CSV file"
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "$ref": "csv-file-upload-response.json"
+      }
+    }
+  },
+  "additionalProperties": false
+}

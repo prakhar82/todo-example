@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "creditUnionId": {
+      "type": "string",
+      "description": "Credit Union Identifier"
+    },
+    "downloadAll": {
+      "type": "string",
+      "description": "Download all records (yes or no)"
+    }
+  },
+  "required": [
+    "creditUnionId",
+    "downloadAll"
+  ]
+}

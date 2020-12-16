@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "Marketing Auth Request Schema",
+  "description": "This API return the Access Token to authenticate other APIs",
+  "required": [
+    "creditUnionId",
+    "header",
+    "keystorePass",
+    "keyAlias",
+    "keyPass",
+    "clientId",
+    "email",
+    "domain"
+  ],
+  "properties": {
+    "creditUnionId": {
+      "type": "string",
+      "title": "The creditUnionId schema",
+      "description": "An explanation about the purpose of this instance.",
+      "examples": [
+        1
+      ]
+    },
+    "header": {
+      "type": "string",
+      "title": "The header schema",
+      "description": "An explanation about the purpose of this instance.",
+      "examples": [
+        "{\"alg\":\"RS256\"}"
+      ]
+    },
+    "keystorePass": {
+      "type": "string",
+      "title": "The keystorePass schema",
+      "description": "An explanation about the purpose of this instance.",
+      "examples": [
+        "mypass"
+      ]
+    },
+    "keyAlias": {
+      "type": "string",
+      "title": "The keyAlias schema",
+      "description": "An explanation about the purpose of this instance.",
+      "examples": [
+        "auth_ss"
+      ]
+    },
+    "keyPass": {
+      "type": "string",
+      "title": "The keyPass schema",
+      "description": "An explanation about the purpose of this instance.",
+      "examples": [
+        "mypass"
+      ]
+    },
+    "clientId": {
+      "type": "string",
+      "title": "The clientId schema",
+      "description": "An explanation about the purpose of this instance.",
+      "examples": [
+        "clientId"
+      ]
+    },
+    "email": {
+      "type": "string",
+      "title": "The email schema",
+      "description": "An explanation about the purpose of this instance.",
+      "examples": [
+        "sfsxxxxxxxxxxxxx@fincuro.in"
+      ]
+    },
+    "domain": {
+      "type": "string",
+      "title": "The domain schema",
+      "description": "An explanation about the purpose of this instance.",
+      "examples": [
+        "https://test.salesforce.com"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

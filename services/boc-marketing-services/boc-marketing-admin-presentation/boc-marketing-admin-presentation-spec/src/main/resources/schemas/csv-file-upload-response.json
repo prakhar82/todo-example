@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "memberId": {
+      "type": "string",
+      "description": "Credit Union Identifier"
+    },
+    "leadOpportunityId": {
+      "type": "string",
+      "description": "Download all records (yes or no)"
+    }
+  }
+}

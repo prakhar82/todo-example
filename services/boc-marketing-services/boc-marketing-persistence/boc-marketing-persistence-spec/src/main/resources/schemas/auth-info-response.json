@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "authId": {
+      "type": "integer",
+      "description": "Auth Id"
+    },
+    "creditUnionId": {
+      "type": "string",
+      "description": "Credit Union Id"
+    },
+    "header": {
+      "type": "string",
+      "description": "Header"
+    },
+    "keystorePass": {
+      "type": "string",
+      "description": "Keystore pass"
+    },
+    "keyAlias": {
+      "type": "string",
+      "description": "Key alias"
+    },
+    "keyPass": {
+      "type": "string",
+      "description": "Key pass"
+    },
+    "clientId": {
+      "type": "string",
+      "description": "Client id"
+    },
+    "email": {
+      "type": "string",
+      "description": "Email"
+    },
+    "accessToken": {
+      "type": "string",
+      "description": "Access token"
+    },
+    "tokenExpiryOn": {
+      "type": "string",
+      "description": "Token expiry date time"
+    },
+    "domain": {
+      "type": "string",
+      "description": "Domain"
+    },
+    "url": {
+      "type": "string",
+      "description": "Database Url"
+    },
+    "username": {
+      "type": "string",
+      "description": "DB Username"
+    },
+    "password": {
+      "type": "string",
+      "description": "DB Password"
+    },
+    "driverClassName": {
+      "type": "string",
+      "description": "Database driver name"
+    }
+  },
+  "required": [
+    "creditUnionId",
+    "accessToken",
+    "authId",
+    "clientId",
+    "email",
+    "header",
+    "keyAlias",
+    "keyPass",
+    "keystorePass",
+    "tokenExpiryOn"
+  ]
+}

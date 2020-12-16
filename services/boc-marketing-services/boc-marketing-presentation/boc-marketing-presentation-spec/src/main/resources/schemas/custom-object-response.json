@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "totalSize": {
+      "type": "integer",
+      "description": "Number of records"
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "$ref": "leads-opportunities.json"
+      }
+    }
+  },
+  "required": ["records", "totalSize"],
+  "additionalProperties": false
+}

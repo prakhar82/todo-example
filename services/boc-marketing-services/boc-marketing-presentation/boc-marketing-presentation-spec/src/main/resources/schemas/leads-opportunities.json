@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Identifier"
+    },
+    "bocforgeMemberNo": {
+      "type": "string",
+      "description": "Member Number"
+    },
+    "bocforgeFinancialAccountType": {
+      "type": "string",
+      "description": "Financial account type"
+    },
+    "bocforgeLoHeaderText": {
+      "type": "string",
+      "description": "Notification header text"
+    },
+    "bocforgeMemberResponse": {
+      "type": "string",
+      "description": "Member response button text"
+    },
+    "bocforgeButtonCode": {
+      "type": ["integer", "null"],
+      "description": "Response button code"
+    },
+    "bocforgeChoiceCode": {
+      "type": "integer",
+      "description": "Response choice code"
+    },
+    "bocforgeCRMPriority": {
+      "type": "string",
+      "description": "CRM Priority",
+      "default": "null"
+    },
+    "promotions": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "bocforgePromotionId": {
+            "type": "integer",
+            "description": "Promotion Identifier"
+          },
+          "bocforgePromotionDescription": {
+            "type": "string",
+            "description": "Promotion description"
+          },
+          "bocforgePromotionStartDate": {
+            "type": "string",
+            "description": "Promotion start date"
+          },
+          "bocforgePromotionEndDate": {
+            "type": "string",
+            "description": "Promotion end date"
+          }
+        },
+        "required": [
+          "bocforgePromotionDescription",
+          "bocforgePromotionEndDate",
+          "bocforgePromotionId",
+          "bocforgePromotionStartDate"
+        ]
+      }
+    }
+  },
+  "required": [
+    "id",
+    "bocforgeButtonCode",
+    "bocforgeChoiceCode",
+    "bocforgeCRMPriority",
+    "bocforgeFinancialAccountType",
+    "bocforgeLoHeaderText",
+    "bocforgeMemberNo",
+    "bocforgeMemberResponse",
+    "promotions"
+  ],
+  "additionalProperties": false
+}

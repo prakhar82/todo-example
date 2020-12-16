@@ -1,0 +1,303 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v2.1",
+    "title": "Authenticated Marketing Integration API",
+    "description": "Swagger specification for Authenticated Marketing Integration API"
+  },
+  "host": "gffinancial--fcuro.my.salesforce.com",
+  "basePath": "/services/data/v40.0/query",
+  "schemes": [
+    "https"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/query": {
+      "get": {
+        "tags": [
+          "marketingObject"
+        ],
+        "description": "Gets Marketing Object from Salseforce.",
+        "parameters": [
+          {
+            "name": "q",
+            "type": "string",
+            "description": "Salseforce Query",
+            "in": "query",
+            "required": true
+          },
+          {
+            "name": "Authorization",
+            "type": "string",
+            "description": "OAuth token to authenticate Salseforce",
+            "in": "header",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with Marketing Object from Salseforce",
+            "headers": {
+              "Strict-Transport-Security": {
+                "type": "string",
+                "description": "HTTPS strict transport security header",
+                "default": "max-age=31536000"
+              },
+              "Etag": {
+                "type": "string",
+                "description": "A unique ID identifying whether this resource has changed"
+              },
+              "Cache-Control": {
+                "type": "string",
+                "description": "Describes how long this response can be cached",
+                "default": "max-age=28800"
+              },
+              "X-Frame-Options": {
+                "type": "string",
+                "description": "Prevent this request from being loaded in any iframes",
+                "default": "DENY"
+              },
+              "X-Content-Type-Options": {
+                "type": "string",
+                "description": "Ensures each page has a content type and prevents browsers from doing MIME type sniffing",
+                "default": "nosniff"
+              }
+            },
+            "schema": {
+              "title": "Credit Union response schema",
+              "type": "object",
+              "properties": {
+                "totalSize": {
+                  "title": "Totalsize",
+                  "type": "integer"
+                },
+                "records": {
+                  "title": "Records",
+                  "type": "array",
+                  "items": {
+                    "title": "Items",
+                    "type": "object",
+                    "properties": {
+                      "Id": {
+                        "type": "string",
+                        "description": "Identifier"
+                      },
+                      "bocforgeMemberNo__c": {
+                        "type": "string",
+                        "description": "Member Number"
+                      },
+                      "bocforgeFinancialAccountType__c": {
+                        "type": "string",
+                        "description": "Financial account type"
+                      },
+                      "bocforgeLoHeaderText__c": {
+                        "type": "string",
+                        "description": "Notification header text"
+                      },
+                      "bocforgeMemberResponse__c": {
+                        "type": "string",
+                        "description": "Member response button text"
+                      },
+                      "bocforgeMemberResponseDate__c": {
+                        "type": "string",
+                        "description": "Member response date"
+                      },
+                      "bocforgeMemberResponseTime__c": {
+                        "type": "string",
+                        "description": "Member response time"
+                      },
+                      "bocforgePromotionDescription1__c": {
+                        "type": "string",
+                        "description": "Promotion Description 1"
+                      },
+                      "bocforgePromotionDescription2__c": {
+                        "type": "string",
+                        "description": "Promotion Description 2"
+                      },
+                      "bocforgePromotionDescription3__c": {
+                        "type": "string",
+                        "description": "Promotion Description 3"
+                      },
+                      "bocforgePromotionDescription4__c": {
+                        "type": "string",
+                        "description": "Promotion Description 4"
+                      },
+                      "bocforgePromotionDescription5__c": {
+                        "type": "string",
+                        "description": "Promotion Description 5"
+                      },
+                      "bocforgePromotionDescription6__c": {
+                        "type": "string",
+                        "description": "Promotion Description 6"
+                      },
+                      "bocforgeButtonCode__c": {
+                        "type": "integer",
+                        "description": "Response button code"
+                      },
+                      "bocforgeChoiceCode__c": {
+                        "type": "integer",
+                        "description": "Response choice code"
+                      },
+                      "bocforgeCRMPriority__c": {
+                        "type": "string",
+                        "description": "CRM Priority",
+                        "default": "null"
+                      },
+                      "bocforgePromotion1StartDate__c": {
+                        "type": "string",
+                        "description": "Promotion Start date 1"
+                      },
+                      "bocforgePromotion2StartDate__c": {
+                        "type": "string",
+                        "description": "Promotion Start date 2"
+                      },
+                      "bocforgePromotion3StartDate__c": {
+                        "type": "string",
+                        "description": "Promotion Start date 3"
+                      },
+                      "bocforgePromotion4StartDate__c": {
+                        "type": "string",
+                        "description": "Promotion Start date 4"
+                      },
+                      "bocforgePromotion5StartDate__c": {
+                        "type": "string",
+                        "description": "Promotion Start date 5"
+                      },
+                      "bocforgePromotion6StartDate__c": {
+                        "type": "string",
+                        "description": "Promotion Start date 6"
+                      },
+                      "bocforgePromotion1EndDate__c": {
+                        "type": "string",
+                        "description": "Promotion end date 1"
+                      },
+                      "bocforgePromotion2EndDate__c": {
+                        "type": "string",
+                        "description": "Promotion end date 2"
+                      },
+                      "bocforgePromotion3EndDate__c": {
+                        "type": "string",
+                        "description": "Promotion end date 3"
+                      },
+                      "bocforgePromotion4EndDate__c": {
+                        "type": "string",
+                        "description": "Promotion end date 4"
+                      },
+                      "bocforgePromotion5EndDate__c": {
+                        "type": "string",
+                        "description": "Promotion end date 5"
+                      },
+                      "bocforgePromotion6EndDate__c": {
+                        "type": "string",
+                        "description": "Promotion end date 6"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{Id}": {
+      "patch": {
+        "tags": [
+          "updateMarketingObject"
+        ],
+        "description": "Update Marketing Object in Salesforce.",
+        "parameters": [
+          {
+            "name": "Id",
+            "type": "string",
+            "description": "Identifier",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "Authorization",
+            "type": "string",
+            "description": "OAuth token to authenticate Salseforce",
+            "in": "header",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Request body",
+            "required": true,
+            "schema": {
+              "title": "Request body",
+              "type": "object",
+              "properties": {
+                "bocforgeMemberResponse__c": {
+                  "type": "string",
+                  "description": "Member Response"
+                },"bocforgeMemberChoiceText__c": {
+                  "type": "string",
+                  "description": "Member Response choice text"
+                },
+                "bocforgeMemberResponseDate__c": {
+                  "type": "string",
+                  "description": "Member Response Date"
+                },
+                "bocforgeMemberResponseTime__c": {
+                  "type": "string",
+                  "description": "Member Response Time"
+                },
+                "bocforgeButtonCode__c": {
+                  "type": "integer",
+                  "description": "Member Response Button Code"
+                },
+                "bocforgeChoiceCode__c": {
+                  "type": "integer",
+                  "description": "Member Response Choice Code"
+                },
+                "required": [
+                  "bocforgeMemberResponse__c",
+                  "bocforgeMemberResponseDate__c",
+                  "bocforgeMemberResponseTime__c",
+                  "bocforgeButtonCode__c",
+                  "bocforgeChoiceCode__c"
+                ]
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully updated",
+            "headers": {
+              "Strict-Transport-Security": {
+                "type": "string",
+                "description": "HTTPS strict transport security header",
+                "default": "max-age=31536000"
+              },
+              "Etag": {
+                "type": "string",
+                "description": "A unique ID identifying whether this resource has changed"
+              },
+              "Cache-Control": {
+                "type": "string",
+                "description": "Describes how long this response can be cached",
+                "default": "max-age=28800"
+              },
+              "X-Frame-Options": {
+                "type": "string",
+                "description": "Prevent this request from being loaded in any iframes",
+                "default": "DENY"
+              },
+              "X-Content-Type-Options": {
+                "type": "string",
+                "description": "Ensures each page has a content type and prevents browsers from doing MIME type sniffing",
+                "default": "nosniff"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

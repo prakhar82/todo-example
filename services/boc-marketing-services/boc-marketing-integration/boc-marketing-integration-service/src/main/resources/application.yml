@@ -1,0 +1,64 @@
+spring:
+  application:
+    name: boc-marketing-integration-service
+  activemq:
+    broker-url: ${BROKER_URL:tcp://localhost:61616}
+  jmx:
+    default-domain: ${spring.application.name}
+  jta:
+    logDir: target/${spring.application.name}-logs
+
+server:
+  port: 9938
+  contextPath: /boc-marketing-integration-service
+
+# Logging
+logging:
+  level:
+    root: INFO
+    com.backbase: DEBUG
+    org.springframework: INFO
+
+registry:
+  instance:
+    appname: ${spring.application.name}
+    role: live
+    healthCheckUrlPath: /production-support/health
+    statusPageUrlPath: /production-support/info
+    nonSecurePort: ${server.port}
+    public: true
+  client:
+    serviceUrl: defaultZone=http://${REGISTRY_HOST:localhost}:${REGISTRY_PORT:8080}/registry/eureka/
+
+idempotencyConfiguration:
+  cacheName: ${spring.application.name}Cache
+
+backbase:
+  communication:
+    logRequests: true
+    logReplies: true
+  eventsourcing:
+    commands-and-events-storage-enabled: false
+  persistence:
+    enabled: false
+  web:
+    security:
+      enabled: true
+
+buildingblocks:
+  security:
+    csrf:
+      enabled: false
+
+sso:
+  jwt:
+    internal:
+      type: signed
+      signature:
+        algorithm: HS256
+        key:
+          type: ENV
+          value: SIG_SECRET_KEY
+
+customObjectFetchQuery: SELECT Id,bocforgeMemberResponse__c,bocforgeMemberNo__c,bocforgeButtonCode__c,bocforgeChoiceCode__c,bocforgeFinancialAccountType__c,bocforgeLoHeaderText__c,bocforgePromotionDescription1__c,bocforgePromotionDescription2__c,bocforgePromotionDescription3__c,bocforgePromotionDescription4__c,bocforgePromotionDescription5__c,bocforgePromotionDescription6__c,bocforgePromotion1StartDate__c,bocforgePromotion2StartDate__c,bocforgePromotion3StartDate__c,bocforgePromotion4StartDate__c,bocforgePromotion5StartDate__c,bocforgePromotion6StartDate__c,bocforgePromotion1EndDate__c,bocforgePromotion2EndDate__c,bocforgePromotion3EndDate__c,bocforgePromotion4EndDate__c,bocforgePromotion5EndDate__c,bocforgePromotion6EndDate__c from bocforgeLeadOpportunity__c where bocforgeLeadOpportunity__c.bocforgeMemberNo__c={0}
+customObjectUpdateQuery: sobjects/bocforgeLeadOpportunity__c

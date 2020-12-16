@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "accessToken": {
+      "type": "string",
+      "description": "Access Token"
+    },
+    "baseUrl": {
+      "type": "string",
+      "description": "Base Url"
+    },
+    "memberNumber": {
+      "type": "string",
+      "description": "Member Number"
+    }
+  },
+  "required": [
+    "accessToken",
+    "baseUrl"
+  ]
+}

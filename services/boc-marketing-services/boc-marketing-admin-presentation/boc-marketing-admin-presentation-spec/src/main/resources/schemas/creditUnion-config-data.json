@@ -1,0 +1,91 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "creditUnionId": {
+      "type": "string",
+      "description": "Credit Union Identifier"
+    },
+    "source": {
+      "type": "string",
+      "description": "Credit Union Type(CRM, DB or CSV)"
+    },
+    "creditUnionApiInfo": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "baseUrl": {
+            "type": "string",
+            "description": "Base Uri"
+          },
+          "operation": {
+            "type": "string",
+            "description": "Operation"
+          }
+        }
+      }
+    },
+    "creditUnionAppAuth": {
+      "type": "object",
+      "properties": {
+        "header": {
+          "type": "string",
+          "description": "Header"
+        },
+        "keystorePass": {
+          "type": "string",
+          "description": "Keystore pass"
+        },
+        "keyAlias": {
+          "type": "string",
+          "description": "Key alias"
+        },
+        "keyPass": {
+          "type": "string",
+          "description": "Key pass"
+        },
+        "clientId": {
+          "type": "string",
+          "description": "Client id"
+        },
+        "email": {
+          "type": "string",
+          "description": "Email"
+        },
+        "domain": {
+          "type": "string",
+          "description": "Domain"
+        }
+      }
+    },
+    "databaseInfo": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "Database Url"
+        },
+        "username": {
+          "type": "string",
+          "description": "DB Username"
+        },
+        "password": {
+          "type": "string",
+          "description": "DB Password"
+        },
+        "databaseType": {
+          "type": "string",
+          "description": "Database Type"
+        }
+      }
+    }
+  },
+  "required": [
+    "creditUnionId",
+    "creditUnionApiInfo",
+    "creditUnionAppAuth",
+    "creditUnionType",
+    "databaseInfo",
+    "source"
+  ]
+}

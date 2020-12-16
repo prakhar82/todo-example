@@ -1,0 +1,43 @@
+#%RAML 1.0
+---
+title: MarketingPresentationService
+version: v1
+baseUri: "gateway/api/boc-marketing-presentation-service/v1"
+mediaType: application/json
+protocols: [HTTP, HTTPS]
+uses:
+  traits: traits/boc-traits.raml
+#===========================================================
+# API resource definitions
+#===========================================================
+/leadsopportunities:
+  displayName: Leads and Opportunities
+  /fetch:
+    displayName: Fetch Leads and Opportunities
+    is: [traits.BocCustomError,traits.BadRequestError,traits.challengeable,traits.UnauthorizedError,traits.NotAcceptableError,traits.InternalServerError,traits.ForbiddenError,traits.NotFoundError,traits.UnsupportedMediaTypeError]
+    post:
+      body:
+        application/json:
+          type: !include schemas/leads-opportunities-request.json
+      responses:
+        200:
+          description: SuccessResponse
+          body:
+            application/json:
+              type: !include schemas/custom-object-response.json
+
+  /update:
+    displayName: Update Member Response
+    is: [traits.BocCustomError,traits.BadRequestError,traits.challengeable,traits.UnauthorizedError,traits.NotAcceptableError,traits.InternalServerError,traits.ForbiddenError,traits.NotFoundError,traits.UnsupportedMediaTypeError]
+    /{Id}:
+      displayName: Update Member Response
+      patch:
+        body:
+          application/json:
+            type: !include schemas/leads-opportunities-member-response-update-request.json
+        responses:
+          204:
+            description: Member Response Update Success Response
+            body:
+              application/json:
+                type: any

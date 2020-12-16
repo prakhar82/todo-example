@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": {
+    "properties": {
+      "leadsOpportunitiesId": {
+        "type": "integer",
+        "description": "Leads Opportunity Id"
+      },
+      "creditUnionId": {
+        "type": "string",
+        "description": "Credit Union Id"
+      },
+      "leadId": {
+        "type": "string",
+        "description": "Lead Id"
+      },
+      "opportunityId": {
+        "type": "string",
+        "description": "Leads Opportunity Id"
+      },
+      "accountNumber": {
+        "type": "string",
+        "description": "Account Number"
+      },
+      "memberNumber": {
+        "type": "string",
+        "description": "Member Number"
+      },
+      "name": {
+        "type": "string",
+        "description": "Name"
+      },
+      "description": {
+        "type": "string",
+        "description": "Description"
+      },
+      "type": {
+        "type": "string",
+        "description": "Type"
+      },
+      "memberResponse": {
+        "type": "string",
+        "description": "Member Response"
+      }
+    },
+    "required": [
+      "name",
+      "memberNumber",
+      "leadsOpportunitiesId",
+      "leadId",
+      "accountNumber",
+      "description",
+      "type",
+      "creditUnionId",
+      "memberResponse",
+      "opportunityId"
+    ]
+  }
+}

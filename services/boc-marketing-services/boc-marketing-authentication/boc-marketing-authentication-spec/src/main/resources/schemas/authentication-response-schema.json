@@ -1,0 +1,74 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "Marketing Auth Response Schema",
+    "description": "This API return the Access Token to authenticate other APIs",
+    "required": [
+        "access_token",
+        "instance_url",
+        "id",
+        "token_type",
+        "issued_at",
+        "signature",
+        "scope"
+    ],
+    "properties": {
+        "access_token": {
+            "type": "string",
+            "title": "The access_token schema",
+            "description": "Access Token to authenticate other APIs.",
+            "examples": [
+                "00D4m0000008b8e!ARgAQC6gfgO.88brCfeb35LZn6tygA7_oziVp79d_L4ERTE9Coi8rwwWX1OlcT4rohgFakY1aIW9SP5oKeaIWJvwEEyFIg3r"
+            ]
+        },
+        "instance_url": {
+            "type": "string",
+            "title": "The instance_url schema",
+            "description": "Salesforse URL of the Credit Union.",
+            "examples": [
+                "https://gffinancial--fcuro.my.salesforce.com"
+            ]
+        },
+        "id": {
+            "type": "string",
+            "title": "The id schema",
+            "description": "Unique request identifier.",
+            "examples": [
+                "https://test.salesforce.com/id/00D4m0000008b8eEAA/0054m000000Jb67AAC"
+            ]
+        },
+        "token_type": {
+            "type": "string",
+            "title": "The token_type schema",
+            "description": "Describes the Token type.",
+            "examples": [
+                "Bearer"
+            ]
+        },
+        "issued_at": {
+            "type": "string",
+            "title": "The issued_at schema",
+            "description": "Time stamp, when the token was issued.",
+            "examples": [
+                "1596767796483"
+            ]
+        },
+        "signature": {
+            "type": "string",
+            "title": "The signature schema",
+            "description": "Digital signature to secure the token.",
+            "examples": [
+                "sEPgtcKLmCSNpQlblPsGyjMV6pkD9KW8L9/VydAOS7g="
+            ]
+        },
+        "scope": {
+            "type": "string",
+            "title": "The scope schema",
+            "description": "Scope of the API.",
+            "examples": [
+                "sEPgtcKLmCSNpQlblPsGyjMV6pkD9KW8L9/VydAOS7g="
+            ]
+        }
+    },
+    "additionalProperties": true
+}

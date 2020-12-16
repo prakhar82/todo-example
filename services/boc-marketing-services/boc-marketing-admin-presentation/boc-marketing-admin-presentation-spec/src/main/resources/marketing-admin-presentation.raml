@@ -1,0 +1,135 @@
+#%RAML 1.0
+---
+title: Marketing Admin Presentation Service
+version: v1
+baseUri: "gateway/api/boc-marketing-admin-presentation-service/v1"
+protocols: [ HTTP, HTTPS ]
+uses:
+  traits: traits/boc-traits.raml
+types:
+  uploadFile-response: !include schemas/csv-file-upload-response-list.json
+
+#===========================================================
+# API resource definitions
+#===========================================================
+/admin:
+  displayName: Admin Presentation Services
+  description: Admin services for Authenticated Marketing.
+
+  /uploadCsvFile/{creditUnionId}:
+    displayName: Upload CSV File
+    description: Upload CSV File from Admin widegt.
+    is: [ traits.BocCustomError,traits.BadRequestError,traits.challengeable,traits.UnauthorizedError,traits.NotAcceptableError,traits.InternalServerError,traits.ForbiddenError,traits.NotFoundError,traits.UnsupportedMediaTypeError ]
+    uriParameters:
+      creditUnionId:
+        description: Credit Union Id.
+        type: string
+    post:
+      body:
+        multipart/form-data:
+          properties:
+            file:
+              description: The file to be uploaded. Supported Format is csv.
+              required: true
+              type: file
+              example: !include schemas/leadsopportunities.csv
+      responses:
+        200:
+          body:
+            application/json:
+              type: uploadFile-response
+
+  /downloadCsvFile:
+    displayName: Download CSV File
+    description: Download CSV File.
+    is: [ traits.BocCustomError,traits.BadRequestError,traits.challengeable,traits.UnauthorizedError,traits.NotAcceptableError,traits.InternalServerError,traits.ForbiddenError,traits.NotFoundError,traits.UnsupportedMediaTypeError ]
+    post:
+      body:
+        application/json:
+          type: !include schemas/csv-file-download-request.json
+      responses:
+        200:
+          body:
+            text/csv:
+              type: file
+              fileTypes: [ '*/*' ]
+              maxLength: 307200
+
+  /downloadAuditFile:
+    displayName: Download Audit File
+    description: Download Audit File.
+    is: [ traits.BocCustomError,traits.BadRequestError,traits.challengeable,traits.UnauthorizedError,traits.NotAcceptableError,traits.InternalServerError,traits.ForbiddenError,traits.NotFoundError,traits.UnsupportedMediaTypeError ]
+    post:
+      body:
+        application/json:
+          type: !include schemas/audit-file-download-request.json
+      responses:
+        200:
+          body:
+            text/csv:
+              type: file
+              fileTypes: [ '*/*' ]
+              maxLength: 307200
+
+  /getCreditUnionconfigData/{creditUnionId}:
+    displayName: Get CreditUnion Config Data
+    is: [ traits.BocCustomError,traits.BadRequestError,traits.challengeable,traits.UnauthorizedError,traits.NotAcceptableError,traits.InternalServerError,traits.ForbiddenError,traits.NotFoundError,traits.UnsupportedMediaTypeError ]
+    uriParameters:
+      creditUnionId:
+        description: Credit Union Id.
+        type: string
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: !include schemas/creditUnion-config-data.json
+
+  /saveCreditUnionconfigData:
+    displayName: Save CreditUnion Config Data
+    is: [ traits.BocCustomError,traits.BadRequestError,traits.challengeable,traits.UnauthorizedError,traits.NotAcceptableError,traits.InternalServerError,traits.ForbiddenError,traits.NotFoundError,traits.UnsupportedMediaTypeError ]
+    post:
+      body:
+        application/json:
+          type: !include schemas/creditUnion-config-data.json
+      responses:
+        200:
+          body:
+            application/json:
+              type: !include schemas/success-response.json
+
+  /updateDataFormatter:
+    displayName: Update Data Formatter
+    is: [ traits.BocCustomError,traits.BadRequestError,traits.challengeable,traits.UnauthorizedError,traits.NotAcceptableError,traits.InternalServerError,traits.ForbiddenError,traits.NotFoundError,traits.UnsupportedMediaTypeError ]
+    post:
+      body:
+        application/json:
+          type: !include schemas/update-data-formatter.json
+      responses:
+        200:
+          body:
+            application/json:
+              type: !include schemas/success-response.json
+
+  /uploadJksFile/{creditUnionId}:
+    displayName: Upload JKS File
+    description: Upload JKS File from Admin widegt.
+    is: [ traits.BocCustomError,traits.BadRequestError,traits.challengeable,traits.UnauthorizedError,traits.NotAcceptableError,traits.InternalServerError,traits.ForbiddenError,traits.NotFoundError,traits.UnsupportedMediaTypeError ]
+    uriParameters:
+      creditUnionId:
+        description: Repository to import to.
+        type: string
+    post:
+      body:
+        multipart/form-data:
+          properties:
+            file:
+              description: The file to be uploaded. Supported Format is jks.
+              required: true
+              type: file
+              example: !include example/keystore.jks
+      responses:
+        200:
+          body:
+            application/json:
+              type: !include schemas/success-response.json

@@ -1,0 +1,112 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v2.1",
+    "title": "Authenticated Marketing API",
+    "description": "Swagger specification for Authenticated Marketing API"
+  },
+  "host": "test.salesforce.com",
+  "basePath": "/services/oauth2/token",
+  "schemes": [
+    "https"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/token": {
+      "post": {
+        "tags": [
+          "accessToken"
+        ],
+        "description": "Gets oAuth Access Token from Salseforce.",
+        "responses": {
+          "200": {
+            "description": "Successful response with Access Token from Salseforce",
+            "headers": {
+              "Strict-Transport-Security": {
+                "type": "string",
+                "description": "HTTPS strict transport security header",
+                "default": "max-age=31536000"
+              },
+              "Etag": {
+                "type": "string",
+                "description": "A unique ID identifying whether this resource has changed"
+              },
+              "Cache-Control": {
+                "type": "string",
+                "description": "Describes how long this response can be cached",
+                "default": "max-age=28800"
+              },
+              "X-Frame-Options": {
+                "type": "string",
+                "description": "Prevent this request from being loaded in any iframes",
+                "default": "DENY"
+              },
+              "X-Content-Type-Options": {
+                "type": "string",
+                "description": "Ensures each page has a content type and prevents browsers from doing MIME type sniffing",
+                "default": "nosniff"
+              }
+            },
+            "schema": {
+              "type": "object",
+              "properties": {
+                "access_token": {
+                  "description": "access_token",
+                  "title": "access_token",
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 250
+                },
+                "instance_url": {
+                  "description": "instance_url",
+                  "title": "instance_url",
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 140
+                },
+                "id": {
+                  "description": "id",
+                  "title": "id",
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 140
+                },
+                "token_type": {
+                  "description": "token_type",
+                  "title": "token_type",
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 140
+                },
+                "issued_at": {
+                  "description": "issued_at",
+                  "title": "issued_at",
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 140
+                },
+                "signature": {
+                  "description": "signature",
+                  "title": "signature",
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 140
+                },
+                "scope": {
+                  "description": "scope",
+                  "title": "scope",
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 140
+                },
+                "additionalProperties": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

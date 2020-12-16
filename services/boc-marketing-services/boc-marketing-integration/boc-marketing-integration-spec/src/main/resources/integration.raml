@@ -1,0 +1,38 @@
+#%RAML 1.0
+---
+title: RAML to get the Credit Union data for Authenticated Marketing
+version: v1
+baseUri: "{version}"
+mediaType: application/json
+protocols: [HTTP, HTTPS]
+uses:
+  traits: traits/boc-traits.raml
+#===========================================================
+# API resource definitions
+#===========================================================
+/marketingIntegration:
+  displayName: Marketing Widget Integration
+  post:
+    description: Request payload for Integration API
+    is: [traits.BocCustomError,traits.BadRequestError,traits.challengeable,traits.UnauthorizedError,traits.NotAcceptableError,traits.InternalServerError,traits.ForbiddenError,traits.NotFoundError,traits.UnsupportedMediaTypeError]
+    body:
+      application/json:
+        type: !include schemas/integration-request-schema.json
+    responses:
+      200:
+        description: SuccessResponse
+        body:
+          application/json:
+            type: !include schemas/integration-response-schema.json
+
+  patch:
+    is: [traits.BocCustomError,traits.BadRequestError,traits.challengeable,traits.UnauthorizedError,traits.NotAcceptableError,traits.InternalServerError,traits.ForbiddenError,traits.NotFoundError,traits.UnsupportedMediaTypeError]
+    body:
+      application/json:
+        type: !include schemas/member-response-update-request-schema.json
+    responses:
+      204:
+        description: Member Response Update Success Response
+        body:
+          application/json:
+            type: any

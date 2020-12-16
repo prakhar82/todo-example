@@ -1,0 +1,26 @@
+#%RAML 1.0
+---
+title: RAML to get the Access Token for Authenticated Marketing
+version: v1
+baseUri: "{version}"
+mediaType:  application/json
+protocols: [ HTTP, HTTPS ]
+uses:
+  traits: traits/boc-traits.raml
+#===============================================================
+# API resource definitions
+#===============================================================
+/authentication:
+  displayName: authentication
+  is: [traits.BocCustomError,traits.BadRequestError,traits.challengeable,traits.UnauthorizedError,traits.NotAcceptableError,traits.InternalServerError,traits.ForbiddenError,traits.NotFoundError,traits.UnsupportedMediaTypeError]
+  post:
+    description: Request payload for Auth API
+    body:
+      application/json:
+        schema: !include schemas/authentication-request-schema.json
+    responses:
+      200:
+        description: Request successfully executed. Get the Access Token.
+        body:
+          application/json:
+            type: !include schemas/authentication-response-schema.json

@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "creditUnionId": {
+      "type": "string",
+      "description": "Credit union identifier"
+    },
+    "startDate": {
+      "type": "string",
+      "description": "Audit start date"
+    },
+    "endDate": {
+      "type": "string",
+      "description": "Audit end date"
+    },
+    "recordType": {
+      "type": "string",
+      "description": "Type of audit record(success or error)"
+    }
+  },
+  "required": [
+    "creditUnionId",
+    "startDate",
+    "endDate",
+    "recordType"
+  ]
+}

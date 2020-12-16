@@ -1,0 +1,118 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "marketingauth",
+    "version": "v1"
+  },
+  "host": "52.20.219.22:8080",
+  "basePath": "/gateway/api/marketing-auth-service/v1",
+  "schemes": [
+    "http","https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/authentication": {
+      "post": {
+        "tags": ["authentication"],
+        "description": "marketing authentication",
+        "summary": "Marketing Auth Request",
+        "operationId": "marketingAuthRequest",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name":"marketingAuth",
+            "in": "body",
+            "required": true,
+            "description": "Marketing Auth Request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "creditUnionId": {
+                  "type": "string",
+                  "description": "",
+                  "example": 1
+                }, "header": {
+                  "type": "string",
+                  "description": "",
+                  "example": "{\"alg\":\"RS256\"}"
+                },
+                "keystorePass":{
+                  "type": "string",
+                  "description": "",
+                  "example": "mypass"
+                },
+                "keyAlias":{
+                  "type": "string",
+                  "description": "",
+                  "example": "auth_ss"
+                },
+                "keyPass": {
+                  "type": "string",
+                  "description": "",
+                  "example": "{\"alg\":\"RS256\"}"
+                },
+                "clientId": {
+                  "type": "string",
+                  "description": "",
+                  "example": "clientId"
+                },
+                "email": {
+                  "type": "string",
+                  "description": "",
+                  "example": "sfsxxxxxxxxxxxxx@fincuro.in"
+                },
+                "domain":{
+                  "type": "string",
+                  "description": "",
+                  "example": "https://test.salesforce.com"
+                }
+              }
+            }
+          },{
+            "name": "Authorization",
+            "in": "header",
+            "description": "an authorization header",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "title": "MarketingAuthSwagger",
+              "properties": {
+                "access_token": {
+                  "type": "string"
+                },
+                "instance_url": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "token_type": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "access_token",
+                "instance_url",
+                "id",
+                "token_type"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

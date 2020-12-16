@@ -1,0 +1,187 @@
+#%RAML 1.0
+---
+title: MarketingAuthPersistence
+version: v1
+baseUri: "{version}"
+mediaType: application/json
+protocols: [ HTTP, HTTPS ]
+uses:
+  traits: traits/boc-traits.raml
+#===========================================================
+# API resource definitions
+#===========================================================
+/creditunion:
+  displayName: Credit Union
+  is: [traits.BocCustomError,traits.BadRequestError,traits.challengeable,traits.UnauthorizedError,traits.NotAcceptableError,traits.InternalServerError,traits.ForbiddenError,traits.NotFoundError,traits.UnsupportedMediaTypeError]
+  /{creditUnionId}:
+    displayName: Get Credit Union By Id
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: !include schemas/credit-union-response.json
+
+/apiinfo:
+  displayName: Api Info
+  is: [traits.BocCustomError,traits.BadRequestError,traits.challengeable,traits.UnauthorizedError,traits.NotAcceptableError,traits.InternalServerError,traits.ForbiddenError,traits.NotFoundError,traits.UnsupportedMediaTypeError]
+  get:
+    queryParameters:
+      creditUnionId:
+        description: Credit Union Id
+        type: string
+        required: true
+      operation:
+        description: Operation name
+        type: string
+        required: true
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include schemas/api-info-response.json
+
+/authinfo:
+  displayName: Api Auth Info
+  is: [traits.BocCustomError,traits.BadRequestError,traits.challengeable,traits.UnauthorizedError,traits.NotAcceptableError,traits.InternalServerError,traits.ForbiddenError,traits.NotFoundError,traits.UnsupportedMediaTypeError]
+  get:
+    queryParameters:
+      creditUnionId:
+        description: Credit Union Id
+        type: string
+        required: true
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include schemas/auth-info-response.json
+
+/savetoken:
+  displayName: Save Token
+  is: [traits.BocCustomError,traits.BadRequestError,traits.challengeable,traits.UnauthorizedError,traits.NotAcceptableError,traits.InternalServerError,traits.ForbiddenError,traits.NotFoundError,traits.UnsupportedMediaTypeError]
+  post:
+    body:
+      application/json:
+        type: !include schemas/save-token-request.json
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include schemas/save-token-response.json
+
+/leadsopportunities:
+  displayName: LeadsAndOpportunities
+  is: [traits.BocCustomError,traits.BadRequestError,traits.challengeable,traits.UnauthorizedError,traits.NotAcceptableError,traits.InternalServerError,traits.ForbiddenError,traits.NotFoundError,traits.UnsupportedMediaTypeError]
+  get:
+    queryParameters:
+      creditUnionId:
+        description: CreditUnionId
+        type: string
+        required: true
+      fetchAll:
+        description: Fetch all or only actioned
+        type: string
+        required: true
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include schemas/get-leads-opportunities-response.json
+  post:
+    is: [traits.BocCustomError,traits.BadRequestError,traits.challengeable,traits.UnauthorizedError,traits.NotAcceptableError,traits.InternalServerError,traits.ForbiddenError,traits.NotFoundError,traits.UnsupportedMediaTypeError]
+    body:
+      application/json:
+        type: !include schemas/leads-opportunities-response.json
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include schemas/csv-file-upload-response-list.json
+  /update:
+    is: [traits.BocCustomError,traits.BadRequestError,traits.challengeable,traits.UnauthorizedError,traits.NotAcceptableError,traits.InternalServerError,traits.ForbiddenError,traits.NotFoundError,traits.UnsupportedMediaTypeError]
+    /{leadOpportunityId}:
+      put:
+        body:
+          application/json:
+            type: !include schemas/leads-opportunities-update-request.json
+        responses:
+          200:
+            body:
+              application/json:
+                type: !include schemas/success-response.json
+
+  /member:
+    displayName: MemberLeadsOpportunities
+    is: [traits.BocCustomError,traits.BadRequestError,traits.challengeable,traits.UnauthorizedError,traits.NotAcceptableError,traits.InternalServerError,traits.ForbiddenError,traits.NotFoundError,traits.UnsupportedMediaTypeError]
+    post:
+      body:
+        application/json:
+          type: !include schemas/fetch-member-leads-opportunities-request.json
+      responses:
+        200:
+          body:
+            application/json:
+              type: !include schemas/get-leads-opportunities-response.json
+
+/getaudit:
+  displayName: Get Audit
+  is: [traits.BocCustomError,traits.BadRequestError,traits.challengeable,traits.UnauthorizedError,traits.NotAcceptableError,traits.InternalServerError,traits.ForbiddenError,traits.NotFoundError,traits.UnsupportedMediaTypeError]
+  post:
+    body:
+      application/json:
+        type: !include schemas/get-audit-request.json
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include schemas/get-audit-response.json
+
+/saveaudit:
+  displayName: SaveAudit
+  is: [traits.BocCustomError,traits.BadRequestError,traits.challengeable,traits.UnauthorizedError,traits.NotAcceptableError,traits.InternalServerError,traits.ForbiddenError,traits.NotFoundError,traits.UnsupportedMediaTypeError]
+  post:
+    body:
+      application/json:
+        type: !include schemas/audit-save-request.json
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include schemas/success-response.json
+
+/getconfigdata:
+  displayName: Config Data
+  /{creditUnionId}:
+    is: [traits.BocCustomError,traits.BadRequestError,traits.challengeable,traits.UnauthorizedError,traits.NotAcceptableError,traits.InternalServerError,traits.ForbiddenError,traits.NotFoundError,traits.UnsupportedMediaTypeError]
+    displayName: Config Data By Credit Union Id
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: !include schemas/config-data.json
+
+/saveconfigdata:
+  displayName: Save Config Data
+  post:
+    body:
+      application/json:
+        type: !include schemas/config-data.json
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include schemas/success-response.json
+
+/changeFormatter:
+  displayName: Change Formatter
+  is: [traits.BocCustomError,traits.BadRequestError,traits.challengeable,traits.UnauthorizedError,traits.NotAcceptableError,traits.InternalServerError,traits.ForbiddenError,traits.NotFoundError,traits.UnsupportedMediaTypeError]
+  post:
+    body:
+      application/json:
+        type: !include schemas/change-formatter.json
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include schemas/success-response.json

@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Audit Identifier"
+    },
+    "txnId": {
+      "type": "string",
+      "description": "Transaction Identifier"
+    },
+    "creditUnionId": {
+      "type": "string",
+      "description": "Credit Union Identifier"
+    },
+    "memberId": {
+      "type": "string",
+      "description": "Member Identifier"
+    },
+    "notificationId": {
+      "type": "string",
+      "description": "Leads Opportunities Identifier"
+    },
+    "channel": {
+      "type": "string",
+      "description": "Channel"
+    },
+    "operation": {
+      "type": "string",
+      "description": "Operation"
+    },
+    "operationResult": {
+      "type": "string",
+      "description": "Operation Result"
+    },
+    "createDate": {
+      "type": "string",
+      "description": "Create Date"
+    },
+    "request": {
+      "type": "string",
+      "description": "Request payload of API"
+    },
+    "buttonCode": {
+      "type": "integer",
+      "description": "Response button code"
+    },
+    "buttonText": {
+      "type": "string",
+      "description": "Response button text"
+    },
+    "choiceCode": {
+      "type": "integer",
+      "description": "Response choice code"
+    },
+    "choiceText": {
+      "type": "string",
+      "description": "Response choice text"
+    },
+    "responseDate": {
+      "type": "string",
+      "description": "Response Date"
+    },
+    "responseTime": {
+      "type": "string",
+      "description": "Response Time"
+    }
+  },
+  "required": [
+    "creditUnionId",
+    "id",
+    "request",
+    "operationResult",
+    "operation",
+    "memberId",
+    "createDate",
+    "channel",
+    "buttonCode",
+    "buttonText",
+    "choiceCode",
+    "choiceText",
+    "notificationId",
+    "txnId",
+    "responseDate",
+    "responseTime"
+  ]
+}

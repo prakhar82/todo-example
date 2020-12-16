@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <contextName>Marketing Persistence Service</contextName>
+
+    <logger name="com.boc" level="DEBUG"/>
+
+    <include resource="com/backbase/buildingblocks/logging/base.xml" />
+</configuration>

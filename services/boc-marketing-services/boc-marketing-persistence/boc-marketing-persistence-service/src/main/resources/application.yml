@@ -1,0 +1,76 @@
+spring:
+  application:
+    name: boc-marketing-persistence-service
+  activemq:
+    broker-url: ${BROKER_URL:tcp://localhost:61616}
+  jmx:
+    default-domain: ${spring.application.name}
+  jta:
+    logDir: target/${spring.application.name}-logs
+  datasource:
+    url: jdbc:mysql://localhost:3306/BOC_AUTHENTICATED_MARKETING
+    username: root
+    password: root
+    driverClassName: com.mysql.jdbc.Driver
+    hikari:
+      connection-timeout: 6000
+      maximum-pool-size: 5
+    jpa:
+      generate-ddl: false
+
+server:
+  port: 9966
+  contextPath: /boc-marketing-persistence-service
+
+# Logging
+logging:
+  level:
+    root: INFO
+    com.backbase: DEBUG
+    org.springframework: INFO
+
+registry:
+  instance:
+    appname: ${spring.application.name}
+    role: live
+    healthCheckUrlPath: /production-support/health
+    statusPageUrlPath: /production-support/info
+    nonSecurePort: ${server.port}
+    public: true
+  client:
+    serviceUrl: defaultZone=http://${REGISTRY_HOST:localhost}:${REGISTRY_PORT:8080}/registry/eureka/
+
+idempotencyConfiguration:
+  cacheName: ${spring.application.name}Cache
+
+backbase:
+  communication:
+    logRequests: true
+    logReplies: true
+  eventsourcing:
+    commands-and-events-storage-enabled: false
+  persistence:
+    enabled: true
+  web:
+    security:
+      enabled: true
+
+buildingblocks:
+  security:
+    csrf:
+      enabled: false
+
+sso:
+  jwt:
+    internal:
+      type: signed
+      signature:
+        algorithm: HS256
+        key:
+          type: ENV
+          value: SIG_SECRET_KEY
+
+tokenExpiryTime: 20
+gatewayAuthUrl: http://52.20.219.22:8080/gateway/api/auth/login
+gatewayUsername: admin
+gatewayPassword: admin

@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "creditUnionId": {
+      "type": "string",
+      "description": "Credit Union Identifier"
+    },
+    "bocforgeMemberResponse": {
+      "type": "string",
+      "description": "Member Response"
+    },
+    "bocforgeMemberChoiceText": {
+      "type": "string",
+      "description": "Member response choice text"
+    },
+    "bocforgeButtonCode": {
+      "type": "integer",
+      "description": "Member Response Button Code"
+    },
+    "bocforgeChoiceCode": {
+      "type": "integer",
+      "description": "Member Response Choice Code"
+    }
+  },
+  "required": [
+    "creditUnionId",
+    "bocforgeMemberResponse",
+    "bocforgeChoiceCode",
+    "bocforgeButtonCode",
+    "bocforgeMemberChoiceText"
+  ]
+}

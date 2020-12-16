@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "accessToken": {
+      "type": "string",
+      "description": "Access Token"
+    },
+    "baseUrl": {
+      "type": "string",
+      "description": "Base Url"
+    },
+    "requestBody": {
+      "type": "object",
+      "description": "Request Body",
+      "properties": {
+        "bocforgeMemberResponse__c": {
+          "type": "string",
+          "description": "Member response button text"
+        },
+        "bocforgeMemberChoiceText__c": {
+          "type": "string",
+          "description": "Member response choice text"
+        },
+        "bocforgeMemberResponseDate__c": {
+          "type": "string",
+          "description": "Member Response Date"
+        },
+        "bocforgeMemberResponseTime__c": {
+          "type": "string",
+          "description": "Member Response Time"
+        },
+        "bocforgeButtonCode__c": {
+          "type": "integer",
+          "description": "Member Response Button Code"
+        },
+        "bocforgeChoiceCode__c": {
+          "type": "integer",
+          "description": "Member Response Choice Code"
+        }
+      }
+    },
+    "id": {
+      "type": "string",
+      "description": "Identifier"
+    }
+  },
+  "required": [
+    "accessToken",
+    "forgeMemberResponse__c"
+  ]
+}
